@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!----------------- bdy container to prevent overflow ----------------->
+    <div id="bdy">
+        <!------------------ background image (desktop only) --------------------->
+        <div id="bgimage">
+            <div id="bgoverlay"></div>
+        </div>
+        <!-------------------- nav section -------------------------->
+        <nav>
+            <ul>
+                <li class="logo">
+                    <h1><a href="index.html">sonder beads</h1>
+                </li>
+                <li class="navicons">
+                    <a href="javascript:void(0);" id="order-icon"><img src="pics/icons/icons8-cart-48.png"
+                            alt="order list"> <span></span>
+                    </a>
+                </li>
+                <li class="navicons dropdown">
+                    <a href="javascript:void(0);" id="menu-icon"><img src="pics/icons/icons8-lines-48.png"
+                            alt="dropdown nav"></a>
+                </li>
+            </ul>
+            <!----------------- desktop nav list ----------------->
+            <ul class="desktop">
+                <li><a href="contact.html">waistbeads</a></li>
+                <li><a href="contact.html">bracelets</a></li>
+                <li><a href="contact.html">rings</a></li>
+                <li><a href="contact.html">history</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+        </nav>
+        <!----------------- popout navigation BAR (mobile and ipad) ----------------->
+        <div id="popout-menu" class="popout-menu">
+            <ul>
+                <li><a href="index.html">Home</a><span id="close-menu"><img src="pics/icons/icons8-x-50.png"
+                            alt=""></span></li>
+                <li><a href="contact.html">waistbeads</a></li>
+                <li><a href="contact.html">bracelet</a></li>
+                <li><a href="contact.html">rings</a></li>
+                <li><a href="contact.html">history</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+        </div>
+        <!----------------- popout cart ----------------->
+        <div id="popout-cart" class="popout-cart">
+            <div class="carttab">
+                <h3>shopping cart <span><button id="close-cart">close</button></span></h3>
+            </div>
+            <hr class="thin-grey-line">
+            <div class="cart-footer">
+                <div class="totalamt">
+                    <h2>Subtotal</h2>
+                    <h4>$ USD</h4>
+                </div>
+                <p>Shipping & taxes calculated at checkout
+                </p>
+                <div class="cartbtn">
+                    <button class="checkout">checkout!</button>
+                </div>
+            </div>
+        </div>
+        <!----------------- overlay to make background dimmed after nav pops out ----------------->
+        <div id="overlay" class="overlay"></div>
+        <!----------------- landing page text ----------------->
+        <div id="main">
+            <h1>Sonder Beads</h1>
+            <h2>HOMEMADE BEADED JEWELRY</h2>
+            <a href="#jewelry"><button>SHOP NOW</button></a>
+        </div>
+        <!----------------- jewelry section ----------------->
+        <div id="jewelry-container" data-aos="fade-in" data-aos-duration="1000">
+            <div id="jewelry" class="wow fadeIn">
+                <div class="category">
+                    <a href="html/waist.html">
+                        <img src="pics/headers/jwaistbead.jpg" alt="Waistbead Cover" class="pop-effect">
+                        <span>waistbeads</span>
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="/html/bracelets.html">
+                        <img src="pics/headers/jbracelets.jpg" alt="Bracelet Cover" class="pop-effect">
+                        <span>bracelets</span>
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="/html/earrings.html">
+                        <img src="pics/headers/jrings.jpg" alt="Rings Cover" class="pop-effect">
+                        <span>rings</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!----------------- slogan for desktop text ----------------->
+        <div id="desktop-slogan" class="slg" data-aos="fade-in" data-aos-duration="1000">
+            <h4>body adornments for all shapes and sizes made with LOVE</h4>
+            <p>Sonder — the understanding that every person's story is as complex and significant as your own.
+                At
+                Sonder
+                Beads, we embrace this philosophy through our unique designs that cherish creativity and
+                community.
+                Explore our collection to find jewelry that reflects the unique beauty of each soul.</p>
+        </div>
+        <!----------------- new arrivals section ----------------->
+        <div id="newarrivals" data-aos="fade-right" data-aos-duration="400">
+            <h2>NEW ARRIVALS</h2>
+            <div id="splide-arrivals" class="splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide" class="product">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                        <li class="splide__slide">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                        <li class="splide__slide">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                        <li class="splide__slide">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                        <li class="splide__slide">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                        <li class="splide__slide">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!----------------- featured items section ----------------->
+        <div id="featured" data-aos="fade-left" data-aos-duration="400">
+            <h2>FEATURED</h2>
+            <div id="splide-featured" class="splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide" class="product">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                        <li class="splide__slide" class="product">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                        <li class="splide__slide" class="product">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                        <li class="splide__slide" class="product">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                        <li class="splide__slide" class="product">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                        <li class="splide__slide" class="product">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!----------------- highlighted items section ----------------->
+        <div id="highlighted">
+            <div class="topcurve2">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+            <img src="pics/headers/jwaistbead.jpg" data-aos="fade-in" data-aos-duration="1000" alt="highlighted image">
+            <h2>shop crystal waistbeads</h2>
+            <div id="splide-highlighted" class="splide" data-aos="fade-in" data-aos-duration="1000">
+                <h2>shop crystal</h2>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide" class="product">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                        <li class="splide__slide" class="product">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                        <li class="splide__slide" class="product">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                        <li class="splide__slide" class="product">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                        <li class="splide__slide" class="product">
+                            <a href="../html/products/waistbeads/product_page1.html">
+                                <img src="pics/headers/jwaistbead.jpg" alt="white marble bracelet">
+                                <p>White Marble Bracelet</p>
+                                <h4>$8.00</h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="btmcurve2">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+            <div class="btmcurve2-1">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+        </div>
+        <!----------------- slogan for mobile ----------------->
+        <div id="mobile-slogan" class="slg" data-aos="fade-in" data-aos-duration="1200">
+            <p>body adornments for all shapes and sizes made with LOVE</p>
+        </div>
+        <!----------------- history section ----------------->
+        <div id="history">
+            <div class="history-container" data-aos="fade-in" data-aos-duration="1000">
+                <img src="pics/headers/multiplewaistbeads copy.JPEG" alt="Waistbeads Image 1" class="img1">
+                <img src="pics/headers/multiplewaistbeads copy.JPEG" alt="Waistbeads Image 2" class="img2">
+            </div>
+            <div class="history-text-container" data-aos="fade-in" data-aos-duration="1000">
+                <h2>History of Waistbeads</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore
+                    et dolore magna aliqua. Sagittis aliquam malesuada bibendum arcu vitae. Dictum fusce ut
+                    placerat
+                    orci nulla pellentesque dignissim. Augue interdum velit euismod in pellentesque massa
+                    placerat.
+                    In
+                    eu mi bibendum neque egestas congue. Quam elementum pulvinar etiam non. consequat ac felis
+                    donec
+                    et.
+                    Semper hendrerit gravida rutrum. Cras fermentum odio eu feugiat. Curabitur gravida arcu
+                    ac
+                    tortor. Praesent semper feug
+                    iat nibh sed pulvinar proin.</p>
+            </div>
+        </div>
+        <!---------------- video section -------------------->
+        <div id="video" data-aos="fade-up" data-aos-duration="1000">
+            <div class="video-container">
+                <video width="95%" height="650px" autoplay muted loop>
+                    <source src="pics/headers/8e3c28e64e12472599eb61fa04fed8f2.mp4" type="video/mp4">
+                    your browser doesn't support the video tag
+                </video>
+            </div>
+        </div>
+        <!----------------- reviews section ----------------->
+        <div id="reviews" data-aos="fade-in" data-aos-duration="1200">
+            <section id="splide-reviews" class="splide" aria-label="carousel-heading">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="card">
+                                <div class="card-header">
+                                    <img src="pics/icons/icons8-hibiscus-64.png" alt="">
+                                    <h2>Cute Beads</h2>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                    tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut e Duis aute irure dolor in
+                                    reprehenderit
+                                    in voluptate velit esse.</p>
+                                <ul class="stars">
+                                    <li><img src="pics/icons/icons8-star-48.png" alt=""></li>
+                                    <li><img src="pics/icons/icons8-star-48.png" alt=""></li>
+                                    <li><img src="pics/icons/icons8-star-48.png" alt=""></li>
+                                    <li><img src="pics/icons/icons8-star-48.png" alt=""></li>
+                                    <li><img src="pics/icons/icons8-star-48.png" alt=""></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="card">
+                                <div class="card-header">
+                                    <img src="pics/icons/icons8-hibiscus-64.png" alt="">
+                                    <h2>Cool Beads</h2>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                    tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut e Duis aute irure dolor in
+                                    reprehenderit
+                                    in voluptate velit esse.</p>
+                                <ul class="stars">
+                                    <li><img src="pics/icons/icons8-star-48.png" alt=""></li>
+                                    <li><img src="pics/icons/icons8-star-48.png" alt=""></li>
+                                    <li><img src="pics/icons/icons8-star-48.png" alt=""></li>
+                                    <li><img src="pics/icons/icons8-star-48.png" alt=""></li>
+                                    <li><img src="pics/icons/icons8-star-48.png" alt=""></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="card">
+                                <div class="card-header">
+                                    <img src="pics/icons/icons8-hibiscus-64.png" alt="">
+                                    <h2>Nice Beads</h2>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                    tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut e Duis aute irure dolor in
+                                    reprehenderit
+                                    in voluptate velit esse.</p>
+                                <ul class="stars">
+                                    <li><img src="pics/icons/icons8-star-48.png" alt=""></li>
+                                    <li><img src="pics/icons/icons8-star-48.png" alt=""></li>
+                                    <li><img src="pics/icons/icons8-star-48.png" alt=""></li>
+                                    <li><img src="pics/icons/icons8-star-48.png" alt=""></li>
+                                    <li><img src="pics/icons/icons8-star-48.png" alt=""></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <!------------------------- footer section ------------------------->
+        <footer class="footer-distributed">
+            <hr class="thin-grey-line">
+            <div class="footer-left">
+                <h3>Sonder Beads </h3>
+                <p class="footer-links">
+                    <a href="#">Home</a>
+                    |
+                    <a href="#">About</a>
+                    |
+                    <a href="#">Contact</a>
+                    |
+                    <a href="#">Blog</a>
+                </p>
+                <p class="footer-company-name">Copyright © 2022 <strong>SonderBeads</strong> All rights reserved
+                </p>
+            </div>
+            <div class="footer-center">
+                <div>
+                    <img src="pics/icons/icons8-mail-48.png" alt="mail icon">
+                    <p><span>Sonder Beads</span>
+                        Contact Us</p>
+                </div>
+                <div>
+                    <img src="pics/icons/icons8-gmail-48.png" alt="mail icon">
+                    <p><a href="mailto:sonderbeads.co@gmail.com">sonderbeadsco@gmail.com</a></p>
+                </div>
+                <div>
+                    <img src="pics/icons/icons8-instagram-48.png" alt="insta icon">
+                    <p>@sonderbeads </p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-company-about">
+                    <span>About the company</span>
+                    <strong>Sonder Beads</strong> Sonder — the understanding that every person's story is as
+                    complex and
+                    significant as your own. At
+                    Sonder
+                    Beads, we embrace this philosophy through our unique designs that cherish creativity and
+                    community.
+                </p>
+            </div>
+        </footer>
+        <!------------------------- js ------------------------->
+        <script src="bundle.js" defer></script>
+        <script src="js/index.js" defer></script>
+        <script src="js/cart.js" defer></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+
+                var splideHighlighted = new Splide('#splide-highlighted', {
+                    type: 'loop',
+                    perPage: 2,
+                    perMove: 1,
+                    breakpoints: {
+                        1024: {
+                            perPage: 1,
+                        },
+                    }
+                });
+                splideHighlighted.mount();
+
+                // Initialize the new arrivals carousel
+                var splideArrivals = new Splide('#splide-arrivals', {
+                    type: 'loop',
+                    perPage: 3,
+                    perMove: 1,
+                });
+                splideArrivals.mount();
+
+                // Initialize the featured carousel
+                var splideFeatured = new Splide('#splide-featured', {
+                    type: 'loop',
+                    perPage: 3,
+                    perMove: 1,
+                });
+                splideFeatured.mount();
+
+                var splideReviews = new Splide('#splide-reviews', {
+                    type: 'loop',
+                });
+                splideReviews.mount();
+            });
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,1602 @@
+/* ----------------- font styling ---------------- */
+
+@font-face {
+    font-family: 'Mernature';
+    src: url('../fonts/MERQOLA\ NATURE.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pratika';
+    src: url('../fonts/Praktika-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bebas';
+    src: url('../fonts/BebasNeue-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ----------------- key frames ---------------- */
+
+@keyframes fadewhite {
+
+    89%,
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* ----------------- page & body styling -----------------  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* makes the box model work in all browsers (padding and margin are consistent etc) */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: rgb(255, 255, 255);
+}
+
+#bdy {
+    overflow-x: hidden !important;
+
+}
+
+/* ----------------- background image styling -----------------  */
+
+#bgimage {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../pics/headers/riverbg.jpg');
+    background-size: cover;
+    z-index: -1;
+    overflow-y: hidden;
+}
+
+/* ----------------- navigation BAR styling (mobile & ipad) ----------------- */
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(19, 34, 27, 0.5);
+    color: #fff;
+    padding: 5px 5px;
+    z-index: 99;
+}
+
+nav ul {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    align-items: center;
+}
+
+nav ul li.logo {
+    flex-grow: 1;
+    display: flex;
+}
+
+nav ul li h1 {
+    padding-left: 15px;
+    font-size: clamp(15px, 3vw, 22px);
+    z-index: 99;
+    font-family: 'Mernature';
+}
+
+.navicons img {
+    width: clamp(24px, 3vw, 32px);
+    height: clamp(24px, 3vw, 32px);
+    cursor: pointer;
+}
+
+.logo h1 a {
+    font-size: clamp(16px, 3vw, 24px);
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+
+/* ----------------- navigation BAR styling (desktop) ----------------- */
+
+nav ul.desktop {
+    display: none;
+}
+
+nav ul.desktop {
+    position: absolute;
+    transform: translateY(-90%);
+    justify-content: center;
+    width: 100%;
+}
+
+nav ul.desktop li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    font-family: 'Mernature';
+    padding: 5px 10px;
+}
+
+/* ----------------- popout nav bar styling (mobile & ipad) ----------------- */
+
+.popout-menu {
+    position: fixed;
+    top: 0;
+    right: -70vw;
+    /* Hide the menu off-screen initially */
+    width: 70vw;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -1px 0 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease;
+    /* Smooth transition for sliding in and out */
+    z-index: 1000;
+}
+
+.popout-menu ul li {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.popout-menu span img {
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+}
+
+.popout-menu ul {
+    list-style-type: none;
+}
+
+.popout-menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: clamp(18px, 3vw, 32px);
+    font-family: 'bebas';
+}
+
+.popout-menu.show {
+    right: 0;
+}
+
+/* ----------------- popout cart styling  ----------------- */
+
+#order-icon span {
+    font-size: clamp(14px, 2vw, 18px);
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #93cda75c;
+    border-radius: 50%;
+    position: absolute;
+    top: 45%;
+    right: 10%;
+    color: #ffffff;
+}
+
+
+.popout-cart {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 100vw;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -1px 0 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease;
+    z-index: 1000000;
+    overflow-y: auto;
+}
+
+.show {
+    right: 0 !important;
+}
+
+/* styling of the popout menu */
+
+.carttab h3 {
+    font-family: 'bebas';
+    font-size: clamp(22px, 3vw, 32px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carttab #close-cart {
+    cursor: pointer;
+    font-family: 'bebas';
+    font-size: clamp(16px, 3vw, 36px);
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 10px;
+    border: none;
+}
+
+.carttab {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* setup for each cart item */
+
+.cartlist {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.cartimg img {
+    width: 25vw;
+    height: 20vw;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.cartdetails {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+
+.cartname {
+    font-size: 18px;
+    font-family: 'bebas';
+}
+
+.item-description p {
+    font-family: 'bebas';
+}
+
+.carttotal {
+    font-family: 'bebas';
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cartquantity {
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.cartquantity span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 14px;
+    color: #000000;
+    font-weight: bolder;
+}
+
+/* styling for the footer part of the cart / total amount */
+
+.cart-footer {
+    margin: 0px 20px;
+}
+
+.totalamt {
+    display: flex;
+    flex-direction: row;
+    font-family: 'bebas';
+    justify-content: space-between;
+}
+
+.totalamt h2 {
+    font-size: clamp(22px, 3vw, 32px);
+}
+
+.totalamt h4 {
+    font-size: clamp(22px, 3vw, 32px);
+}
+
+.cart-footer p {
+    margin-top: 5%;
+    font-size: clamp(14px, 2vw, 32px);
+    font-family: 'bebas';
+    text-align: left;
+}
+
+.cartbtn {
+    margin-top: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cartbtn button {
+    cursor: pointer;
+    width: 90%;
+    margin-top: 5%;
+    font-family: 'bebas';
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    /* center the text on the image */
+    padding: 10px 20px;
+    font-size: clamp(24px, 4vw, 36px);
+    color: #000000;
+    text-decoration: none;
+    /* removes underline */
+    border-radius: 10px;
+    border: none;
+}
+
+
+/* ----------------- overlay styling (mobile & ipad) ----------------- */
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    display: none;
+}
+
+#overlay.show {
+    display: block;
+}
+
+/* ----------------- landing page content styling ----------------- */
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-bottom: 30%;
+}
+
+/* button styling */
+
+#main button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: rgba(66, 96, 83, 0.3);
+    color: white;
+    font-family: 'Pratika';
+    border: none;
+    border-radius: 5px;
+    font-size: clamp(16px, 4vw, 20px);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+#main button:hover {
+    background-color: rgba(66, 96, 83, 0.6);
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+/* text styling */
+
+#main h1 {
+    font-size: clamp(16px, 10vw, 80px);
+    font-weight: 50;
+    font-family: 'Mernature';
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+}
+
+
+#main h2 {
+    font-size: clamp(14px, 4vw, 28px);
+    font-weight: 50;
+    font-family: 'Pratika';
+    color: white;
+    text-shadow: 2px 2px 5px rgba(2, 42, 20, 0.6);
+}
+
+
+/* ----------------- jewelry section styling ----------------- */
+
+#jewelry {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    overflow: hidden;
+
+}
+
+.category {
+    height: 28vh;
+    overflow: hidden;
+    position: relative;
+    margin: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category a img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    justify-self: center;
+
+}
+
+/* button styling */
+
+.category a span {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+    position: absolute;
+    bottom: 0.5%;
+    left: 50%;
+    box-shadow: 0px -30px 50px rgba(0, 0, 0, 0.3);
+    background-color: rgba(71, 23, 49, 0.2);
+    transform: translate(-50%, 0);
+    font-size: clamp(18px, 1.5vw, 35px);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'bebas';
+    text-shadow: 2px 2px 5px rgba(2, 42, 20, 0.4);
+    width: 100%;
+    height: 30px;
+    font-weight: lighter;
+    justify-content: center;
+}
+
+.category a span:hover {
+    background-color: rgba(71, 23, 49, 0.4);
+    /* darkens background on hover */
+    transition: background-color 0.2s ease;
+    /* adds a transition when hovering over the button */
+    cursor: pointer;
+    z-index: 80;
+}
+
+/* ----------------- history section styling ----------------- */
+
+#history {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 6%;
+}
+
+.history-container {
+    position: relative;
+    width: 95%;
+    padding-bottom: 50%;
+}
+
+.img1,
+.img2 {
+    position: absolute;
+    object-fit: cover;
+    width: 65%;
+    height: 150%;
+}
+
+.img1 {
+    left: 43%;
+    top: 10%;
+    box-shadow: 20px 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.img2 {
+    left: -3%;
+    top: 40%;
+    z-index: 1;
+    box-shadow: 20px 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+.history-text-container {
+    margin-top: 55%;
+    padding: 20px;
+    text-align: center;
+}
+
+.history-text-container h2 {
+    margin-bottom: 5%;
+    font-size: clamp(26px, 7vw, 62px);
+    font-family: 'Bebas';
+    font-weight: lighter;
+    color: #000000;
+}
+
+.history-text-container p {
+    font-size: clamp(16px, 3vw, 30px);
+    color: #000000;
+    margin-bottom: 20%;
+}
+
+.topcurve,
+.btmcurve,
+.topcurve2,
+.btmcurve2,
+.btmcurve2-1 {
+    display: none;
+}
+
+
+/* ----------------- new arrivals section styling ----------------- */
+
+#newarrivals {
+    margin-top: 15%;
+    padding: 20px;
+}
+
+#newarrivals h2 {
+    font-size: clamp(24px, 4vw, 42px);
+    margin-bottom: 10px;
+    font-family: 'Bebas';
+    margin-left: 10px;
+
+}
+
+#splide-arrivals img,
+#splide-featured img {
+    width: 31vw;
+    height: 31vw;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+#splide-featured .splide__slide,
+#splide-arrivals .splide__slide {
+    margin-right: 15px;
+    width: auto !important;
+    font-family: 'bebas';
+}
+
+#splide-arrivals p,
+#splide-featured p {
+    margin-top: 10px;
+    font-size: clamp(13.5px, 2.8vw, 28px);
+    color: #000000;
+}
+
+#splide-arrivals h4,
+#splide-featured h4 {
+    color: #000000;
+    font-size: clamp(14px, 2.75vw, 25px);
+    margin-top: 5px;
+
+}
+
+#splide-arrivals .splide__slide a,
+#splide-featured .splide__slide a,
+#splide-highlighted .splide__slide a {
+    text-decoration: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/* ----------------- featured section styling ----------------- */
+
+
+#featured {
+    padding: 20px;
+    margin-bottom: 15%;
+}
+
+#featured h2 {
+    font-size: clamp(24px, 4vw, 42px);
+    margin-bottom: 10px;
+    margin-right: 5px;
+    text-align: right;
+    font-family: 'Bebas';
+}
+
+
+/* ----------------- slogan section styling ----------------- */
+
+
+.slg {
+    padding: 30px;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    color: #555;
+    text-align: center;
+    line-height: 6vh;
+    color: #000000;
+    font-family: 'Bebas';
+}
+
+.slg p {
+    font-size: clamp(24px, 8vw, 52px);
+}
+
+
+/* ----------------- highlighted section styling ----------------- */
+
+#highlighted {
+    width: 100%;
+    position: relative;
+    /* Make this element a containing block for absolutely positioned elements */
+    height: auto;
+    /* Adjust based on your layout */
+}
+
+#highlighted>h2 {
+    position: absolute;
+    /* Aligns the heading to the bottom */
+    bottom: 9%;
+    /* Ensure it spans the full width */
+    background-color: rgba(19, 34, 27, 0.5);
+    width: 100%;
+    padding: 10px 20px;
+    font-size: clamp(18px, 3.5vw, 35px);
+    color: #ffffff;
+    font-family: 'bebas';
+    font-weight: lighter;
+    z-index: 99;
+}
+
+#splide-highlighted img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+}
+
+#splide-highlighted a p {
+    font-family: 'bebas';
+    margin-top: 10px;
+    font-size: clamp(17px, 1.5vw, 28px);
+    color: #ffffff;
+}
+
+#splide-highlighted h4 {
+    font-family: 'bebas';
+    color: #ffffff;
+}
+
+#splide-highlighted h3,
+#splide-highlighted h2,
+#highlighted a p,
+#highlighted a h3,
+#highlighted>img,
+#splide-featured .splide__pagination,
+#splide-arrivals .splide__pagination,
+#reviews .splide__pagination,
+#splide-highlighted .splide__pagination,
+#splide-featured .splide__arrow,
+#splide-arrivals .splide__arrow,
+#splide-highlighted .splide__arrow,
+#desktop-slogan,
+nav ul.desktop {
+    display: none;
+}
+
+/* ----------------- video section styling ----------------- */
+
+.video-container {
+    display: flex;
+    justify-content: center;
+}
+
+video {
+    border-radius: 10px;
+    margin-top: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    justify-content: center;
+    height: 40vh;
+}
+
+/* ----------------- reviews section styling ----------------- */
+
+#reviews {
+    margin-top: 35%;
+    padding-bottom: 10%;
+
+}
+
+#reviews h2 {
+    padding: 10px 20px;
+    font-size: clamp(24px, 5vw, 42px);
+    font-family: 'bebas';
+}
+
+#reviews>h2 {
+    display: none;
+}
+
+#reviews .splide__arrow svg {
+    fill: black !important;
+    width: 1.3em !important;
+    height: 1.3em !important;
+}
+
+#reviews .splide__arrow {
+    height: 2em !important;
+    width: 2em !important;
+    background: #ffffff00 !important;
+    top: 45% !important;
+}
+
+#reviews .splide__arrow--prev {
+    left: 1em !important;
+}
+
+#reviews.splide__arrow--next {
+    right: 1em !important;
+}
+
+
+.card {
+    background-color: #fafefa;
+    /* Card background color */
+    color: #000000;
+    /* Light text color */
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    padding: 24px;
+    width: 73vw;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10%;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+}
+
+.card-header img {
+    width: 13vw;
+    height: 6vh;
+    margin-right: 10px;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+.card p {
+    margin: 16px 0;
+    font-size: clamp(14px, 3vw, 32px);
+    ;
+    color: #000000;
+}
+
+.stars {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+}
+
+.stars li {
+    margin-right: 4px;
+}
+
+.stars img {
+    width: 20px;
+    height: 20px;
+}
+
+/* ----------------- footer section styling ----------------- */
+
+.thin-grey-line {
+    margin-bottom: 8%;
+    border: none;
+    height: 1px;
+    background-color: rgba(128, 128, 128, 0.289);
+}
+
+footer.footer-distributed {
+    height: auto;
+}
+
+.footer-distributed {
+    background-color: #ffffffe1;
+    width: 100%;
+    font: bold 16px sans-serif;
+    padding: 50px 50px 60px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer-left {
+    width: 30%;
+}
+
+.footer-distributed h3 {
+    color: #0e291a;
+    font-family: 'bebas';
+    font-size: 35px;
+    margin-top: 15%;
+}
+
+.footer-links {
+    color: #000000;
+    margin: 20px 0 12px;
+}
+
+.footer-links a {
+    line-height: 1.8;
+    text-decoration: none;
+    color: rgb(24, 70, 40);
+}
+
+.footer-company-name {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.footer-center {
+    width: 35%;
+}
+
+.footer-center img {
+    width: 40px;
+    height: 40px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+
+.footer-center p {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-center p a {
+    color: #000000c8;
+    text-decoration: none;
+
+}
+
+.footer-right {
+    width: 30%;
+}
+
+.footer-company-about {
+    line-height: 20px;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.footer-company-about span {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+/* media query for ipad */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+    /* ----------------- jewelry section styling ----------------- */
+
+    #jewelry {
+        margin-top: 6px;
+    }
+
+    .category {
+        height: 35vh;
+    }
+
+    .category a span {
+        font-size: clamp(18px, 3.5vw, 35px);
+    }
+
+    /* ----------------- newArrivals section styling ----------------- */
+
+    .newarrivals-container img {
+        width: 32vw;
+        height: 33vw;
+    }
+
+    /* ----------------- featured section styling ----------------- */
+
+    .featured-container img {
+        width: 32vw;
+        height: 32vw;
+    }
+
+
+    /* ----------------- highlighted section styling ---------------- */
+
+    #splide-highlighted img {
+        height: 50vh;
+
+    }
+
+    #highlighted>h2 {
+        position: absolute;
+        bottom: 6%;
+    }
+
+    /* ----------------- slogan styling ----------------- */
+    .slg p {
+        font-size: clamp(24px, 8vw, 62px);
+    }
+
+
+    /* ----------------- history section styling ----------------- */
+
+    .history-container {
+        width: 80%;
+    }
+
+    .img1,
+    .img2 {
+        height: 120%;
+    }
+
+    .img1 {
+        left: 55%;
+        top: 10%;
+    }
+
+    .img2 {
+        left: 5%;
+    }
+
+    .history-text-container {
+        margin-top: 40%;
+    }
+
+    .history-text-container h2 {
+        font-size: clamp(26px, 6vw, 62px);
+    }
+
+    .history-text-container p {
+
+        padding: 0 5%;
+    }
+
+    /* ----------------- video section styling ----------------- */
+
+    video {
+        height: 50vh;
+    }
+
+    /* ----------------- reviews styling ---------------- */
+
+
+    #reviews {
+        margin-top: 25%;
+        padding-bottom: 5%;
+    }
+
+    .card {
+        height: 30vh;
+    }
+
+    .card-header img {
+        width: 11vw;
+        height: 7vh;
+    }
+
+    .stars img {
+        margin-top: 10px;
+        width: 4vw;
+        height: 4vw;
+    }
+
+    #reviews .splide__pagination {
+        bottom: 3em !important;
+    }
+
+    #reviews .splide__arrow {
+        margin-right: 5px;
+        margin-left: 5px;
+        height: 3em !important;
+        width: 3em !important;
+        top: 45% !important;
+    }
+
+    #reviews .splide__arrow--prev {
+        left: 3em !important;
+    }
+
+    #reviews .splide__arrow--next {
+        right: 3em !important;
+    }
+
+
+
+}
+
+
+/* media query for desktop */
+
+@media only screen and (min-device-width: 1025px) {
+
+
+    /* ----------------- background image ----------------- */
+
+    #bgimage {
+
+        background-attachment: fixed;
+        animation: fadewhite linear;
+        animation-timeline: view();
+        animation-range: exit 200px;
+    }
+
+    /* ----------------- nav bar styling ----------------- */
+
+    nav {
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+    }
+
+    nav.scrolled {
+        background-color: rgba(0, 0, 0, 0.3);
+        /* Adjust the color and opacity as needed */
+    }
+
+    .navicons.dropdown {
+        display: none;
+    }
+
+    nav ul.desktop {
+        display: flex;
+        align-items: center;
+        z-index: 100;
+    }
+
+    #order-icon {
+        position: relative;
+        /* Ensure the parent container is positioned */
+        z-index: 1100;
+        /* Adjust this value as needed */
+    }
+
+
+    /* ----------------- landing page content styling ----------------- */
+
+    #main {
+        padding-bottom: 5%;
+    }
+
+    /* ----------------- desktop slogan2 styling ----------------- */
+
+    #desktop-slogan {
+        display: block;
+    }
+
+    /* ----------------- jewelry styling ----------------- */
+
+    #jewelry {
+        margin-top: 3%;
+        margin-right: 5%;
+        margin-left: 5%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .pop-effect {
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Smooth transition for transform and box-shadow */
+    }
+
+    .pop-effect:hover {
+        z-index: 10;
+        transform: scale(1.1);
+        /* Scale up the element to 110% of its original size */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        /* Add a shadow to give a popping effect */
+    }
+
+    .category {
+        width: calc(33.33% - 5px);
+        /* Adjust the width to fit 3 items per row, minus margin */
+        margin: 0;
+        margin-bottom: 20px;
+        height: 55vh;
+        /* Add bottom margin for spacing */
+    }
+
+    .category a img {
+        border-radius: 10px;
+        height: 55vh;
+
+    }
+
+    .category a {
+        width: 100%;
+        justify-content: left;
+
+    }
+
+    #jewelry-container h2 {
+        font-size: clamp(14px, 3vw, 42px);
+        padding-left: 30px;
+    }
+
+    /* -----------------  slogan styling ----------------- */
+
+    #mobile-slogan {
+        display: none;
+    }
+
+    .slg {
+        align-items: center;
+        justify-content: center;
+        display: grid;
+        padding: 0;
+        margin: 0;
+        margin-top: 4%;
+        margin-bottom: 10%;
+        text-align: center;
+        font-size: clamp(20px, 8vw, 35px);
+        color: #0e291a;
+        font-family: 'Bebas';
+    }
+
+    .slg h4 {
+        font-size: clamp(20px, 8vw, 35px);
+    }
+
+
+    .slg p {
+        font-family: 'paprika';
+        padding-top: 10px;
+        line-height: 5vh;
+        font-size: 20px;
+        width: 70%;
+        margin: auto;
+
+    }
+
+    /* ----------------- history section styling ----------------- */
+
+    /* styles.css */
+    #history {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .history-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        width: 100%;
+    }
+
+    .history-text-container {
+        flex: 1;
+        margin-right: 20px;
+        margin-top: 4%;
+    }
+
+    .history-container {
+        margin-right: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        flex: 1;
+    }
+
+    .history-text-container h2 {
+        font-size: clamp(20px, 8vw, 42px);
+        color: #000000;
+        margin-bottom: 5%;
+    }
+
+
+    .history-text-container p {
+        font-family: 'paprika';
+        font-size: clamp(18px, 1.6vw, 26px);
+        color: #000000;
+        padding-right: 10%;
+        padding-left: 10%;
+        margin-bottom: 5%;
+    }
+
+
+    .history-container img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        /* Add a fixed height to maintain proportional scaling */
+        height: 50vh;
+        object-fit: cover;
+    }
+
+    .img1 {
+        top: 0;
+        border-radius: 10px;
+    }
+
+    .img2 {
+        top: 20%;
+        left: 20px;
+        border-radius: 10px;
+
+    }
+
+    /* ----------------- new arrivals section styling ----------------- */
+
+    #newarrivals {
+        margin-top: 0;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    #splide-arrivals img,
+    #splide-featured img {
+        border-radius: 10px;
+        width: 20.7vw;
+        height: 20.7vw;
+        margin-right: 10px;
+    }
+
+    #splide-featured .splide__arrow,
+    #splide-arrivals .splide__arrow {
+        display: block;
+        height: 5em !important;
+        width: 5em !important;
+        background: #ffffff00 !important;
+        top: 40% !important;
+    }
+
+    #splide-featured .splide__arrow svg,
+    #splide-arrivals .splide__arrow svg {
+        fill: black !important;
+        width: 2em !important;
+        height: 2em !important;
+    }
+
+    #splide-featured .splide__arrow--prev,
+    #splide-arrivals .splide__arrow--prev {
+        left: -5em !important;
+    }
+
+    #splide-featured .splide__arrow--next,
+    #splide-arrivals .splide__arrow--next {
+        right: -5em !important;
+    }
+
+    /* ----------------- featured section styling ----------------- */
+
+    #featured {
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-bottom: 0;
+    }
+
+
+    /* ----------------- highlighted section styling ----------------- */
+
+    #highlighted {
+        background-size: cover;
+        background-attachment: fixed;
+        padding-top: 10%;
+        background-image: url(../pics/headers/multiplewaistbeads\ copy.JPEG);
+        height: 90vh;
+        display: flex;
+        margin-top: 10%;
+    }
+
+
+    #highlighted::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    /* 1b2b2a */
+    #highlighted>img {
+        display: block;
+        width: 150vw;
+        height: 55vh;
+        /* Adjust the width of the main image as needed */
+        object-fit: cover;
+        z-index: 10;
+    }
+
+    .topcurve2 {
+        display: block;
+        z-index: 87;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+    }
+
+    .topcurve2 svg {
+        position: relative;
+        display: block;
+        width: calc(132% + 1.3px);
+        height: 36px;
+    }
+
+    .topcurve2 .shape-fill {
+        fill: #FFFFFF;
+    }
+
+    .btmcurve2 {
+        display: block;
+        z-index: 99;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+    }
+
+    .btmcurve2 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 31px;
+        transform: rotateY(180deg);
+    }
+
+    .btmcurve2 .shape-fill {
+        fill: #FFFFFF;
+    }
+
+    .btmcurve2-1 {
+        display: block;
+        z-index: 99;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+    }
+
+    .btmcurve2-1 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 31px;
+        transform: rotateY(180deg);
+    }
+
+    .btmcurve2-1 .shape-fill {
+        fill: #ffffff;
+    }
+
+
+    #highlighted>h2 {
+        display: none;
+    }
+
+    #highlighted a p {
+        display: block;
+    }
+
+
+    #splide-highlighted {
+        z-index: 10;
+        width: 46vw;
+        padding-left: 3vw;
+        padding-right: 3vw;
+        /* Enable horizontal scrolling */
+    }
+
+    #splide-highlighted h2 {
+        display: block;
+        font-family: 'bebas';
+        margin-top: 0;
+        color: white;
+        margin-bottom: 20px;
+        /* Add some margin to space the header from the list */
+        font-size: 36px;
+        text-align: center;
+        margin-right: 24px;
+    }
+
+    #highlighted h3 {
+        color: white;
+        display: block;
+        font-family: 'paprika';
+        text-align: center;
+        margin-right: 24px;
+
+    }
+
+    #splide-highlighted .splide__arrow {
+        display: block;
+        height: 5em !important;
+        width: 5em !important;
+        background: #ffffff00 !important;
+        top: 45% !important;
+    }
+
+    #splide-highlighted .splide__slide a {
+        display: flex;
+        justify-content: center;
+        width: 20vw !important;
+    }
+
+    #splide-highlighted .splide__arrow--next {
+        right: 0 !important;
+    }
+
+    #splide-highlighted .splide__arrow--prev {
+        left: -0.2em;
+    }
+
+
+    #splide-highlighted img {
+        width: 16.5vw;
+        height: 26vh;
+        object-fit: cover;
+    }
+
+    #splide-highlighted .splide__list {
+        margin-top: 50px !important;
+    }
+
+    #splide-highlighted .splide__arrow svg {
+        fill: rgb(255, 255, 255) !important;
+        width: 2em !important;
+        height: 2em !important;
+    }
+
+    /* ----------------- video section styling ----------------- */
+
+    video {
+        height: 80vh;
+    }
+
+
+
+    /* ----------------- reviews section styling ----------------- */
+
+    #reviews {
+        margin-top: 5%;
+        background-color: #ffffff;
+        padding-bottom: 0%;
+    }
+
+    .card {
+        max-width: 60%;
+        margin-top: 10%;
+
+    }
+
+    .card p {
+        font-size: clamp(14px, 3vw, 26px);
+    }
+
+    .card-header img {
+        width: 6vw;
+        height: 9vh;
+    }
+
+    .stars img {
+        width: 2.3vw;
+        height: 2.3vw;
+    }
+
+    #reviews .splide__arrow {
+        top: 50% !important;
+    }
+
+    #reviews .splide__arrow svg {
+        fill: black !important;
+        width: 4em !important;
+        height: 4em !important;
+    }
+
+    #reviews .splide__pagination {
+        bottom: 5em !important;
+    }
+
+    #reviews .splide__arrow--prev {
+        left: 10em !important;
+    }
+
+    #reviews .splide__arrow--next {
+        right: 10em !important;
+    }
+
+
+    /* ----------------- reviews section styling ----------------- */
+
+    .footer-distributed {
+        margin-top: 0;
+    }
+
+    .footer-distributed h3 {
+        margin-top: 0;
+    }
+
+}
+
+/* media query for mobile footer */
+
+
+@media (max-width: 880px) {
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .footer-distributed .footer-center i {
+        margin-left: 0;
+    }
+}
+
+@media (max-height:800px) {
+
+    footer {
+        position: static;
+    }
+
+    header {
+        padding-top: 40px;
+    }
+}
