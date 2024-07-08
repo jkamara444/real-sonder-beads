@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const addToCartButtons = document.querySelectorAll('.addcart');
     const subtotalElement = document.querySelector('.totalamt h4');
     const cartCountElement = document.querySelector('#order-icon span'); // Select the <span> element for cart count
+    const popoutCart = document.querySelector('#popout-cart');
+    const overlay = document.querySelector('#overlay');
 
     // Function to update cart count display and item total cost
     function updateCart(item) {
@@ -80,6 +82,10 @@ document.addEventListener('DOMContentLoaded', function () {
             updateSubtotal();
             updateCartCount(); // Update cart count after adding item
             updateLocalStorage(); // Update local storage
+
+            // Show the cart and overlay
+            popoutCart.classList.add('show');
+            overlay.classList.add('show');
         });
     });
 
@@ -99,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         cartCountElement.textContent = totalItems;
     }
-
 
     function updateLocalStorage() {
         // Serialize cart array and store in local storage

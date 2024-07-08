@@ -25,7 +25,7 @@
         <nav>
             <ul>
                 <li class="logo">
-                    <h1><a href="index.html">sonder beads</h1>
+                    <h1><a href="index.html">sonder beads</a></h1>
                 </li>
                 <li class="navicons">
                     <a href="javascript:void(0);" id="order-icon"><img src="pics/icons/icons8-cart-48.png"
@@ -39,11 +39,11 @@
             </ul>
             <!----------------- desktop nav list ----------------->
             <ul class="desktop">
-                <li><a href="contact.html">waistbeads</a></li>
+                <li><a href="/html/contact.html">waistbeads</a></li>
                 <li><a href="contact.html">bracelets</a></li>
                 <li><a href="contact.html">rings</a></li>
                 <li><a href="contact.html">history</a></li>
-                <li><a href="contact.html">contact</a></li>
+                <li><a href="/html/contact.html">contact</a></li>
             </ul>
         </nav>
         <!----------------- popout navigation BAR (mobile and ipad) ----------------->
@@ -55,19 +55,20 @@
                 <li><a href="contact.html">bracelet</a></li>
                 <li><a href="contact.html">rings</a></li>
                 <li><a href="contact.html">history</a></li>
-                <li><a href="contact.html">contact</a></li>
+                <li><a href="html/contact.html">contact</a></li>
             </ul>
         </div>
         <!----------------- popout cart ----------------->
         <div id="popout-cart" class="popout-cart">
             <div class="carttab">
-                <h3>shopping cart <span><button id="close-cart">close</button></span></h3>
+                <h3>shopping cart <span><button id="close-cart">close</button> </span></h3>
             </div>
             <hr class="thin-grey-line">
+            <div class="cart-items"></div>
             <div class="cart-footer">
                 <div class="totalamt">
                     <h2>Subtotal</h2>
-                    <h4>$ USD</h4>
+                    <h4 id="cart-total">$0.00 USD</h4>
                 </div>
                 <p>Shipping & taxes calculated at checkout
                 </p>
@@ -444,9 +445,9 @@
             </div>
         </footer>
         <!------------------------- js ------------------------->
-        <script src="bundle.js" defer></script>
-        <script src="js/index.js" defer></script>
-        <script src="js/cart.js" defer></script>
+        <script src="bundle.js"></script>
+        <script src="js/index.js"></script>
+        <script src="js/cart.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
 

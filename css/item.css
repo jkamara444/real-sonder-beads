@@ -513,6 +513,7 @@ nav ul.desktop li a {
     padding: 8px;
     font-size: 14px;
     width: 80px;
+    color: #000;
     /* Adjust width of the input field */
 }
 

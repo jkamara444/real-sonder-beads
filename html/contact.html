@@ -9,30 +9,25 @@
 </head>
 
 <body>
-    <script src="../bundle.js"></script>
-    <script>
-        import AOS from "simple-aos";
-        AOS.init();
-    </script>
     <div id="bdy">
-        <script src="../js/index.js" defer></script>
         <header>
+            <!----------------- nav section ----------------->
             <nav>
                 <ul>
                     <li class="logo">
                         <h1><a href="index.html">sonder beads</h1>
                     </li>
                     <li class="navicons">
-                        <div class="cart">
-                            <a href=order.html></a><img src="../pics/icons/icons8-cart-48.png" alt="order list">
-                            <span>0</span>
-                        </div>
+                        <a href="javascript:void(0);" id="order-icon"><img src="../pics/icons/icons8-cart-48.png"
+                                alt="order list"> <span></span>
+                        </a>
                     </li>
                     <li class="navicons dropdown">
                         <a href="javascript:void(0);" id="menu-icon"><img src="../pics/icons/icons8-lines-48.png"
                                 alt="dropdown nav"></a>
                     </li>
                 </ul>
+                <!----------------- desktop nav list ----------------->
                 <ul class="desktop">
                     <li><a href="contact.html">waistbeads</a></li>
                     <li><a href="contact.html">bracelets</a></li>
@@ -54,6 +49,37 @@
                     <li><a href="contact.html">contact</a></li>
                 </ul>
             </div>
+            <!----------------- popout navigation BAR (mobile and ipad) ----------------->
+            <div id="popout-menu" class="popout-menu">
+                <ul>
+                    <li><a href="index.html">Home</a><span id="close-menu"><img src="../pics/icons/icons8-x-50.png"
+                                alt=""></span></li>
+                    <li><a href="contact.html">waistbeads</a></li>
+                    <li><a href="contact.html">bracelet</a></li>
+                    <li><a href="contact.html">rings</a></li>
+                    <li><a href="contact.html">history</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                </ul>
+            </div>
+            <!----------------- popout cart ----------------->
+            <div id="popout-cart" class="popout-cart">
+                <div class="carttab">
+                    <h3>shopping cart <span><button id="close-cart">close</button> </span></h3>
+                </div>
+                <hr class="thin-grey-line">
+                <div class="cart-footer">
+                    <div class="totalamt">
+                        <h2>Subtotal</h2>
+                        <h4>$120.00 USD</h4>
+                    </div>
+                    <p>Shipping & taxes calculated at checkout
+                    </p>
+                    <div class="cartbtn">
+                        <button class="checkout">checkout!</button>
+                    </div>
+                </div>
+            </div>
+            <!------------------ bg image section --------------------->
             <div id="bgimage">
                 <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 100" version="1.1"
                     xmlns="http://www.w3.org/2000/svg">
@@ -69,6 +95,7 @@
                 </svg>
             </div>
         </header>
+        <!------------------ profile card section --------------------->
         <div class="profile-card-container">
             <div class="profile-card">
                 <div class="me-pic">
@@ -78,7 +105,8 @@
                     <h2 class="name">Contact Me</h2>
                     <p class="abt"> My name is Jasmine. I started Sonder Beads towards the end of highschool and
                         recently
-                        decided to open shop again! To contact me about any orders or concerns pleas refernce my email
+                        decided to open shop again! To contact me about any orders or concerns pleas refernce my
+                        email
                         or
                         instagram below! </p>
                 </div>
@@ -88,6 +116,21 @@
                 </div>
             </div>
         </div>
+        <!------------------- policy section ------------------->
+        <div class="policy-container">
+            <h2>Policy</h2>
+            <p>SonderBeads Policy
+            <p>
+            <p>2024-2025 PLEASE READ</p>
+            <p>We do not accept, returns OR refunds in our shop (special circumstances are allowed)</p>
+            <ul>
+                <li>If you have any questions about your order, were sent the wrong items, or have a problem with your
+                    purchase please EMAIL or DM us on Instagram</li>
+                <li>Candellation of and order us only allowed 24 hours within purchasing </li>
+                <li>no replacements / fixes after 3 months</li>
+            </ul>
+        </div>
+        <!------------------ footer section --------------------->
         <footer class="footer-distributed">
             <hr class="thin-grey-line">
             <div class="footer-left">
@@ -105,31 +148,35 @@
             </div>
             <div class="footer-center">
                 <div>
-                    <img src="pics/icons/icons8-mail-48.png" alt="mail icon">
+                    <img src="../pics/icons/icons8-mail-48.png" alt="mail icon">
                     <p><span>Sonder Beads</span>
                         Contact Us</p>
                 </div>
                 <div>
-                    <img src="pics/icons/icons8-gmail-48.png" alt="mail icon">
+                    <img src="../pics/icons/icons8-gmail-48.png" alt="mail icon">
                     <p><a href="mailto:sonderbeads.co@gmail.com">sonderbeadsco@gmail.com</a></p>
                 </div>
                 <div>
-                    <img src="pics/icons/icons8-instagram-48.png" alt="insta icon">
+                    <img src="../pics/icons/icons8-instagram-48.png" alt="insta icon">
                     <p>@sonderbeads </p>
                 </div>
             </div>
             <div class="footer-right">
                 <p class="footer-company-about">
                     <span>About the company</span>
-                    <strong>Sonder Beads</strong> Sonder — the understanding that every person's story is as complex and
+                    <strong>Sonder Beads</strong> Sonder — the understanding that every person's story is as complex
+                    and
                     significant as your own. At
                     Sonder
-                    Beads, we embrace this philosophy through our unique designs that cherish creativity and community.
+                    Beads, we embrace this philosophy through our unique designs that cherish creativity and
+                    community.
                 </p>
             </div>
         </footer>
     </div>
-    <script src="../js/product.js"></script>
+    <script src="../bundle.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/cart.js"></script>
 </body>
 
 </html>
