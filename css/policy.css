@@ -429,238 +429,33 @@ nav ul.desktop li a {
     /* Ensure the SVG is below the text */
 }
 
-/* ----------------- filter styling -----------------  */
+/* ----------------- content styling -----------------  */
 
-#filter {
+.content-container {
     display: flex;
     flex-direction: column;
-    /* Stack the header and button vertically */
     align-items: center;
-    /* Center items horizontally */
-    justify-content: center;
-    /* Center items vertically */
 }
 
-#filter-button {
+.content {
+    margin: 15% 50px;
+    max-width: 500px;
+}
+
+.content h2 {
     font-family: 'bebas';
-    margin-top: 10px;
-    background-color: #3e7c541f;
-    color: rgb(0, 0, 0);
-    padding: 6px 10px;
-    font-size: clamp(14px, 3vw, 18px);
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-}
-
-#filter h2 {
-    z-index: 99;
-    margin-top: 30px;
-    font-size: clamp(18px, 3vw, 28px);
-    font-family: 'bebas';
-}
-
-#dropdown {
-    display: none;
-    position: absolute;
-    font-family: 'bebas';
-    transform: translateY(80%);
-    background-color: #d4ded6e3;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-}
-
-#dropdown a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-#filter-button:focus+#dropdown,
-#dropdown:hover {
-    display: block;
-}
-
-.product {
-    margin: 10px 0;
-}
-
-
-/* ----------------- product list ----------------- */
-
-#waistbeads {
-    margin-top: 25px;
-}
-
-.product-row {
-    padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 10px;
-}
-
-.product {
-    flex-direction: column;
-    align-items: center;
+    font-size: clamp(22px, 3vw, 32px);
+    margin-bottom: 5%;
     text-align: center;
-    /* Optional: background color for product */
-    padding: 10px;
-    /* Padding around product */
 }
 
-.product a {
-    text-decoration: none;
-    color: black;
-    font-family: 'Bebas';
-
-
+.content p {
+    font-family: 'parika';
+    font-size: clamp(16px, 2vw, 32px);
+    text-align: justify;
+    margin-bottom: 15%;
 }
 
-.product h4 {
-    font-size: clamp(16.5px, 1.5vw, 25px);
-    margin-bottom: 15px;
-    font-family: 'Bebas';
-    /* delete later */
-
-}
-
-.product p {
-
-    margin: 10px 0;
-    font-size: clamp(17px, 2.75vw, 25px);
-    /* Space above and below text */
-    font-family: 'Bebas';
-    /* delete later */
-
-}
-
-.product img {
-    width: 100%;
-    /* Make image take full width of container */
-    height: auto;
-    /* Optional: limit the maximum width of images */
-}
-
-/* ----------------- footer section styling ----------------- */
-
-.thin-grey-line {
-    margin-bottom: 8%;
-    border: none;
-    height: 1px;
-    background-color: rgba(128, 128, 128, 0.289);
-}
-
-footer.footer-distributed {
-    height: auto;
-}
-
-.footer-distributed {
-    background-color: #ffffffe1;
-    width: 100%;
-    font: bold 16px sans-serif;
-    padding: 50px 50px 60px 50px;
-}
-
-.footer-distributed .footer-left,
-.footer-distributed .footer-center,
-.footer-distributed .footer-right {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.footer-left {
-    width: 30%;
-}
-
-.footer-distributed h3 {
-    color: #0e291a;
-    font-family: 'bebas';
-    font-size: 35px;
-    margin-top: 15%;
-}
-
-.footer-links {
-    color: #000000;
-    margin: 20px 0 12px;
-}
-
-.footer-links a {
-    line-height: 1.8;
-    text-decoration: none;
-    color: rgb(24, 70, 40);
-}
-
-.footer-company-name {
-    font-size: 14px;
-    font-weight: normal;
-}
-
-.footer-center {
-    width: 35%;
-}
-
-.footer-center img {
-    width: 40px;
-    height: 40px;
-    margin: 10px 15px;
-    vertical-align: middle;
-}
-
-
-.footer-center p {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.footer-center p span {
-    display: block;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 2;
-}
-
-.footer-center p a {
-    color: #000000c8;
-    text-decoration: none;
-
-}
-
-.footer-right {
-    width: 30%;
-}
-
-.footer-company-about {
-    line-height: 20px;
-    font-size: 13px;
-    font-weight: normal;
-}
-
-.footer-company-about span {
-    display: block;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-/* media queries */
-
-@media (min-width: 768px) and (max-width: 1024px) {
-    .product-row {
-        grid-template-columns: repeat(3, 1fr);
-        /* Three columns of equal width */
-    }
-
-    .product img {
-        width: 100%;
-        height: auto;
-    }
-
-    #dropdown {
-        transform: translateY(85%);
-    }
-
-}
 
 @media only screen and (min-device-width: 1025px) {
 
@@ -689,51 +484,14 @@ footer.footer-distributed {
         align-items: center;
     }
 
-    #waistbeads {
-        margin-top: 10px;
+    /* ----------------- content styling -----------------  */
+
+    .content h2 {
+        font-size: clamp(18px, 2.5vw, 32px);
+        margin-bottom: 5%;
     }
 
-    .product-row {
-        gap: 10px;
-        grid-template-columns: repeat(4, 1fr);
-        /* Three columns of equal width */
-        margin-right: 25px;
-        margin-left: 25px;
-    }
-
-    .product img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-    }
-
-    #dropdown {
-        transform: translateY(87%);
-    }
-
-}
-
-/* media query for mobile footer */
-
-
-@media (max-width: 880px) {
-
-    .footer-distributed .footer-left,
-    .footer-distributed .footer-center,
-    .footer-distributed .footer-right {
-        display: block;
-        width: 100%;
-        margin-bottom: 40px;
-    }
-
-    .footer-distributed .footer-center i {
-        margin-left: 0;
-    }
-}
-
-@media (max-height:800px) {
-
-    footer {
-        position: static;
+    .content p {
+        font-size: clamp(14px, 1.5vw, 32px);
     }
 }

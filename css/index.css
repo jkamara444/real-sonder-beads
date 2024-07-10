@@ -113,6 +113,40 @@ nav ul li h1 {
     color: rgb(255, 255, 255);
 }
 
+.dropdown-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    position: absolute;
+    width: 100%;
+    top: 42%;
+    /* Adjust as needed */
+    left: 0;
+    background-color: #fff;
+    /* Adjust background color as needed */
+    z-index: 1;
+}
+
+.open {
+    max-height: 200px;
+    /* Adjust based on content */
+    opacity: 1;
+}
+
+.dropdown-content li a {
+    font-size: clamp(16px, 2vw, 22px) !important;
+}
+
+.dropbtn {
+    cursor: pointer;
+}
+
+.arrow {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
 
 /* ----------------- navigation BAR styling (desktop) ----------------- */
 
@@ -181,19 +215,24 @@ nav ul.desktop li a {
 
 /* ----------------- popout cart styling  ----------------- */
 
-#order-icon span {
-    font-size: clamp(14px, 2vw, 18px);
-    width: 20px;
-    height: 20px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    background-color: #93cda75c;
-    border-radius: 50%;
+.cart-icon-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-icon-container img {
+    display: block;
+}
+
+.cart-icon-container span {
     position: absolute;
-    top: 45%;
-    right: 10%;
-    color: #ffffff;
+    bottom: -10px;
+    left: -25%;
+    background-color: #93cda75c;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: clamp(14px, 2vw, 18px);
 }
 
 
@@ -727,7 +766,7 @@ video {
 /* ----------------- reviews section styling ----------------- */
 
 #reviews {
-    margin-top: 35%;
+    margin-top: 30%;
     padding-bottom: 10%;
 
 }
@@ -752,7 +791,6 @@ video {
     height: 2em !important;
     width: 2em !important;
     background: #ffffff00 !important;
-    top: 45% !important;
 }
 
 #reviews .splide__arrow--prev {
@@ -773,9 +811,7 @@ video {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
     padding: 24px;
     width: 73vw;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 10%;
+    margin: 10% auto;
 }
 
 .card-header {

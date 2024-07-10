@@ -68,3 +68,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  const dropdownBtn = document.querySelector('.dropbtn');
+  const dropdownContent = document.querySelector('.dropdown-content');
+
+  dropdownBtn.addEventListener('click', function (event) {
+    event.stopPropagation();
+    if (dropdownContent.classList.contains('open')) {
+      dropdownContent.classList.remove('open');
+    } else {
+      dropdownContent.classList.add('open');
+    }
+  });
+
+  // Close the dropdown if the user clicks outside of it
+  window.addEventListener('click', function () {
+    if (dropdownContent.classList.contains('open')) {
+      dropdownContent.classList.remove('open');
+    }
+  });
+});
+
+

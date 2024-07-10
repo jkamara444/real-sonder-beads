@@ -154,22 +154,62 @@ nav ul.desktop li a {
     right: 0;
 }
 
+.dropdown-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    position: absolute;
+    width: 100%;
+    top: 42%;
+    /* Adjust as needed */
+    left: 0;
+    background-color: #fff;
+    /* Adjust background color as needed */
+    z-index: 1;
+}
+
+.open {
+    max-height: 200px;
+    /* Adjust based on content */
+    opacity: 1;
+}
+
+.dropdown-content li a {
+    font-size: clamp(16px, 2vw, 22px) !important;
+}
+
+.dropbtn {
+    cursor: pointer;
+}
+
+.arrow {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+
 /* ----------------- popout cart styling  ----------------- */
 
 
-#order-icon span {
-    font-size: clamp(14px, 2vw, 18px);
-    width: 20px;
-    height: 20px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    background-color: #93cda75c;
-    border-radius: 50%;
+.cart-icon-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-icon-container img {
+    display: block;
+}
+
+.cart-icon-container span {
     position: absolute;
-    top: 45%;
-    right: 10%;
-    color: #ffffff;
+    bottom: -10px;
+    left: -25%;
+    background-color: #93cda75c;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: clamp(14px, 2vw, 18px);
 }
 
 
@@ -826,10 +866,13 @@ footer.footer-distributed {
         height: 15vh;
     }
 
+    #thumbnail-carousel {
+        width: 100%;
+    }
     #thumbnail-carousel img {
         margin-right: 5vw;
-        height: 14vh;
-        width: 10vw;
+        height: 12vh;
+        width: 8vw;
     }
 
     #main-carousel img {

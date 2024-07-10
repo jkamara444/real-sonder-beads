@@ -28,9 +28,11 @@
                     <h1><a href="index.html">sonder beads</a></h1>
                 </li>
                 <li class="navicons">
-                    <a href="javascript:void(0);" id="order-icon"><img src="pics/icons/icons8-cart-48.png"
-                            alt="order list"> <span></span>
-                    </a>
+                    <div class="cart-icon-container">
+                        <a href="javascript:void(0);" id="order-icon">
+                            <img src="pics/icons/icons8-cart-48.png" alt="order list"> <span></span>
+                        </a>
+                    </div>
                 </li>
                 <li class="navicons dropdown">
                     <a href="javascript:void(0);" id="menu-icon"><img src="pics/icons/icons8-lines-48.png"
@@ -55,7 +57,14 @@
                 <li><a href="contact.html">bracelet</a></li>
                 <li><a href="contact.html">rings</a></li>
                 <li><a href="contact.html">history</a></li>
-                <li><a href="html/contact.html">contact</a></li>
+                <li class="help-dropdown">
+                    <a href="javascript:void(0);" class="dropbtn">Help <span class="arrow">&#9662;</span></a>
+                    <ul class="dropdown-content">
+                        <li><a href="html/shippingpolicy.html">Shipping Policy</a></li>
+                        <li><a href="html/returnpolicy.html">Return Policy</a></li>
+                        <li><a href="html/contact.html">Contact Us</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!----------------- popout cart ----------------->
