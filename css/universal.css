@@ -526,6 +526,7 @@ footer.footer-distributed {
 
     nav.scrolled {
         background-color: rgba(0, 0, 0, 0.3);
+        z-index: 100;
         /* Adjust the color and opacity as needed */
     }
 
@@ -559,6 +560,14 @@ footer.footer-distributed {
 
     .desktop-dropdown-content li {
         padding: 10px;
+    }
+
+    .footer-distributed {
+        margin-top: 0;
+    }
+
+    .footer-distributed h3 {
+        margin-top: 0;
     }
 
 }
