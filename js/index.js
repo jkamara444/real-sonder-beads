@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const orderIcon = document.getElementById('order-icon');
   const popoutCart = document.getElementById('popout-cart');
   const closeCartButton = document.getElementById('close-cart');
+  const addToCartButtons = document.querySelectorAll('.addcart'); // Assuming .add-to-cart class for Add to Cart buttons
 
   // Popout menu elements
   const menuIcon = document.getElementById('menu-icon');
@@ -47,7 +48,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
     popoutCart.classList.remove('show');
     overlay.classList.remove('show');
   });
+
+  // Add to Cart button event listeners
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      console.log('Add to Cart button clicked');
+      // Add your add-to-cart logic here (e.g., updating cart contents)
+      popoutCart.classList.add('show');
+      overlay.classList.add('show');
+    });
+  });
 });
+
 
 
 // Nav bar transparency
@@ -71,6 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener('DOMContentLoaded', function () {
   const dropdownBtn = document.querySelector('.dropbtn');
   const dropdownContent = document.querySelector('.dropdown-content');
+  const dropdownBtn2 = document.querySelector('.dropbtn2');
+  const dropdownContentDesktop = document.querySelector('.desktop-dropdown-content');
 
   dropdownBtn.addEventListener('click', function (event) {
     event.stopPropagation();
@@ -87,6 +101,23 @@ document.addEventListener('DOMContentLoaded', function () {
       dropdownContent.classList.remove('open');
     }
   });
+
+  dropdownBtn2.addEventListener('click', function (event) {
+    event.stopPropagation();
+    if (dropdownContentDesktop.classList.contains('open')) {
+      dropdownContentDesktop.classList.remove('open');
+    } else {
+      dropdownContentDesktop.classList.add('open');
+    }
+  });
+
+  // Close the dropdown if the user clicks outside of it
+  window.addEventListener('click', function () {
+    if (dropdownContentDesktop.classList.contains('open')) {
+      dropdownContentDesktop.classList.remove('open');
+    }
+  });
+  
 });
 
 

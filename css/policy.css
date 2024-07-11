@@ -1,392 +1,9 @@
-/* ----------------- font styling ---------------- */
-
-@font-face {
-    font-family: 'Mernature';
-    src: url('../fonts/MERQOLA\ NATURE.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Pratika';
-    src: url('../fonts/Praktika-Light.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Bebas';
-    src: url('../fonts/BebasNeue-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
 /* ----------------- page & body styling -----------------  */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* makes the box model work in all browsers (padding and margin are consistent etc) */
-}
-
-body {
-    background: rgb(255, 255, 255);
-    overflow-x: hidden;
-}
 
 .header {
     position: relative;
     text-align: center;
-}
-
-/* ----------------- navigation BAR styling (mobile & ipad) ----------------- */
-
-nav {
-    position: fixed;
-    width: 100%;
-    height: 50px;
-    background-color: rgba(19, 34, 27, 0.5);
-    color: #fff;
-    padding: 5px 5px;
-    z-index: 99;
-}
-
-nav ul {
-    height: 100%;
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-nav ul li {
-    align-items: center;
-}
-
-nav ul li.logo {
-    flex-grow: 1;
-    display: flex;
-}
-
-nav ul li h1 {
-    padding-left: 15px;
-    font-size: clamp(15px, 3vw, 22px);
-    z-index: 99;
-    font-family: 'Mernature';
-}
-
-.navicons img {
-    width: clamp(24px, 3vw, 32px);
-    height: clamp(24px, 3vw, 32px);
-    cursor: pointer;
-}
-
-.logo h1 a {
-    font-size: clamp(16px, 3vw, 24px);
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
-
-
-/* ----------------- navigation BAR styling (desktop) ----------------- */
-
-nav ul.desktop {
-    display: none;
-}
-
-nav ul.desktop {
-    position: absolute;
-    transform: translateY(-90%);
-    justify-content: center;
-    width: 100%;
-}
-
-nav ul.desktop li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 17px;
-    font-family: 'Mernature';
-    padding: 5px 10px;
-}
-
-/* ----------------- popout nav bar styling (mobile & ipad) ----------------- */
-
-.popout-menu {
-    position: fixed;
-    top: 0;
-    right: -70vw;
-    /* Hide the menu off-screen initially */
-    width: 70vw;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-    box-shadow: -1px 0 5px rgba(0, 0, 0, 0.3);
-    transition: right 0.3s ease;
-    /* Smooth transition for sliding in and out */
-    z-index: 1000;
-}
-
-.popout-menu ul li {
-    padding: 20px;
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-}
-
-.popout-menu span img {
-    width: 13px;
-    height: 13px;
-    cursor: pointer;
-}
-
-.popout-menu ul {
-    list-style-type: none;
-}
-
-.popout-menu ul li a {
-    text-decoration: none;
-    color: black;
-    font-size: clamp(18px, 3vw, 32px);
-    font-family: 'bebas';
-}
-
-.popout-menu.show {
-    right: 0;
-}
-
-.dropdown-content {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
-    position: absolute;
-    width: 100%;
-    top: 42%;
-    /* Adjust as needed */
-    left: 0;
-    background-color: #fff;
-    /* Adjust background color as needed */
-    z-index: 1;
-}
-
-.open {
-    max-height: 200px;
-    /* Adjust based on content */
-    opacity: 1;
-}
-
-.dropdown-content li a {
-    font-size: clamp(16px, 2vw, 22px) !important;
-}
-
-.dropbtn {
-    cursor: pointer;
-}
-
-.arrow {
-    font-size: 12px;
-    margin-left: 5px;
-}
-
-
-/* ----------------- popout cart styling  ----------------- */
-
-.cart-icon-container {
-    position: relative;
-    display: inline-block;
-}
-
-.cart-icon-container img {
-    display: block;
-}
-
-.cart-icon-container span {
-    position: absolute;
-    bottom: -10px;
-    left: -25%;
-    background-color: #93cda75c;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 5px;
-    font-size: clamp(14px, 2vw, 18px);
-}
-
-
-.popout-cart {
-    position: fixed;
-    top: 0;
-    right: -100vw;
-    width: 100vw;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-    box-shadow: -1px 0 5px rgba(0, 0, 0, 0.3);
-    transition: right 0.3s ease;
-    z-index: 1000000;
-    overflow-y: auto;
-}
-
-.show {
-    right: 0 !important;
-}
-
-/* styling of the popout menu */
-
-.carttab h3 {
-    font-family: 'bebas';
-    font-size: clamp(22px, 3vw, 32px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.carttab #close-cart {
-    cursor: pointer;
-    font-family: 'bebas';
-    font-size: clamp(16px, 3vw, 36px);
-    background-color: #ffffff;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-    padding: 10px 20px;
-    color: #000000;
-    text-decoration: none;
-    border-radius: 10px;
-    border: none;
-}
-
-.carttab {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border-radius: 10px;
-    position: relative;
-}
-
-/* setup for each cart item */
-
-.cartlist {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.cartimg img {
-    width: 25vw;
-    height: 20vw;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-
-.cartdetails {
-    flex-grow: 1;
-    margin-left: 20px;
-}
-
-
-.cartname {
-    font-size: 18px;
-    font-family: 'bebas';
-}
-
-.item-description p {
-    font-family: 'bebas';
-}
-
-.carttotal {
-    font-family: 'bebas';
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.cartquantity {
-    position: absolute;
-    display: flex;
-    align-items: center;
-}
-
-.cartquantity span {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    text-align: center;
-    line-height: 25px;
-    font-size: 14px;
-    color: #000000;
-    font-weight: bolder;
-}
-
-/* styling for the footer part of the cart / total amount */
-
-.cart-footer {
-    margin: 0px 20px;
-}
-
-.totalamt {
-    display: flex;
-    flex-direction: row;
-    font-family: 'bebas';
-    justify-content: space-between;
-}
-
-.totalamt h2 {
-    font-size: clamp(22px, 3vw, 32px);
-}
-
-.totalamt h4 {
-    font-size: clamp(22px, 3vw, 32px);
-}
-
-.cart-footer p {
-    margin-top: 5%;
-    font-size: clamp(14px, 2vw, 32px);
-    font-family: 'bebas';
-    text-align: left;
-}
-
-.cartbtn {
-    margin-top: 8%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.cartbtn button {
-    cursor: pointer;
-    width: 90%;
-    margin-top: 5%;
-    font-family: 'bebas';
-    background-color: #ffffff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    /* center the text on the image */
-    padding: 10px 20px;
-    font-size: clamp(24px, 4vw, 36px);
-    color: #000000;
-    text-decoration: none;
-    /* removes underline */
-    border-radius: 10px;
-    border: none;
-}
-
-/* ----------------- overlay styling (mobile & ipad) ----------------- */
-
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent background */
-    z-index: 9;
-    display: none;
-    /* Hide the overlay initially */
-}
-
-#overlay.show {
-    display: block;
-    /* Show the overlay */
 }
 
 
@@ -442,6 +59,10 @@ nav ul.desktop li a {
     max-width: 500px;
 }
 
+.section {
+    margin-bottom: 15%;
+}
+
 .content h2 {
     font-family: 'bebas';
     font-size: clamp(22px, 3vw, 32px);
@@ -453,7 +74,14 @@ nav ul.desktop li a {
     font-family: 'parika';
     font-size: clamp(16px, 2vw, 32px);
     text-align: justify;
-    margin-bottom: 15%;
+    margin-bottom: 10%;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .content {
+        margin: 5% 50px;
+    }
 }
 
 
@@ -463,28 +91,12 @@ nav ul.desktop li a {
         height: 25vh;
     }
 
-    /* ----------------- nav bar styling ----------------- */
-
-    nav {
-        background-color: transparent;
-        transition: background-color 0.3s ease;
-    }
-
-    nav.scrolled {
-        background-color: rgba(0, 0, 0, 0.3);
-        /* Adjust the color and opacity as needed */
-    }
-
-    .navicons.dropdown {
-        display: none;
-    }
-
-    nav ul.desktop {
-        display: flex;
-        align-items: center;
-    }
 
     /* ----------------- content styling -----------------  */
+
+    .content {
+        margin: 5% 50px;
+    }
 
     .content h2 {
         font-size: clamp(18px, 2.5vw, 32px);
@@ -494,4 +106,11 @@ nav ul.desktop li a {
     .content p {
         font-size: clamp(14px, 1.5vw, 32px);
     }
+
+    /* ----------------- footer styling -----------------  */
+
+    .footer-distributed h3 {
+        margin-top: 0%;
+    }
+
 }
