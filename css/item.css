@@ -134,12 +134,18 @@
 /* ----------------- item button styling -----------------  */
 
 .options {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     /* Center items horizontally */
     align-items: center;
     /* Center items vertically */
     margin-top: 5%;
+    margin-right: 5%;
+}
+
+.options>div {
+    width: 130px;
 }
 
 .options label,
@@ -147,6 +153,7 @@
     font-family: 'bebas';
     font-size: clamp(14px, 1.5vw, 28px);
     margin-right: 5px;
+    white-space: nowrap;
 }
 
 .options select {
@@ -154,31 +161,52 @@
     font-size: clamp(14px, 2vw, 26px);
 }
 
-.color-option {
-    margin-right: 10px;
-    margin-bottom: 5%;
-    /* Adjust spacing between color and size options */
-}
-
+.color-option,
 .size-option {
-    margin-left: 10px;
-    margin-bottom: 5%;
+    margin-right: 10px;
+    white-space: nowrap;
 
+    /* Adjust spacing between color and size options */
 }
 
 
 .size-option input,
-.color-option select {
+.color-option select,
+.type-option select,
+.note-option input {
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
     border-radius: 10px;
     border: none;
     padding: 8px;
-    font-size: 14px;
-    width: 80px;
     color: #000;
     /* Adjust width of the input field */
 }
+
+.size-option input,
+.color-option select,
+.type-option select {
+    font-size: 14px;
+    width: 80px;
+}
+
+.note-option {
+    margin-top: 25%;
+
+}
+
+input[type="text"]::placeholder {
+    white-space: wrap;
+    padding: 10px;
+}
+
+.note-option input {
+    margin-top: 10%;
+    width: 73vw;
+    height: 10vh;
+    max-width: 400px;
+}
+
 
 
 .item-text-container button {
@@ -472,7 +500,7 @@
     }
 
     .item-text-container button {
-        width: 78%;
+        width: 87%;
     }
 
     .item-text-container p {
@@ -483,14 +511,18 @@
     }
 
     .options {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         justify-content: left;
         font-size: clamp(16px, 1.5vw, 22px);
+        width: 79%;
     }
 
     .color-option,
     .size-option {
         margin-right: 10%;
     }
+
 
 
     h2,

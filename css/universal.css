@@ -292,7 +292,7 @@ nav ul.desktop li a {
 
 .cartimg img {
     width: 100px;
-    height: 80%;
+    height: 100px;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -322,6 +322,7 @@ nav ul.desktop li a {
 .cartquantity {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .cartquantity span {
@@ -385,6 +386,30 @@ nav ul.desktop li a {
     border-radius: 10px;
     border: none;
 }
+
+.item-description {
+    width: 200px;
+}
+
+.item-description p.note {
+    font-family: 'bebas';
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    word-wrap: break-word;
+}
+
+.note {
+    display: none;
+}
+
+.show-note {
+    cursor: pointer;
+    color: rgb(104, 139, 115);
+    text-decoration: none;
+}
+
 
 
 /* ----------------- overlay styling (mobile & ipad) ----------------- */
