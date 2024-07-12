@@ -256,6 +256,15 @@
     padding: 10px;
 }
 
+.splide__track {
+    will-change: transform;
+}
+
+.splide__list {
+    transition: transform 0.6s ease;
+}
+
+
 
 /* ----------------- featured section styling ----------------- */
 
