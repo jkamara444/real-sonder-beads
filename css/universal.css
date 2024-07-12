@@ -288,6 +288,7 @@ nav ul.desktop li a {
     width: 100%;
     margin-top: 20px;
     border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
 }
 
 .cartimg img {
@@ -322,7 +323,6 @@ nav ul.desktop li a {
 .cartquantity {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 .cartquantity span {

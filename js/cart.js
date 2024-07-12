@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const popoutCart = document.querySelector('#popout-cart');
     const overlay = document.querySelector('#overlay');
 
+    // Function to update cart count display and item total cost
     function updateCart(item) {
         const minusButton = item.querySelector('.minus');
         const plusButton = item.querySelector('.plus');
@@ -20,12 +21,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 cartTotalElement.textContent = `$${(unitPrice * quantity).toFixed(2)}`;
                 updateSubtotal();
                 updateCartCount();
-                updateLocalStorage();
+                updateLocalStorage(); // Update local storage when quantity changes
             } else {
                 item.remove();
                 updateSubtotal();
                 updateCartCount();
-                updateLocalStorage();
+                updateLocalStorage(); // Update local storage when item is removed
             }
         });
 
@@ -36,24 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
             cartTotalElement.textContent = `$${(unitPrice * quantity).toFixed(2)}`;
             updateSubtotal();
             updateCartCount();
-            updateLocalStorage();
+            updateLocalStorage(); // Update local storage when quantity changes
         });
-
-        const showNoteButton = item.querySelector('.show-note');
-        const noteElement = item.querySelector('.note');
-
-        if (showNoteButton && noteElement) {
-            showNoteButton.addEventListener('click', () => {
-                const isNoteVisible = noteElement.style.display === 'block';
-                noteElement.style.display = isNoteVisible ? 'none' : 'block';
-                showNoteButton.textContent = isNoteVisible ? 'Show Note' : 'Hide Note';
-            });
-
-            noteElement.style.display = 'none';
-            showNoteButton.textContent = 'Show Note';
-        }
     }
 
+    // Function to add item to cart
     addToCartButtons.forEach(button => {
         button.addEventListener('click', function () {
             const parentItem = button.closest('.item-text-container');
@@ -64,12 +52,15 @@ document.addEventListener('DOMContentLoaded', function () {
             const customNote = parentItem.querySelector('#note') ? parentItem.querySelector('#note').value : 'N/A';
             const unitPrice = parseFloat(parentItem.querySelector('h4').innerText.replace('$', ''));
 
+            // Extract the src of the first image in the main carousel
+            const firstImageSrc = document.querySelector('#main-carousel .splide__slide img').src;
+
             const cartItem = document.createElement('div');
             cartItem.classList.add('cartlist');
 
             cartItem.innerHTML = `
                 <div class="cartimg">
-                    <img src="../../../pics/bracelets/peachcrystalbracelet.jpg" alt="">
+                    <img src="${firstImageSrc}" alt="${productName}">
                 </div>
                 <div class="cartdetails">
                     <div class="cartname">${productName}</div>
@@ -77,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         ${selectedColor !== 'N/A' ? `<p class="color">${selectedColor}</p>` : ''}
                         ${selectedSize !== 'N/A' ? `<p class="size">${selectedSize}</p>` : ''}
                         ${selectedType !== 'N/A' ? `<p class="type">Type: ${selectedType}</p>` : ''}
-                        ${customNote !== 'N/A' ? `<p class="show-note">Show Note</p><p class="note">${customNote}</p>` : ''}
+                        ${customNote !== 'N/A' ? `<p class="note">Note: ${customNote}</p>` : ''}
                     </div>
                     <div class="cartquantity">
                         <span class="minus">&lt;</span>
@@ -94,13 +85,14 @@ document.addEventListener('DOMContentLoaded', function () {
             updateCart(cartItem);
             updateSubtotal();
             updateCartCount();
-            updateLocalStorage();
+            updateLocalStorage(); // Update local storage when item is added to cart
 
             popoutCart.classList.add('show');
             overlay.classList.add('show');
         });
     });
 
+    // Function to update subtotal display
     function updateSubtotal() {
         let subtotal = 0;
         document.querySelectorAll('.carttotal').forEach(cartTotalElement => {
@@ -109,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
         subtotalElement.textContent = `$${subtotal.toFixed(2)} USD`;
     }
 
+    // Function to update cart count display
     function updateCartCount() {
         let totalItems = 0;
         document.querySelectorAll('.cartlist').forEach(cartItem => {
@@ -118,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cartCountElement.textContent = totalItems;
     }
 
+    // Function to update local storage with current cart items
     function updateLocalStorage() {
         const cartItems = [];
         document.querySelectorAll('.cartlist').forEach(cartItem => {
@@ -128,6 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const customNote = cartItem.querySelector('.item-description p.note') ? cartItem.querySelector('.item-description p.note').textContent : '';
             const unitPrice = parseFloat(cartItem.querySelector('.carttotal').getAttribute('data-unit-price'));
             const quantity = parseInt(cartItem.querySelector('.quantity').textContent);
+            const firstImageSrc = cartItem.querySelector('.cartimg img').src;
 
             cartItems.push({
                 productName,
@@ -136,13 +131,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 selectedType,
                 customNote,
                 unitPrice,
-                quantity
+                quantity,
+                firstImageSrc
             });
         });
 
         localStorage.setItem('cart', JSON.stringify(cartItems));
     }
 
+    // Function to load cart items from local storage on page load
     function loadCartFromLocalStorage() {
         const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -152,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             cartItem.innerHTML = `
                 <div class="cartimg">
-                    <img src="../../../pics/bracelets/peachcrystalbracelet.jpg" alt="">
+                    <img src="${item.firstImageSrc}" alt="${item.productName}">
                 </div>
                 <div class="cartdetails">
                     <div class="cartname">${item.productName}</div>
@@ -160,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         ${item.selectedColor ? `<p class="color">${item.selectedColor}</p>` : ''}
                         ${item.selectedSize ? `<p class="size">${item.selectedSize}</p>` : ''}
                         ${item.selectedType ? `<p class="type">${item.selectedType}</p>` : ''}
-                        ${item.customNote ? `<p class="show-note">Show Note</p><p class="note">${item.customNote}</p>` : ''}
+                        ${item.customNote ? `<p class="note">${item.customNote}</p>` : ''}
                     </div>
                     <div class="cartquantity">
                         <span class="minus">&lt;</span>
@@ -174,23 +171,25 @@ document.addEventListener('DOMContentLoaded', function () {
             const cartContainer = document.querySelector('#popout-cart .carttab');
             cartContainer.appendChild(cartItem);
 
+            // Initialize event listeners for quantity update
             updateCart(cartItem);
         });
 
-        updateSubtotal();
-        updateCartCount();
+        updateSubtotal(); // Update subtotal after loading cart items
+        updateCartCount(); // Update cart count after loading cart items
     }
 
-    loadCartFromLocalStorage();
+    loadCartFromLocalStorage(); // Load cart items from local storage on page load
 
+    // Function to handle checkout process
     const checkoutButton = document.querySelector('.checkout');
     checkoutButton.addEventListener('click', () => {
-        localStorage.removeItem('cart');
+        localStorage.removeItem('cart'); // Clear local storage
         document.querySelectorAll('#popout-cart .cartlist').forEach(cartItem => {
-            cartItem.remove();
+            cartItem.remove(); // Remove all cart items from DOM
         });
 
-        updateSubtotal();
-        updateCartCount();
+        updateSubtotal(); // Update subtotal display
+        updateCartCount(); // Update cart count display
     });
 });
