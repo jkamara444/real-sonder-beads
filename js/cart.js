@@ -39,6 +39,18 @@ document.addEventListener('DOMContentLoaded', function () {
             updateCartCount();
             updateLocalStorage(); // Update local storage when quantity changes
         });
+
+        // Add event listener for "Show Note" link
+        const showNoteLink = item.querySelector('.show-note');
+        if (showNoteLink) {
+            showNoteLink.addEventListener('click', () => {
+                const noteParagraph = item.querySelector('.note');
+                if (noteParagraph) {
+                    noteParagraph.style.display = noteParagraph.style.display === 'none' ? 'block' : 'none';
+                    showNoteLink.textContent = noteParagraph.style.display === 'none' ? 'Show Note' : 'Hide Note';
+                }
+            });
+        }
     }
 
     // Function to add item to cart
@@ -68,7 +80,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         ${selectedColor !== 'N/A' ? `<p class="color">${selectedColor}</p>` : ''}
                         ${selectedSize !== 'N/A' ? `<p class="size">${selectedSize}</p>` : ''}
                         ${selectedType !== 'N/A' ? `<p class="type">Type: ${selectedType}</p>` : ''}
-                        ${customNote !== 'N/A' ? `<p class="note">Note: ${customNote}</p>` : ''}
+                        ${customNote !== 'N/A' ? `
+                            <a href="#" class="show-note">Show Note</a>
+                            <p class="note" style="display: none;">${customNote}</p>
+                        ` : ''}
                     </div>
                     <div class="cartquantity">
                         <span class="minus">&lt;</span>
@@ -157,7 +172,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         ${item.selectedColor ? `<p class="color">${item.selectedColor}</p>` : ''}
                         ${item.selectedSize ? `<p class="size">${item.selectedSize}</p>` : ''}
                         ${item.selectedType ? `<p class="type">${item.selectedType}</p>` : ''}
-                        ${item.customNote ? `<p class="note">${item.customNote}</p>` : ''}
+                        ${item.customNote ? `
+                            <a href="#" class="show-note">Show Note</a>
+                            <p class="note" style="display: none;">${item.customNote}</p>
+                        ` : ''}
                     </div>
                     <div class="cartquantity">
                         <span class="minus">&lt;</span>
