@@ -95,7 +95,7 @@ nav ul li h1 {
 }
 
 .logo h1 a {
-    font-size: clamp(18px, 3vw, 24px);
+    font-size: clamp(16px, 3vw, 24px);
     text-decoration: none;
     color: rgb(255, 255, 255);
 }

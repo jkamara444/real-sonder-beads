@@ -67,25 +67,14 @@
     background-color: #619e7712;
     color: rgb(0, 0, 0);
     padding: 6px 10px;
-    font-size: clamp(14px, 3vw, 18px);
+    font-size: clamp(15px, 3vw, 18px);
     border-radius: 5px;
     cursor: pointer;
     border: none;
-    width: 35vw;
+    width: 42vw;
 }
 
-/* margin: 0 10px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-    font-family: 'bebas';
-    margin-top: 10px;
-    /* background-color: #619e7712; */
-    /* color: rgb(0, 0, 0);
-    padding: 6px 10px;
-    font-size: clamp(14px, 3vw, 18px);
-    /* border-radius: 5px; */
-    /* cursor: pointer;
-    border: none;
-    width: 42vw; */ 
+
 
 #filter-sort h2 {
     z-index: 99;
