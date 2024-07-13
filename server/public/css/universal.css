@@ -115,7 +115,7 @@ nav ul li h1 {
     width: 100vw;
 }
 
-#nav-carousel h2 {
+#nav-carousel .splide__slide>p {
     font-family: 'pratika';
     text-transform: uppercase;
     font-size: 12px !important;
