@@ -20,11 +20,12 @@
 }
 
 #bgimage img {
-    width: 110%;
+    width: 120%;
     height: 100vh;
     object-fit: cover;
-    object-position: bottom;
+    object-position: center;
 }
+
 
 /* ----------------- landing page content styling ----------------- */
 
