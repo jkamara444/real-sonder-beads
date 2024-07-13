@@ -114,7 +114,7 @@ nav ul li h1 {
     background-color: rgba(19, 34, 27, 0.5);
     position: relative;
     width: 100vw;
-    font-size: 0.7rem !important;
+    font-size: 0.8rem !important;
 }
 
 #nav-carousel .splide__slide p {
@@ -269,7 +269,8 @@ nav ul.desktop li a {
 .cart-icon-container span {
     position: absolute;
     bottom: -8px;
-    background-color: #76ab895c;
+    background-color: rgb(159 159 159 / 42%);
+     /* #76ab895c; */
     color: white;
     border-radius: 50%;
     padding: 2px 5px;

@@ -14,13 +14,13 @@
 #bgimage {
     position: absolute;
     width: 100vw;
-    height: 85vh;
+    height: 95vh;
     background-size: cover;
     overflow-y: hidden;
 }
 
 #bgimage img {
-    width: 100%;
+    width: 110vw;
     height: 100vh;
     object-fit: cover;
     object-position: center;
@@ -34,7 +34,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 85vh;
     padding-bottom: 30%;
 }
 
@@ -49,7 +49,8 @@
 #main button {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: rgba(66, 96, 83, 0.3);
+    background-color: rgb(159 159 159 / 30%);
+    /* rgba(66, 96, 83, 0.3) */
     color: white;
     font-family: 'Pratika';
     border: none;
@@ -77,8 +78,10 @@
 
 #main h2 {
     font-size: clamp(14px, 4vw, 28px);
-    font-weight: 50;
+    font-weight: 700;
+    margin-top: 5px;
     font-family: 'Pratika';
+    text-transform: uppercase;
     color: white;
     text-shadow: 2px 2px 5px rgba(2, 42, 20, 0.6);
 }
