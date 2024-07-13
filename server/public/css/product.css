@@ -9,9 +9,11 @@
 /* ----------------- background image styling -----------------  */
 
 #bgimage {
-    position: relative;
-    background-image: url('../pics/headers/riverbg.jpg');
-    height: 16vh;
+    position: absolute;
+    background-image: url('../pics/headers/IMG_9657.jpg');
+    background-size: 110%;
+    background-position: center 60%;
+    height: 18vh;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -20,11 +22,11 @@
 
 
 .header-text {
-    margin-top: 40px;
+    margin-top: 65px;
 }
 
 .header-text h1 a {
-    font-size: clamp(16px, 8vw, 48px);
+    font-size: clamp(16px, 7vw, 48px);
     /* clamp() defines a range of values for the font size
     clamp(minimum font size, increase as the viewport width increases up to a max of 19vw, maximum font size. */
     font-weight: 50;
@@ -34,6 +36,7 @@
     font-family: 'Mernature';
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 1);
 }
+
 
 #wave {
     position: absolute;
@@ -56,10 +59,12 @@
     /* Center items vertically */
 }
 
+/* #3e7c541f; #619e7717  */
 #filter-button {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     font-family: 'bebas';
     margin-top: 10px;
-    background-color: #3e7c541f;
+    background-color: #619e7712;
     color: rgb(0, 0, 0);
     padding: 6px 10px;
     font-size: clamp(14px, 3vw, 18px);
@@ -70,7 +75,7 @@
 
 #filter h2 {
     z-index: 99;
-    margin-top: 30px;
+    margin-top: 25%;
     font-size: clamp(18px, 1.8vw, 28px);
     font-family: 'bebas';
 }

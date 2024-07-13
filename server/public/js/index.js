@@ -135,6 +135,5 @@ document.addEventListener('DOMContentLoaded', function () {
       navbar.classList.remove('sticky');
     }
   };
-
 });
 
