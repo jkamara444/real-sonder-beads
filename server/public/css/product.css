@@ -61,17 +61,17 @@
 #filter-button,
 #sort-button {
     margin: 0 10px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
     font-family: 'bebas';
     margin-top: 10px;
     background-color: #619e7712;
     color: rgb(0, 0, 0);
     padding: 6px 10px;
     font-size: clamp(15px, 3vw, 18px);
-    border-radius: 5px;
     cursor: pointer;
     border: none;
     width: 42vw;
+    height: 4vh;
 }
 
 
