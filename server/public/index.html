@@ -19,11 +19,49 @@
     <!----------------- bdy container to prevent overflow ----------------->
     <div id="bdy">
         <!------------------ background image (desktop only) --------------------->
-        <div id="bgimage">
-            <div id="bgoverlay"></div>
+        <div id="bgimage" class="splide">
+            <div class="splide__slider">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide"><img src="./pics/headers/IMG_9654.jpg" alt=""></li>
+                        <li class="splide__slide"><img src="./pics/headers/IMG_9656.jpg" alt=""></li>
+                        <li class="splide__slide"><img src="./pics/headers/IMG_9657.jpg" alt=""></li>
+                        <li class="splide__slide"><img src="./pics/headers/IMG_9658.jpg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <button class="splide__toggle" type="button">
+                <span class="splide__toggle__play"><img src="./pics/icons/icons8-play-64.png" alt=""></span>
+                <span class="splide__toggle__pause"><img src="./pics/icons/icons8-pause-50.png" alt=""></span>
+            </button>
         </div>
         <!-------------------- nav section -------------------------->
-        <nav>
+        <!--------------- sticky nav section --------------->
+        <div id="nav-carousel" class="splide">
+            <button class="splide__toggle" type="button">
+                <span class="splide__toggle__play"><img src="./pics/icons/icons8-play-64.png" alt=""></span>
+                <span class="splide__toggle__pause"><img src="./pics/icons/icons8-pause-50.png" alt=""></span>
+            </button>
+            <div class="splide__slider">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <h2>Sonder Beads is Now Open</h2>
+                        </li>
+                        <li class="splide__slide">
+                            <h2>Free Shipping On Orders Over $35 </h2>
+                        </li>
+                        <li class="splide__slide">
+                            <h2>View Our New Collection</h2>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-------------------- actual nav section -------------------------->
+        <div id="nav-placeholder"></div>
+        <nav id="navbar">
             <ul>
                 <li class="logo">
                     <h1><a href="index.html">sonder beads</a></h1>
@@ -468,6 +506,23 @@
         <script src="js/cart.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
+
+                var landingSplide = new Splide('#bgimage', {
+                    type: 'loop',
+                    autoplay: 'pause',
+                    perPage: 1,
+                    arrows: false,
+                });
+                landingSplide.mount();
+
+                var navSplide = new Splide('#nav-carousel', {
+                    type: 'loop',
+                    autoplay: 'pause',
+                    perPage: 1,
+                    arrows: false,
+                    pagination: false,
+                });
+                navSplide.mount();
 
                 var splideHighlighted = new Splide('#splide-highlighted', {
                     type: 'loop',

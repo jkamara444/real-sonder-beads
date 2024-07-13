@@ -14,11 +14,16 @@
 #bgimage {
     position: absolute;
     width: 100vw;
-    height: 100vh;
-    background-image: url('../pics/headers/riverbg.jpg');
+    height: 85vh;
     background-size: cover;
-    z-index: -1;
     overflow-y: hidden;
+}
+
+#bgimage img {
+    width: 110%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: bottom;
 }
 
 /* ----------------- landing page content styling ----------------- */
@@ -28,8 +33,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
     padding-bottom: 30%;
+}
+
+#main h1,
+#main h2,
+#main a {
+    z-index: 2;
 }
 
 /* button styling */

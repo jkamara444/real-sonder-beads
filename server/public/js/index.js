@@ -117,7 +117,24 @@ document.addEventListener('DOMContentLoaded', function () {
       dropdownContentDesktop.classList.remove('open');
     }
   });
-  
+
 });
 
+
+document.addEventListener('DOMContentLoaded', function () {
+  var navbar = document.getElementById('navbar');
+  var placeholder = document.getElementById('nav-placeholder');
+  var sticky = navbar.offsetTop;
+
+  window.onscroll = function () {
+    if (window.scrollY >= sticky) {
+      placeholder.style.height = navbar.offsetHeight + 'px';
+      navbar.classList.add('sticky');
+    } else {
+      placeholder.style.height = '0px';
+      navbar.classList.remove('sticky');
+    }
+  };
+
+});
 
