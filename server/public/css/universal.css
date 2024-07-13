@@ -118,7 +118,7 @@ nav ul li h1 {
 #nav-carousel h2 {
     font-family: 'pratika';
     text-transform: uppercase;
-    font-size: clamp(14px, 3vw, 32px);
+    font-size: 12px;
     color: white;
     text-align: center;
     padding: 10px 5px;
