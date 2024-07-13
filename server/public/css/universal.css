@@ -141,6 +141,13 @@ nav ul li h1 {
     right: 10px;
 }
 
+#nav-carousel button {
+    width: 0;
+    height: 0;
+    border: none;
+    outline: none;
+}
+
 #nav-carousel button span img {
     top: 25%;
 }
