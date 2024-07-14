@@ -111,8 +111,7 @@
 }
 
 
-#jewelry-carousel .splide__slide img,
-#splide-featured .splide__slide img {
+#jewelry-carousel .splide__slide img {
     width: 70vw;
     object-fit: cover;
     border-radius: 10px;
@@ -282,6 +281,7 @@ div#history {
 
 #newarrivals {
     margin-top: 15%;
+    margin-bottom: 8%;
     padding: 20px;
 }
 
@@ -320,6 +320,7 @@ div#history {
     color: #000000;
     font-size: clamp(14px, 1.75vw, 25px);
     margin-top: 5px;
+    font-family: 'bebas';
 
 }
 
@@ -365,22 +366,31 @@ div#history {
     font-family: 'Bebas';
 }
 
+#splide-featured .splide__slide img {
+    width: 70vw;
+    object-fit: cover;
+    border-radius: 10px;
+    height: 50vh;
+    justify-self: center;
+}
+
 
 /* ----------------- slogan section styling ----------------- */
 
 
 .slg {
-    margin-top: 5%;
+    margin-top: 8%;
     padding: 30px;
     color: #555;
     text-align: center;
     line-height: 6vh;
     color: #000000;
     font-family: 'Bebas';
+    margin-bottom: -15px;
 }
 
 .slg p {
-    font-size: clamp(22px, 8vw, 52px);
+    font-size: clamp(22px, 7.5vw, 52px);
 }
 
 
