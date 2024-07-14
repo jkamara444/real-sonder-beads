@@ -160,24 +160,37 @@
         </div>
         <!----------------- jewelry section ----------------->
         <div id="jewelry-container" data-aos="fade-in" data-aos-duration="1000">
-            <div id="jewelry" class="wow fadeIn">
-                <div class="category">
-                    <a href="./server/public/html/waist.html">
-                        <img src="./server/public/pics/headers/jwaistbead.jpg" alt="Waistbead Cover" class="pop-effect">
-                        <span>waistbeads</span>
-                    </a>
-                </div>
-                <div class="category">
-                    <a href="/html/bracelets.html">
-                        <img src="./server/public/pics/headers/jbracelets.jpg" alt="Bracelet Cover" class="pop-effect">
-                        <span>bracelets</span>
-                    </a>
-                </div>
-                <div class="category">
-                    <a href="/html/earrings.html">
-                        <img src="./server/public/pics/headers/jrings.jpg" alt="Rings Cover" class="pop-effect">
-                        <span>rings</span>
-                    </a>
+            <div id="jewelry-carousel" class="splide" aria-label="Jewelry Carousel">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="category">
+                                <a href="./server/public/html/waist.html">
+                                    <img src="./server/public/pics/headers/jwaistbead.jpg" alt="Waistbead Cover"
+                                        class="pop-effect">
+                                    <span>waistbeads</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="category">
+                                <a href="/html/bracelets.html">
+                                    <img src="./server/public/pics/headers/jbracelets.jpg" alt="Bracelet Cover"
+                                        class="pop-effect">
+                                    <span>bracelets</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="category">
+                                <a href="/html/earrings.html">
+                                    <img src="./server/public/pics/headers/jrings.jpg" alt="Rings Cover"
+                                        class="pop-effect">
+                                    <span>rings</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -544,6 +557,18 @@
                     pagination: false,
                 });
                 navSplide.mount();
+
+                var jewelrySplide = new Splide('#jewelry-carousel', {
+                    arrows: false,
+                    pagination: false,
+                    mediaQuery: 'min',
+                    breakpoints: {
+                        1024: {
+                            destroy: true,
+                        },
+                    }
+                });
+                jewelrySplide.mount();
 
                 var splideHighlighted = new Splide('#splide-highlighted', {
                     type: 'loop',

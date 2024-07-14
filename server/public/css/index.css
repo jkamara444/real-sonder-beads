@@ -89,7 +89,62 @@
 
 /* ----------------- jewelry section styling ----------------- */
 
-#jewelry {
+/* ----------------- jewelry section styling ----------------- */
+
+#jewelry-carousel {
+    margin: 7% 4%;
+}
+
+#jewelry-carousel .splide__slide {
+    width: 70vw !important;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#jewelry-carousel .splide__slide img {
+    width: 70vw;
+    margin-right: 35px;
+    object-fit: cover;
+    border-radius: 10px;
+    height: 34vh;
+    justify-self: center;
+}
+
+#jewelry-carousel .splide__slide a span {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+    position: absolute;
+    bottom: 0.5%;
+    left: 45%;
+    box-shadow: 0px -30px 50px rgba(0, 0, 0, 0.3);
+    background-color: rgba(71, 23, 49, 0.2);
+    transform: translate(-50%, 0);
+    font-size: clamp(18px, 1.5vw, 35px);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'bebas';
+    text-shadow: 2px 2px 5px rgba(2, 42, 20, 0.4);
+    width: 90%;
+    height: 30px;
+    font-weight: lighter;
+    justify-content: center;
+}
+
+#jewelry-carousel .splide__slide a span:hover {
+    background-color: rgba(71, 23, 49, 0.4);
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    z-index: 80;
+}
+
+/* #jewelry {
     display: flex;
     flex-direction: column;
     padding-top: 10px;
@@ -149,7 +204,7 @@
     /* adds a transition when hovering over the button */
     cursor: pointer;
     z-index: 80;
-}
+} */
 
 /* ----------------- history section styling ----------------- */
 
