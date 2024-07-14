@@ -193,8 +193,11 @@
     width: 80px;
 }
 
-.type-option select {
+.type-option select,
+.color-option select {
     background-color: #619e7712;
+    height: 4vh;
+    padding: 6px 10px;
 }
 
 .note-option {

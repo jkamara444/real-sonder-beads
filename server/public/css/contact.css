@@ -8,11 +8,13 @@
 
 /* ----------------- background image styling -----------------  */
 
+
 #bgimage {
-    position: relative;
-    background-image: url('../pics/headers/riverbg.jpg');
-    background-size: cover;
-    height: 16vh;
+    position: absolute;
+    background-image: url('../pics/headers/IMG_9657.jpg');
+    background-size: 110%;
+    background-position: center 60%;
+    height: 18vh;
     width: 100vw;
     display: flex;
     align-items: center;

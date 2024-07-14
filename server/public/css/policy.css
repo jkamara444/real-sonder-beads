@@ -10,10 +10,11 @@
 /* ----------------- background image styling -----------------  */
 
 #bgimage {
-    position: relative;
-    background-image: url('../pics/headers/riverbg.jpg');
-    background-size: cover;
-    height: 16vh;
+    position: absolute;
+    background-image: url(../pics/headers/IMG_9655.jpg);
+    background-size: 110%;
+    background-position: center 62%;
+    height: 18vh;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -25,17 +26,6 @@
     margin-top: 40px;
 }
 
-.header-text h1 a {
-    font-size: clamp(16px, 8vw, 48px);
-    /* clamp() defines a range of values for the font size
-    clamp(minimum font size, increase as the viewport width increases up to a max of 19vw, maximum font size. */
-    font-weight: 50;
-    z-index: 2;
-    text-decoration: none;
-    color: white;
-    font-family: 'Mernature';
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 1);
-}
 
 #wave {
     position: absolute;
@@ -55,7 +45,7 @@
 }
 
 .content {
-    margin: 15% 50px;
+    margin: 30% 50px;
     max-width: 500px;
 }
 
@@ -67,7 +57,7 @@
     font-family: 'bebas';
     font-size: clamp(22px, 3vw, 32px);
     margin-bottom: 5%;
-    text-align: center;
+    text-align: left;
 }
 
 .content p {
