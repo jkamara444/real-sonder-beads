@@ -193,10 +193,15 @@
     width: 80px;
 }
 
+.type-option select {
+    background-color: #619e7712;
+}
+
 .note-option {
     margin-top: 25%;
 
 }
+
 
 input[type="text"]::placeholder {
     white-space: wrap;
