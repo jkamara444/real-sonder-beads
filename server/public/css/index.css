@@ -296,14 +296,17 @@ div#history {
 }
 
 #splide-featured img {
-    width: 68vw;
+    width: 73vw;
     height: 45vh;
     object-fit: cover;
-    border-radius: 10px;
 }
 
 
-#splide-featured .splide__slide,
+#splide-featured .splide__slide {
+    width: auto !important;
+    font-family: 'bebas';
+}
+
 #splide-arrivals .splide__slide {
     margin-right: 15px;
     width: auto !important;
@@ -350,7 +353,6 @@ div#history {
 
 #featured {
     padding: 20px 0px;
-    margin-top: 10%;
 }
 
 #featured h2 {
@@ -367,7 +369,8 @@ div#history {
 
 
 .slg {
-    margin-top: 5%;
+    margin-top: 25%;
+    margin-bottom: 5%;
     padding: 30px;
     color: #555;
     text-align: center;
