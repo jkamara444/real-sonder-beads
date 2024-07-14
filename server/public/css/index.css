@@ -288,10 +288,16 @@ div#history {
 
 }
 
-#splide-arrivals img,
-#splide-featured img {
+#splide-arrivals img {
     width: 31vw;
     height: 31vw;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#splide-featured img {
+    width: 68vw;
+    height: 45vh;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -343,14 +349,15 @@ div#history {
 
 
 #featured {
-    padding: 20px;
+    padding: 20px 0px;
     margin-top: 10%;
 }
 
 #featured h2 {
+    padding: 20px;
     font-size: clamp(24px, 2.5vw, 42px);
     margin-bottom: 10px;
-    margin-right: 5px;
+    margin-left: 30px;
     text-align: right;
     font-family: 'Bebas';
 }
