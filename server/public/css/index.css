@@ -97,7 +97,8 @@
     margin: 7% 4%;
 }
 
-#jewelry-carousel .splide__slide {
+#jewelry-carousel .splide__slide,
+#splide-featured .splide__slide {
     width: 70vw !important;
     overflow: hidden;
     position: relative;
@@ -105,11 +106,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 20px;
+
 }
 
-#jewelry-carousel .splide__slide img {
+
+#jewelry-carousel .splide__slide img,
+#splide-featured .splide__slide img {
     width: 70vw;
-    margin-right: 35px;
     object-fit: cover;
     border-radius: 10px;
     height: 34vh;
@@ -230,7 +234,6 @@ div#history {
     width: 65%;
     height: 150%;
     border-radius: 10px;
-
 }
 
 .img1 {
@@ -297,17 +300,6 @@ div#history {
     border-radius: 10px;
 }
 
-#splide-featured img {
-    width: 73vw;
-    height: 45vh;
-    object-fit: cover;
-}
-
-
-#splide-featured .splide__slide {
-    width: auto !important;
-    font-family: 'bebas';
-}
 
 #splide-arrivals .splide__slide {
     margin-right: 15px;
@@ -315,13 +307,9 @@ div#history {
     font-family: 'bebas';
 }
 
+#splide-arrivals p,
 #splide-featured p {
-    margin-top: 10px;
-    font-size: clamp(16px, 2vw, 28px);
-    color: #000000;
-}
-
-#splide-arrivals p {
+    font-family: 'bebas';
     margin-top: 10px;
     font-size: clamp(13.5px, 1.8vw, 28px);
     color: #000000;
@@ -336,13 +324,20 @@ div#history {
 }
 
 #splide-arrivals .splide__slide a,
-#splide-featured .splide__slide a,
 #splide-highlighted .splide__slide a {
     text-decoration: none;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 10px;
+}
+
+#splide-featured .splide__slide a {
+    text-decoration: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
 }
 
 .splide__track {
@@ -359,15 +354,13 @@ div#history {
 
 
 #featured {
-    padding: 20px 0px;
-    margin-top: 20%;
+    margin: 20% 4%;
 }
 
 #featured h2 {
-    padding: 20px;
     font-size: clamp(24px, 2.5vw, 42px);
     margin-bottom: 10px;
-    margin-left: 30px;
+    margin-right: 5px;
     text-align: right;
     font-family: 'Bebas';
 }
@@ -377,8 +370,7 @@ div#history {
 
 
 .slg {
-    margin-top: 25%;
-    margin-bottom: 5%;
+    margin-top: 5%;
     padding: 30px;
     color: #555;
     text-align: center;
