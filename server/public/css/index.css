@@ -49,10 +49,12 @@
 #main button {
     margin-top: 15px;
     padding: 10px 20px;
+    letter-spacing: 0.4px;
     background-color: rgb(159 159 159 / 30%);
     /* rgba(66, 96, 83, 0.3) */
     color: white;
-    font-family: 'Pratika';
+    font-family: 'Roboto Condensed';
+    font-weight: 300;
     border: none;
     border-radius: 5px;
     font-size: clamp(16px, 4vw, 20px);
@@ -78,9 +80,9 @@
 
 #main h2 {
     font-size: clamp(14px, 4vw, 28px);
-    font-weight: 700;
+    font-weight: 200;
     margin-top: 5px;
-    font-family: 'Pratika';
+    font-family: 'Roboto Condensed';
     text-transform: uppercase;
     color: white;
     text-shadow: 2px 2px 5px rgba(2, 42, 20, 0.6);
@@ -376,20 +378,17 @@ div#history {
 /* ----------------- highlighted section styling ----------------- */
 
 #highlighted {
+    display: flex;
+    justify-content: center;
     width: 100%;
     position: relative;
-    /* Make this element a containing block for absolutely positioned elements */
     height: auto;
-    /* Adjust based on your layout */
 }
 
-#highlighted>h2 {
+.highlighted-mobile-txt {
     position: absolute;
-    /* Aligns the heading to the bottom */
-    bottom: 9%;
-    /* Ensure it spans the full width */
-    background-color: rgba(71, 23, 49, 0.2);
-    width: 100%;
+    bottom: 20%;
+    text-align: center;
     padding: 10px 20px;
     font-size: clamp(18px, 3.5vw, 35px);
     color: #ffffff;
@@ -397,6 +396,32 @@ div#history {
     font-weight: lighter;
     z-index: 99;
 }
+
+.highlighted-mobile-txt h2 {
+    padding: 5px 10px;
+    font-family: 'bebas';
+    letter-spacing: 0.5px;
+    font-weight: lighter;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: rgba(71, 23, 49, 0.2);
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+.highlighted-mobile-txt button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: rgb(41 56 44 / 34%);
+    letter-spacing: 0.4px;
+    color: white;
+    font-family: 'Roboto Condensed';
+    font-weight: 400;
+    border: none;
+    border-radius: 5px;
+    font-size: clamp(16px, 4vw, 20px);
+    box-shadow: 0px 0px 20px rgb(255 255 255 / 77%);
+}
+
 
 #splide-highlighted img {
     display: flex;
