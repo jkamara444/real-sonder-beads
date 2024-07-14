@@ -197,17 +197,25 @@ document.addEventListener('DOMContentLoaded', function () {
         updateCartCount(); // Update cart count after loading cart items
     }
 
-    loadCartFromLocalStorage(); // Load cart items from local storage on page load
-
-    // Function to handle checkout process
-    const checkoutButton = document.querySelector('.checkout');
-    checkoutButton.addEventListener('click', () => {
-        localStorage.removeItem('cart'); // Clear local storage
-        document.querySelectorAll('#popout-cart .cartlist').forEach(cartItem => {
-            cartItem.remove(); // Remove all cart items from DOM
+    // Load cart items from local storage when the page loads
+    loadCartFromLocalStorage();
+    // Function to clear cart
+    // Function to clear cart items
+    function clearCart() {
+        const cartItems = document.querySelectorAll('.cartlist');
+        cartItems.forEach(item => {
+            item.remove();
         });
+        updateSubtotal();
+        updateCartCount();
+        localStorage.removeItem('cart'); // Clear local storage
+    }
 
-        updateSubtotal(); // Update subtotal display
-        updateCartCount(); // Update cart count display
-    });
+    // Add event listener for checkout button to clear cart
+    const checkoutButton = document.querySelector('.checkout');
+    if (checkoutButton) {
+        checkoutButton.addEventListener('click', function () {
+            clearCart();
+        });
+    }
 });

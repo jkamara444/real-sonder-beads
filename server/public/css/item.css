@@ -177,6 +177,7 @@
 .type-option select,
 .note-option input {
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
     border-radius: 10px;
     border: none;
