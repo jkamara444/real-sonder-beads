@@ -229,6 +229,8 @@ div#history {
     object-fit: cover;
     width: 65%;
     height: 150%;
+    border-radius: 10px;
+
 }
 
 .img1 {
@@ -313,8 +315,13 @@ div#history {
     font-family: 'bebas';
 }
 
-#splide-arrivals p,
 #splide-featured p {
+    margin-top: 10px;
+    font-size: clamp(16px, 2vw, 28px);
+    color: #000000;
+}
+
+#splide-arrivals p {
     margin-top: 10px;
     font-size: clamp(13.5px, 1.8vw, 28px);
     color: #000000;
@@ -353,6 +360,7 @@ div#history {
 
 #featured {
     padding: 20px 0px;
+    margin-top: 20%;
 }
 
 #featured h2 {
