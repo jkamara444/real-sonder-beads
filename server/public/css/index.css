@@ -386,7 +386,7 @@ div#history {
 #highlighted>a button {
     z-index: 99;
     position: absolute;
-    bottom: 9%;
+    bottom: 0%;
     width: 100%;
     margin-top: 15px;
     padding: 10px 20px;
@@ -402,6 +402,9 @@ div#history {
     box-shadow: 5px -5px 30px rgb(0 0 0 / 73%);
 }
 
+#splide-highlighted .splide__slide {
+    height: 40vh;
+}
 
 #splide-highlighted img {
     display: flex;
@@ -425,9 +428,10 @@ div#history {
 
 #splide-highlighted .splide__arrow svg {
     fill: rgb(255, 255, 255) !important;
+    z-index: 999;
     color: #000;
-    width: 4em !important;
-    height: 4em !important;
+    width: 1em !important;
+    height: 1em !important;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -435,10 +439,10 @@ div#history {
     align-items: center;
     justify-content: center;
     display: flex;
-    height: 2em !important;
-    width: 2em !important;
-    background: #ffffff00 !important;
-    top: 45% !important;
+    height: 1.5em !important;
+    width: 1.5em !important;
+    background: #00000081 !important;
+    bottom: 0% !important;
 }
 
 #splide-highlighted h3,
