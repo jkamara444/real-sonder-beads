@@ -107,6 +107,7 @@ nav ul li h1 {
     position: fixed;
     top: 0;
     width: 100%;
+    background-color: #1d2e21a6;
 }
 
 /* ----------------- popout nav bar styling (mobile & ipad) ----------------- */
