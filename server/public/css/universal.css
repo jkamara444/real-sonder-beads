@@ -434,6 +434,7 @@ nav ul.desktop li a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 20%;
 }
 
 .cartbtn button {
