@@ -282,8 +282,7 @@ div#history {
 #newarrivals {
     margin-top: 15%;
     margin-bottom: 8%;
-    padding: 20px;
-}
+    padding: 7% 3%;}
 
 #newarrivals h2 {
     font-size: clamp(24px, 2.5vw, 42px);
