@@ -51,6 +51,20 @@ html {
     text-align: center;
 }
 
+.jewelry-slider-container,
+.featured-slider-container {
+    background: #ccc;
+    margin-top: 3%;
+}
+
+#jewelry-slider,
+#featured-slider {
+    background: rgb(0, 0, 0);
+    height: 3px;
+    transition: width 400ms ease;
+    width: 0;
+}
+
 
 
 /* ----------------- navigation BAR styling (mobile & ipad) ----------------- */
@@ -508,6 +522,8 @@ nav ul.desktop li a {
     height: 1px;
     background-color: rgba(128, 128, 128, 0.289);
 }
+
+
 
 footer.footer-distributed {
     height: auto;

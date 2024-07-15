@@ -92,7 +92,7 @@
 
 /* ----------------- jewelry section styling ----------------- */
 
-#jewelry-carousel {
+#jewelry-container {
     margin: 7% 4%;
 }
 
@@ -304,23 +304,36 @@ div#history {
     margin-right: 15px;
     width: auto !important;
     font-family: 'bebas';
+    margin: 0 7.5px;
 }
 
-#splide-arrivals p,
-#splide-featured p {
+#splide-arrivals p {
     font-family: 'bebas';
     margin-top: 10px;
-    font-size: clamp(13.5px, 1.8vw, 28px);
+    font-size: clamp(14px, 1.8vw, 28px);
     color: #000000;
 }
 
-#splide-arrivals h4,
-#splide-featured h4 {
+#splide-arrivals h4 {
     color: #000000;
     font-size: clamp(14px, 1.75vw, 25px);
     margin-top: 5px;
     font-family: 'bebas';
 
+}
+
+#splide-featured p {
+    font-family: 'bebas';
+    margin-top: 10px;
+    font-size: clamp(18px, 1.8vw, 28px);
+    color: #000000;
+}
+
+#splide-featured h4 {
+    color: #000000;
+    font-size: clamp(17px, 1.75vw, 25px);
+    margin-top: 5px;
+    font-family: 'bebas';
 }
 
 #splide-arrivals .splide__slide a,
@@ -329,7 +342,6 @@ div#history {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 10px;
 }
 
 #splide-featured .splide__slide a {
@@ -357,11 +369,11 @@ div#history {
     margin: 20% 4%;
 }
 
-#featured h2 {
+#featured h2,
+#jewelry-container>h2 {
     font-size: clamp(24px, 2.5vw, 42px);
-    margin-bottom: 10px;
-    margin-right: 5px;
-    text-align: right;
+    margin-bottom: 15px;
+    margin-left: 5px;
     font-family: 'Bebas';
 }
 
@@ -372,6 +384,7 @@ div#history {
     height: 50vh;
     justify-self: center;
 }
+
 
 
 /* ----------------- slogan section styling ----------------- */

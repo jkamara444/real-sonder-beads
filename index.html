@@ -164,6 +164,7 @@
         </div>
         <!----------------- jewelry section ----------------->
         <div id="jewelry-container" data-aos="fade-in" data-aos-duration="1000">
+            <h2>SHOP BY CATEGORY</h2>
             <div id="jewelry-carousel" class="splide" aria-label="Jewelry Carousel">
                 <div class="splide__track">
                     <ul class="splide__list">
@@ -195,6 +196,9 @@
                             </div>
                         </li>
                     </ul>
+                </div>
+                <div class="jewelry-slider-container">
+                    <div id="jewelry-slider"></div>
                 </div>
             </div>
         </div>
@@ -336,7 +340,7 @@
         </div>
         <!----------------- featured items section ----------------->
         <div id="featured" data-aos="fade-left" data-aos-duration="400">
-            <!-- <h2>FEATURED</h2> -->
+            <h2>FEATURED</h2>
             <div id="splide-featured" class="splide">
                 <div class="splide__track">
                     <ul class="splide__list">
@@ -383,6 +387,9 @@
                             </a>
                         </li>
                     </ul>
+                </div>
+                <div class="featured-slider-container">
+                    <div id="featured-slider"></div>
                 </div>
             </div>
         </div>
@@ -537,6 +544,7 @@
         <script>
             document.addEventListener('DOMContentLoaded', function () {
 
+                //landing carousel
                 var landingSplide = new Splide('#bgimage', {
                     type: 'loop',
                     autoplay: 'play',
@@ -545,6 +553,7 @@
                 });
                 landingSplide.mount();
 
+                //nav carousel
                 var navSplide = new Splide('#nav-carousel', {
                     type: 'loop',
                     autoplay: 'play',
@@ -554,9 +563,11 @@
                 });
                 navSplide.mount();
 
+                // jewelry carousel
                 var jewelrySplide = new Splide('#jewelry-carousel', {
                     arrows: false,
                     pagination: false,
+                    type: 'loop',
                     mediaQuery: 'min',
                     breakpoints: {
                         1024: {
@@ -564,8 +575,18 @@
                         },
                     }
                 });
+
+                var bar = jewelrySplide.root.querySelector('#jewelry-slider');
+
+                jewelrySplide.on('mounted move', function () {
+                    var end = jewelrySplide.Components.Controller.getEnd() + 1;
+                    var rate = Math.min((jewelrySplide.index + 1) / end, 1);
+                    bar.style.width = String(100 * rate) + '%';
+                });
                 jewelrySplide.mount();
 
+
+                // Initialize the highlighted carousel
                 var splideHighlighted = new Splide('#splide-highlighted', {
                     type: 'loop',
                     perPage: 2,
@@ -602,8 +623,19 @@
                         },
                     }
                 });
+
+                var bar2 = splideFeatured.root.querySelector('#featured-slider');
+
+                splideFeatured.on('mounted move', function () {
+                    var end = splideFeatured.Components.Controller.getEnd() + 1;
+                    var rate = Math.min((splideFeatured.index + 1) / end, 1);
+                    bar2.style.width = String(100 * rate) + '%';
+                });
+
                 splideFeatured.mount();
 
+
+                // Initialize the reviews carousel
                 var splideReviews = new Splide('#splide-reviews', {
                     type: 'loop',
                 });
