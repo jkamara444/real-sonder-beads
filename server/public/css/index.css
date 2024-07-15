@@ -257,8 +257,9 @@ div#history {
     margin-bottom: 5%;
     font-size: clamp(26px, 7vw, 62px);
     font-family: 'Bebas';
-    font-weight: lighter;
+    font-weight: 100;
     color: #000000;
+
 }
 
 .history-text-container p {
@@ -289,7 +290,7 @@ div#history {
     margin-bottom: 10px;
     font-family: 'Bebas';
     margin-left: 10px;
-
+    font-weight: 100;
 }
 
 #splide-arrivals img {
@@ -375,6 +376,8 @@ div#history {
     margin-bottom: 15px;
     margin-left: 5px;
     font-family: 'Bebas';
+    font-weight: 100;
+    margin-top: 40px;
 }
 
 #splide-featured .splide__slide img {
