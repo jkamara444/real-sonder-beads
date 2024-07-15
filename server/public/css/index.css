@@ -98,7 +98,6 @@
 
 #jewelry-carousel .splide__slide,
 #splide-featured .splide__slide {
-    width: 70vw !important;
     overflow: hidden;
     position: relative;
     border-radius: 10px;
@@ -117,6 +116,16 @@
     height: 34vh;
     justify-self: center;
 }
+
+@media only screen and (max-width: 600px) {
+
+    #jewelry-carousel .splide__slide,
+    #splide-featured .splide__slide {
+        width: 70vw !important;
+    }
+
+}
+
 
 #jewelry-carousel .splide__slide a span {
     overflow: hidden;
@@ -148,35 +157,7 @@
     z-index: 80;
 }
 
-/* #jewelry {
-    display: flex;
-    flex-direction: column;
-    padding-top: 10px;
-    overflow: hidden;
-    margin-top: 3%;
-
-}
-
-.category {
-    height: 28vh;
-    overflow: hidden;
-    position: relative;
-    margin: 10px 20px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.category a img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    justify-self: center;
-
-}
-
-/* button styling */
+/* ----------------- button section styling ----------------- */
 
 .category a span {
     overflow: hidden;
@@ -282,7 +263,10 @@ div#history {
 #newarrivals {
     margin-top: 15%;
     margin-bottom: 12%;
-    padding: 7% 2%;}
+    padding: 7% 2%;
+}
+
+
 
 #newarrivals h2 {
     font-size: clamp(24px, 2.5vw, 42px);
@@ -493,7 +477,8 @@ div#history {
 #splide-featured .splide__arrow,
 #splide-arrivals .splide__arrow,
 #desktop-slogan,
-nav ul.desktop {
+nav ul.desktop,
+.newarrivals-slider-container {
     display: none;
 }
 
@@ -774,12 +759,43 @@ video {
 
     /* ----------------- jewelry styling ----------------- */
 
-    #jewelry {
+    #jewelry-container {
+        padding: 20px;
+        margin: 0;
+    }
+
+    #jewelry-carousel {
+        display: flex;
+        /* Ensure the container uses flexbox */
+        justify-content: space-between;
+        /* Distribute space evenly */
         margin-top: 3%;
         margin-right: 5%;
         margin-left: 5%;
-        flex-direction: row;
+    }
+
+    #jewelry-carousel .splide__track {
+        display: flex;
+        /* Ensure the inner list uses flexbox */
+        width: 100%;
+        /* Full width for proper spacing */
         justify-content: space-between;
+        /* Distribute space evenly */
+    }
+
+    #jewelry-carousel .splide__list {
+        display: flex;
+        /* Ensure the inner list uses flexbox */
+        width: 100%;
+        /* Full width for proper spacing */
+        justify-content: space-between;
+        /* Distribute space evenly */
+        padding: 0;
+        /* Remove default padding */
+        margin: 0;
+        /* Remove default margin */
+        list-style: none;
+        /* Remove default list styling */
     }
 
     .pop-effect {
@@ -796,22 +812,32 @@ video {
         /* Add a shadow to give a popping effect */
     }
 
-    .category {
+    #jewelry-carousel .splide__slide {
         width: calc(32.55% - 5px);
         /* Adjust the width to fit 3 items per row, minus margin */
         margin: 0;
         margin-bottom: 20px;
         height: 55vh;
         /* Add bottom margin for spacing */
+        overflow: hidden;
+        position: relative;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .category a img {
+    #jewelry-carousel .splide__slide a img {
         border-radius: 10px;
         height: 55vh;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        justify-self: center;
 
     }
 
-    .category a {
+    #jewelry-carousel .splide__slide a {
         width: 100%;
         justify-content: left;
 
@@ -821,6 +847,41 @@ video {
         font-size: clamp(14px, 3vw, 42px);
         padding-left: 30px;
     }
+
+    /* button styling */
+
+    #jewelry-carousel .splide__slide a span {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        z-index: 99;
+        position: absolute;
+        bottom: 0.5%;
+        left: 50%;
+        box-shadow: 0px -30px 50px rgba(0, 0, 0, 0.3);
+        background-color: rgba(71, 23, 49, 0.2);
+        transform: translate(-50%, 0);
+        font-size: clamp(18px, 1.5vw, 35px);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-family: 'bebas';
+        text-shadow: 2px 2px 5px rgba(2, 42, 20, 0.4);
+        width: 100%;
+        height: 30px;
+        font-weight: lighter;
+        justify-content: center;
+    }
+
+    #jewelry-carousel .splide__slide a span:hover {
+        background-color: rgba(71, 23, 49, 0.4);
+        /* darkens background on hover */
+        transition: background-color 0.2s ease;
+        /* adds a transition when hovering over the button */
+        cursor: pointer;
+        z-index: 80;
+    }
+
 
     /* -----------------  slogan styling ----------------- */
 
@@ -835,7 +896,7 @@ video {
         padding: 0;
         margin: 0;
         margin-top: 4%;
-        margin-bottom: 10%;
+        margin-bottom: 5%;
         text-align: center;
         font-size: clamp(20px, 8vw, 35px);
         color: #0e291a;
@@ -860,7 +921,7 @@ video {
     /* ----------------- history section styling ----------------- */
 
     /* styles.css */
-    #history {
+    div#history {
         display: flex;
         flex-direction: row-reverse;
     }
@@ -928,9 +989,11 @@ video {
     /* ----------------- new arrivals section styling ----------------- */
 
     #newarrivals {
-        margin-top: 0;
-        margin-right: 5%;
-        margin-left: 5%;
+        margin: 0 5%;
+    }
+
+    .newarrivals-slider-container {
+        display: block;
     }
 
     #splide-arrivals img,
@@ -970,10 +1033,89 @@ video {
     /* ----------------- featured section styling ----------------- */
 
     #featured {
-        margin-right: 5%;
-        margin-left: 5%;
-        margin-bottom: 0;
+        padding: 7% 2%;
+        margin: 0 5%;
     }
+
+    #featured h2 {
+        font-size: clamp(24px, 2.5vw, 42px);
+        margin-bottom: 10px;
+        font-family: 'Bebas';
+        margin-left: 10px;
+        font-weight: 100;
+    }
+
+    #splide-featured .splide__slide img {
+        object-fit: cover;
+        border-radius: 10px;
+        width: 20.7vw;
+        height: 20.7vw;
+    }
+
+    #splide-featured .splide__slide {
+        margin-right: 15px;
+        font-family: 'bebas';
+        margin: 0 7.5px;
+        width: auto !important;
+    }
+
+    #splide-featured p {
+        font-family: 'bebas';
+        margin-top: 10px;
+        font-size: clamp(18px, 1.8vw, 28px);
+        color: #000000;
+    }
+
+    #splide-featured h4 {
+        color: #000000;
+        font-size: clamp(17px, 1.75vw, 25px);
+        margin-top: 5px;
+        font-family: 'bebas';
+    }
+
+    #splide-featured .splide-featured-list {
+        text-decoration: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #splide-featured .splide__slide a {
+        text-decoration: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+    }
+
+    .splide__track {
+        will-change: transform;
+    }
+
+    .splide__list {
+        transition: transform 0.6s ease;
+    }
+
+    #splide-featured {
+        display: block;
+        background: #ffffff00 !important;
+        top: 40% !important;
+    }
+
+    #splide-featured .splide__arrow svg {
+        fill: black !important;
+        width: 2em !important;
+        height: 2em !important;
+    }
+
+    #splide-featured .splide__arrow--prev {
+        left: -5em !important;
+    }
+
+    #splide-featured .splide__arrow--next {
+        right: -5em !important;
+    }
+
 
 
     /* ----------------- highlighted section styling ----------------- */
@@ -1081,7 +1223,7 @@ video {
     }
 
 
-    #highlighted>h2 {
+    #highlighted>a button {
         display: none;
     }
 
@@ -1163,6 +1305,8 @@ video {
 
     video {
         height: 80vh;
+        width: 90%;
+        border-radius: 10px;
     }
 
 

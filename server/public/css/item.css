@@ -23,9 +23,9 @@
 /* ----------------- item section ----------------- */
 
 #item {
+    position: absolute;
     display: flex;
     flex-direction: column;
-    position: absolute;
     height: 100vh;
 }
 
@@ -114,7 +114,7 @@
 .item-text-container h2 {
     font-weight: lighter;
     margin-top: 5%;
-    font-size: clamp(26px, 7vw, 45px);
+    font-size: clamp(28px, 6vw, 40px);
     font-family: 'bebas';
     margin-bottom: 10px;
 }
@@ -147,7 +147,7 @@
 }
 
 .options>div {
-    width: 130px;
+    width: 140px;
 }
 
 .options label,
@@ -164,7 +164,8 @@
 }
 
 .color-option,
-.size-option {
+.size-option,
+.type-option {
     margin-right: 10px;
     white-space: nowrap;
 
@@ -190,7 +191,7 @@
 .color-option select,
 .type-option select {
     font-size: 14px;
-    width: 80px;
+    width: 70px;
 }
 
 .type-option select,
@@ -207,12 +208,19 @@
 .note-option input {
     margin-right: 0;
     margin-top: 25%;
+    align-items: center;
 
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 14px;
 }
 
 input[type="text"]::placeholder {
     white-space: wrap;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 .note-option input {
@@ -384,7 +392,7 @@ input[type="text"]::placeholder {
         position: relative;
         background-image: url('../pics/headers/riverbg.jpg');
         background-size: cover;
-        height: 16vh;
+        height: 23vh;
         width: 100vw;
         display: flex;
         align-items: center;
@@ -398,6 +406,15 @@ input[type="text"]::placeholder {
         height: auto;
     }
 
+    #item {
+        position: relative;
+    }
+
+    .topnav {
+        position: absolute;
+        top: 0;
+    }
+
     /* ----------------- you may like section ----------------- */
 
     .product-row {
@@ -408,6 +425,7 @@ input[type="text"]::placeholder {
     #waistbeads {
         margin-top: 15%;
     }
+
 
 
     /* ----------------- carousel ----------------- */
@@ -428,6 +446,12 @@ input[type="text"]::placeholder {
         height: 70vh;
         margin: 3%;
     }
+
+    .size-option input {
+        width: 100px;
+    }
+
+
 
 
     /* main carousel */
@@ -512,6 +536,7 @@ input[type="text"]::placeholder {
         width: 100%;
         margin: 3% 2%;
         align-items: normal;
+        height: 80%;
     }
 
     .item-text-container button {
@@ -519,7 +544,7 @@ input[type="text"]::placeholder {
     }
 
     .item-text-container p {
-        font-size: clamp(14px, 1.3vw, 22px);
+        font-size: clamp(14px, 1.3vw, 18px);
         margin-left: 0;
         margin-right: 10%;
         text-align: left;
@@ -530,14 +555,14 @@ input[type="text"]::placeholder {
         grid-template-columns: repeat(2, 1fr);
         justify-content: left;
         font-size: clamp(16px, 1.5vw, 22px);
-        width: 79%;
+        height: auto;
+        width: 80%;
     }
 
     .color-option,
     .size-option {
         margin-right: 10%;
     }
-
 
 
     h2,

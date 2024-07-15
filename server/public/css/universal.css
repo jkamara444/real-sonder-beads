@@ -52,13 +52,15 @@ html {
 }
 
 .jewelry-slider-container,
-.featured-slider-container {
+.featured-slider-container,
+.newarrivals-slider-container {
     background: #ccc;
     margin-top: 3%;
 }
 
 #jewelry-slider,
-#featured-slider {
+#featured-slider,
+#newarrivals-slider {
     background: rgb(0, 0, 0);
     height: 3px;
     transition: width 400ms ease;
@@ -183,6 +185,7 @@ nav ul.desktop {
 }
 
 nav ul.desktop {
+    z-index: 999;
     position: absolute;
     transform: translateY(-90%);
     justify-content: center;

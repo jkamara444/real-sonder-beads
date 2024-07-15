@@ -158,7 +158,7 @@
         </div>
         <!----------------- jewelry section ----------------->
         <div id="jewelry-container" data-aos="fade-in" data-aos-duration="1000">
-            <h2>SHOP BY CATEGORY</h2>
+            <!-- <h2>SHOP BY CATEGORY</h2> -->
             <div id="jewelry-carousel" class="splide" aria-label="Jewelry Carousel">
                 <div class="splide__track">
                     <ul class="splide__list">
@@ -255,6 +255,9 @@
                             </a>
                         </li>
                     </ul>
+                </div>
+                <div class="newarrivals-slider-container">
+                    <div id="newarrivals-slider"></div>
                 </div>
             </div>
         </div>
@@ -604,6 +607,15 @@
                         },
                     }
                 });
+
+                var bar2 = splideArrivals.root.querySelector('#newarrivals-slider');
+
+                splideArrivals.on('mounted move', function () {
+                    var end = splideArrivals.Components.Controller.getEnd() + 1;
+                    var rate = Math.min((splideArrivals.index + 1) / end, 1);
+                    bar2.style.width = String(100 * rate) + '%';
+                });
+
                 splideArrivals.mount();
 
                 // Initialize the featured carousel
@@ -613,17 +625,17 @@
                     perMove: 1,
                     breakpoints: {
                         1024: {
-                            perPage: 1,
+                            perPage: 3,
                         },
                     }
                 });
 
-                var bar2 = splideFeatured.root.querySelector('#featured-slider');
+                var bar3 = splideFeatured.root.querySelector('#featured-slider');
 
                 splideFeatured.on('mounted move', function () {
                     var end = splideFeatured.Components.Controller.getEnd() + 1;
                     var rate = Math.min((splideFeatured.index + 1) / end, 1);
-                    bar2.style.width = String(100 * rate) + '%';
+                    bar3.style.width = String(100 * rate) + '%';
                 });
 
                 splideFeatured.mount();
