@@ -137,3 +137,23 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const faqHeaders = document.querySelectorAll('.faq-header');
+
+  faqHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const faqContent = header.nextElementSibling;
+
+      if (faqContent.style.maxHeight) {
+        faqContent.style.maxHeight = null;
+      } else {
+        document.querySelectorAll('.faq-content').forEach(content => {
+          content.style.maxHeight = null;
+        });
+        faqContent.style.maxHeight = faqContent.scrollHeight + 'px';
+      }
+    });
+  });
+});
+
+

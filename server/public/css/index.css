@@ -294,21 +294,37 @@ div#history {
 }
 
 #splide-arrivals p,
-#splide-featured p,
 #splide-highlighted a p {
     font-family: 'bebas';
     margin-top: 10px;
     font-size: clamp(14px, 1.8vw, 18px);
     color: #000000;
+    font-weight: 200;
+}
+
+#splide-featured p {
+    font-size: (16px, 1.8vw, 18px);
+    font-family: 'bebas';
+    margin-top: 10px;
+    color: #000000;
+
 }
 
 #splide-arrivals h4,
-#splide-featured h4,
 #splide-highlighted h4 {
     color: #000000;
     font-size: clamp(14px, 1.75vw, 16px);
     margin-top: 5px;
     font-family: 'bebas';
+    font-weight: 200;
+}
+
+#splide-featured h4 {
+    color: #000000;
+    font-size: clamp(16px, 1.75vw, 16px);
+    margin-top: 5px;
+    font-family: 'bebas';
+    font-weight: 200;
 
 }
 

@@ -141,6 +141,10 @@
     text-align: center;
 }
 
+.thin-grey-line2 {
+    margin: 10px 10%;
+}
+
 /* ----------------- item button styling -----------------  */
 
 .options {
@@ -243,7 +247,6 @@ input[type="text"]::placeholder {
 }
 
 
-
 .item-text-container button {
     width: 73%;
     align-items: center;
@@ -277,9 +280,9 @@ input[type="text"]::placeholder {
 }
 
 #waistbeads h2 {
-    font-size: clamp(24px, 3.5vw, 42px);
+    font-size: clamp(28px, 6vw, 40px);
     font-family: 'bebas';
-    font-weight: 700;
+    font-weight: 100;
     margin-bottom: 10px;
     text-align: center;
 }
@@ -312,16 +315,19 @@ input[type="text"]::placeholder {
 }
 
 .product h4 {
-    font-size: clamp(16px, 3vw, 25px);
-    font-family: 'bebas';
-    font-weight: 200;
+    font-size: clamp(14px, 1.5vw, 20px);
+    margin-left: 5px;
     margin-bottom: 15px;
+    font-family: 'Bebas';
+    font-weight: 100;
 }
 
 .product p {
-    margin: 10px 0;
-    font-family: 'bebas';
-    font-size: clamp(17px, 3vw, 26px);
+    letter-spacing: 0.35px;
+    margin: 10px 5px;
+    font-size: clamp(15px, 2.75vw, 20px);
+    font-family: 'Bebas';
+    font-weight: 100;
 }
 
 
@@ -435,7 +441,7 @@ input[type="text"]::placeholder {
     }
 
     #waistbeads {
-        margin-top: 15%;
+        margin-top: 5%;
     }
 
 
@@ -460,7 +466,7 @@ input[type="text"]::placeholder {
     }
 
     .text-content {
-       align-items: normal;
+        align-items: normal;
     }
 
     .size-option input {
