@@ -522,7 +522,7 @@ nav ul.desktop li a {
 .thin-grey-line {
     margin-bottom: 8%;
     border: none;
-    height: 1px;
+    height: 2px;
     background-color: rgba(128, 128, 128, 0.289);
 }
 
@@ -637,7 +637,7 @@ footer.footer-distributed {
     }
 
     nav.scrolled {
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.4);
         z-index: 100;
         /* Adjust the color and opacity as needed */
     }

@@ -102,6 +102,13 @@
 
 /* ----------------- item text section ----------------- */
 
+.text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .item-text-container {
     margin-top: 6%;
     display: flex;
@@ -187,12 +194,17 @@
     /* Adjust width of the input field */
 }
 
-.size-option input,
-.color-option select,
-.type-option select {
+.size-option input {
     font-size: 14px;
     width: 70px;
 }
+
+.type-option select,
+.color-option select {
+    font-size: 14px;
+    width: 80px;
+}
+
 
 .type-option select,
 .color-option select {
@@ -445,6 +457,10 @@ input[type="text"]::placeholder {
         align-items: normal;
         height: 70vh;
         margin: 3%;
+    }
+
+    .text-content {
+       align-items: normal;
     }
 
     .size-option input {

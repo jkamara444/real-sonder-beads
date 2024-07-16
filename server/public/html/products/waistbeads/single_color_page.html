@@ -17,6 +17,11 @@
 </head>
 
 <body>
+    <style>
+        .text-content {
+            margin-top: -60px;
+        }
+    </style>
     <!----------------- bdy container to prevent overflow ----------------->
     <div id="bdy">
         <!------------------ background image (desktop only) --------------------->
@@ -85,31 +90,33 @@
             </div>
             <!----------------- text & buttons for item section  ----------------->
             <div class="item-text-container" id="product-1">
-                <h2>Pink Marble Bracelet</h2>
-                <h4>$20.00</h4>
-                <div class="options">
-                    <div class="color-option">
-                        <label for="color">Color:</label>
-                        <select id="color">
-                            <option value="pink">pink</option>
-                            <option value="red">red</option>
-                            <option value="green">green</option>
-                        </select>
+                <div class="text-content">
+                    <h2>Pink Marble Bracelet</h2>
+                    <h4>$20.00</h4>
+                    <div class="options">
+                        <div class="color-option">
+                            <label for="color">Color:</label>
+                            <select id="color">
+                                <option value="pink">pink</option>
+                                <option value="red">red</option>
+                                <option value="green">green</option>
+                            </select>
+                        </div>
+                        <div class="size-option">
+                            <label for="size">Size (in inches):</label>
+                            <input type="number" id="size" min="0">
+                        </div>
                     </div>
-                    <div class="size-option">
-                        <label for="size">Size (in inches):</label>
-                        <input type="number" id="size" min="0">
-                    </div>
+                    <button class="addcart">Add to Cart</button>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et dolore magna aliqua. Sagittis aliquam malesuada bibendum arcu vitae. Dictum fusce ut placerat
+                        orci nulla pellentesque dignissim. Augue interdum velit euismod in pellentesque massa placerat.
+                        In
+                        eu mi bibendum neque egestas congue. Quam elementum pulvinar etiam non. consequat ac felis donec
+                        et.
+                        Semper semper feugiat nibh sed pulvinar proin.</p>
                 </div>
-                <button class="addcart">Add to Cart</button>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore
-                    et dolore magna aliqua. Sagittis aliquam malesuada bibendum arcu vitae. Dictum fusce ut placerat
-                    orci nulla pellentesque dignissim. Augue interdum velit euismod in pellentesque massa placerat.
-                    In
-                    eu mi bibendum neque egestas congue. Quam elementum pulvinar etiam non. consequat ac felis donec
-                    et.
-                    Semper semper feugiat nibh sed pulvinar proin.</p>
             </div>
         </div>
         <!----------------- nav section ----------------->
