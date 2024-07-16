@@ -284,58 +284,58 @@
                 </p>
             </div>
         </footer>
-        <!----------------- js ----------------->
-        <script src="../../../bundle.js"></script>
-        <script src="../../../js/index.js"></script>
-        <script src="../../../js/cart.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-
-                var navSplide = new Splide('#nav-carousel', {
-                    type: 'loop',
-                    autoplay: 'play',
-                    perPage: 1,
-                    arrows: false,
-                    pagination: false,
-                });
-                navSplide.mount();
-
-
-                var thumbnails = new Splide('#thumbnail-carousel', {
-                    arrows: false,
-                    perPage: 3,
-                    fixedWidth: 110,
-                    fixedHeight: 120,
-                    rewind: true,
-                    pagination: false,
-                    isNavigation: true,
-                    focus: 'center',
-                    breakpoints: {
-                        1024: {
-                            fixedWidth: 75,
-                            fixedHeight: 40,
-                            arrows: true,
-
-                        },
-                    },
-                }).mount();
-
-                var main = new Splide('#main-carousel', {
-                    type: 'fade',
-                    rewind: true,
-                    pagination: false,
-                    breakpoints: {
-                        1024: {
-                            arrows: false,
-                        },
-                    },
-                });
-
-                main.sync(thumbnails);
-                main.mount();
-            });
-        </script>
     </div>
+    <!----------------- js ----------------->
+    <script src="../../../bundle.js"></script>
+    <script src="../../../js/index.js"></script>
+    <script src="../../../js/cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            var navSplide = new Splide('#nav-carousel', {
+                type: 'loop',
+                autoplay: 'play',
+                perPage: 1,
+                arrows: false,
+                pagination: false,
+            });
+            navSplide.mount();
+
+
+            var thumbnails = new Splide('#thumbnail-carousel', {
+                arrows: false,
+                perPage: 3,
+                fixedWidth: 110,
+                fixedHeight: 120,
+                rewind: true,
+                pagination: false,
+                isNavigation: true,
+                focus: 'center',
+                breakpoints: {
+                    1024: {
+                        fixedWidth: 75,
+                        fixedHeight: 40,
+                        arrows: true,
+
+                    },
+                },
+            }).mount();
+
+            var main = new Splide('#main-carousel', {
+                type: 'fade',
+                rewind: true,
+                pagination: false,
+                breakpoints: {
+                    1024: {
+                        arrows: false,
+                    },
+                },
+            });
+
+            main.sync(thumbnails);
+            main.mount();
+        });
+    </script>
 </body>
 
 </html>

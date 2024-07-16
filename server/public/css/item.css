@@ -20,6 +20,11 @@
     /* Ensure the SVG is below the text */
 }
 
+.topnav {
+    position: absolute;
+    top: 0;
+}
+
 /* ----------------- item section ----------------- */
 
 #item {
@@ -121,13 +126,13 @@
 .item-text-container h2 {
     font-weight: lighter;
     margin-top: 5%;
-    font-size: clamp(28px, 6vw, 40px);
+    font-size: clamp(24px, 6vw, 40px);
     font-family: 'bebas';
     margin-bottom: 10px;
 }
 
 .item-text-container h4 {
-    font-size: clamp(16px, 5.5vw, 30px);
+    font-size: clamp(16px, 5vw, 30px);
     font-family: 'bebas';
     margin-bottom: 10px;
 }
@@ -428,10 +433,6 @@ input[type="text"]::placeholder {
         position: relative;
     }
 
-    .topnav {
-        position: absolute;
-        top: 0;
-    }
 
     /* ----------------- you may like section ----------------- */
 
