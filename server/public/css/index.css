@@ -236,17 +236,19 @@ div#history {
 
 .history-text-container h2 {
     margin-bottom: 5%;
-    font-size: clamp(26px, 7vw, 62px);
     font-family: 'Bebas';
     font-weight: 100;
     color: #000000;
+    font-size: clamp(24px, 2.5vw, 42px);
 
 }
 
 .history-text-container p {
-    font-size: clamp(16px, 3vw, 30px);
+    font-size: clamp(14px, 1.8vw, 18px);
     color: #000000;
+    line-height: 2px;
     margin-bottom: 20%;
+    line-height: 23px;
 }
 
 .topcurve,
@@ -487,20 +489,23 @@ video {
 
 #reviews {
     margin-top: 13%;
-    padding-bottom: 10%;
 
 }
 
 #reviews h2 {
     padding: 10px 20px;
-    font-size: clamp(24px, 8vw, 34px);
+    font-size: clamp(22px, 7.5vw, 52px);
     font-family: 'bebas';
 }
 
 #reviews>h2 {
-    font-size: clamp(20px, 8vw, 34px);
+    font-size: clamp(24px, 2.5vw, 42px);
     font-weight: 100;
     text-align: center;
+}
+
+#reviews hr.thin-grey-line {
+    margin: 50px;
 }
 
 #reviews .splide__arrow svg {
@@ -740,8 +745,8 @@ video {
     #main h1 {
         font-size: clamp(16px, 4.2vw, 68px);
     }
-    
-    
+
+
     #main h2 {
         font-size: clamp(14px, 2vw, 28px);
     }
@@ -1318,32 +1323,25 @@ video {
         width: 1.5vw;
         height: 1.5vw;
     }
-}
 
-#reviews .splide__arrow {
-    top: 50% !important;
-}
+    #reviews .splide__arrow {
+        top: 50% !important;
+    }
 
-#reviews .splide__arrow svg {
-    fill: black !important;
-    width: 4em !important;
-    height: 4em !important;
-}
+    #reviews .splide__arrow svg {
+        fill: black !important;
+        width: 4em !important;
+        height: 4em !important;
+    }
 
-#reviews .splide__pagination {
-    bottom: 5em !important;
-}
+    #reviews .splide__pagination {
+        bottom: 5em !important;
+    }
 
-#reviews .splide__arrow--prev {
-    left: 10em !important;
-}
-
-#reviews .splide__arrow--next {
-    right: 10em !important;
+    #reviews>h2 {
+        font-size: clamp(20px, 8vw, 34px);
+    }
 }
 
 
 /* ----------------- reviews section styling ----------------- */
-
-
-}
