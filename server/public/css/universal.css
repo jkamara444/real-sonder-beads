@@ -8,18 +8,33 @@
 }
 
 @font-face {
-    font-family: 'Pratika';
-    src: url('../fonts/Praktika-Light.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'Bebas';
     src: url('../fonts/BebasNeue-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'harmonia';
+    src: url('../fonts/Harmonia\ Sans\ W01\ Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'harmonia-light';
+    src: url('../fonts/HarmoniaSansProCyr-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'harmonia-bold';
+    src: url('../fonts/Harmonia\ Sans\ W01\ Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 
 /* ----------------- page & body styling -----------------  */
@@ -138,7 +153,7 @@ nav ul li h1 {
 }
 
 #nav-carousel .splide__slide p {
-    font-family: 'Roboto Condensed';
+    font-family: 'harmonia';
     font-weight: 200;
     letter-spacing: 0.8px;
     text-transform: uppercase;
@@ -566,11 +581,19 @@ footer.footer-distributed {
     line-height: 1.8;
     text-decoration: none;
     color: rgb(24, 70, 40);
+    font-family: 'harmonia-bold';
 }
 
 .footer-company-name {
     font-size: 14px;
     font-weight: normal;
+    font-family: 'harmonia';
+}
+
+.logo-bold,
+.footer-center p,
+.footer-company-about span {
+    font-family: 'harmonia-bold';
 }
 
 .footer-center {
@@ -588,6 +611,10 @@ footer.footer-distributed {
 .footer-center p {
     display: inline-block;
     vertical-align: middle;
+}
+
+.footer-center p span {
+    font-family: 'harmonia';
 }
 
 .footer-center p span {
@@ -611,13 +638,15 @@ footer.footer-distributed {
     line-height: 20px;
     font-size: 13px;
     font-weight: normal;
+    font-family: 'harmonia';
 }
 
-.footer-company-about span {
+.company-about {
     display: block;
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 20px;
+    font-family: 'harmonia-bold';
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {

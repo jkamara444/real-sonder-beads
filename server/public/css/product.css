@@ -1,12 +1,24 @@
-/* ----------------- page & body styling -----------------  */
+/* ----------------- page & body styling ----------------- */
 
 .header {
     position: relative;
     text-align: center;
 }
 
+.header-text h1 a {
+    position: absolute;
+    top: 73%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(16px, 6.5vw, 48px);
+    font-weight: 50;
+    z-index: 2;
+    text-decoration: none;
+    color: white;
+    font-family: 'Mernature';
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
 
-/* ----------------- background image styling -----------------  */
+/* ----------------- background image styling ----------------- */
 
 #bgimage {
     position: absolute;
@@ -16,26 +28,8 @@
     height: 19vh;
     width: 100vw;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
-
-
-.header-text {
-    margin-top: 73px;
-}
-
-.header-text h1 a {
-    font-size: clamp(16px, 6.5vw, 48px);
-    font-weight: 50;
-    z-index: 2;
-    text-decoration: none;
-    color: white;
-    font-family: 'Mernature';
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-
-}
-
 
 #wave {
     position: absolute;
@@ -43,11 +37,9 @@
     left: 0;
     width: 100%;
     z-index: 5;
-    /* Ensure the SVG is below the text */
 }
 
-
-/* ----------------- filter styling -----------------  */
+/* ----------------- filter styling ----------------- */
 
 #filter-sort {
     display: flex;
@@ -58,7 +50,6 @@
     margin-bottom: -20px;
 }
 
-/* #3e7c541f; #619e7717  */
 #filter-sort select {
     margin: 0 10px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
@@ -76,8 +67,6 @@
     border-radius: 10px;
 }
 
-
-
 #filter-sort h2 {
     z-index: 99;
     font-size: clamp(18px, 1.8vw, 28px);
@@ -88,7 +77,6 @@
 #dropdown:hover {
     display: block;
 }
-
 
 /* ----------------- product list ----------------- */
 
@@ -108,9 +96,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /* Optional: background color for product */
     padding: 10px;
-    /* Padding around product */
 }
 
 .product a {
@@ -118,7 +104,6 @@
     color: black;
     font-family: 'Bebas';
     text-align: left;
-
 }
 
 .product h4 {
@@ -126,37 +111,26 @@
     margin-left: 5px;
     margin-bottom: 15px;
     font-family: 'Bebas';
-    /* delete later */
-    font-weight: 100;
-
-
 }
 
 .product p {
     letter-spacing: 0.35px;
     margin: 10px 5px;
     font-size: clamp(15px, 2.75vw, 20px);
-    /* Space above and below text */
     font-family: 'Bebas';
-    /* delete later */
-    font-weight: 100;
-
 }
 
 .product img {
+    border-radius: 5px;
     width: 100%;
-    /* Make image take full width of container */
     height: auto;
-    /* Optional: limit the maximum width of images */
 }
 
-
-/* media queries */
+/* ----------------- media queries ----------------- */
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .product-row {
         grid-template-columns: repeat(3, 1fr);
-        /* Three columns of equal width */
     }
 
     .product img {
@@ -167,11 +141,9 @@
     #dropdown {
         transform: translateY(85%);
     }
-
 }
 
 @media only screen and (min-device-width: 1025px) {
-
     #bgimage {
         height: 29vh;
         background-size: cover;
@@ -194,7 +166,6 @@
     .product-row {
         gap: 10px;
         grid-template-columns: repeat(4, 1fr);
-        /* Three columns of equal width */
         margin-right: 30px;
         margin-left: 30px;
     }
@@ -202,11 +173,9 @@
     .product img {
         width: 100%;
         height: auto;
-        border-radius: 8px;
     }
 
     #dropdown {
         transform: translateY(87%);
     }
-
 }

@@ -23,6 +23,7 @@
 .topnav {
     position: absolute;
     top: 0;
+    overflow-x: hidden;
 }
 
 /* ----------------- item section ----------------- */
@@ -138,7 +139,8 @@
 }
 
 .item-text-container p {
-    font-size: clamp(16px, 3vw, 28px);
+    font-family: "harmonia-light";
+    font-size: clamp(14px, 1.8vw, 28px);
     padding-top: 20px;
     margin-left: 8%;
     margin-right: 8%;
@@ -236,12 +238,13 @@
 input[type="text"] {
     padding: 10px;
     font-size: 14px;
+    font-family: "harmonia";
 }
 
 input[type="text"]::placeholder {
-    white-space: wrap;
     padding: 10px;
-    margin-bottom: 10px;
+    white-space: pre-wrap;
+    text-align: center;
 }
 
 .note-option input {

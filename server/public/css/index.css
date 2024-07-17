@@ -53,11 +53,11 @@
     background-color: rgb(159 159 159 / 30%);
     /* rgba(66, 96, 83, 0.3) */
     color: white;
-    font-family: 'Roboto Condensed';
+    font-family: 'harmonia-light';
     font-weight: 300;
     border: none;
     border-radius: 5px;
-    font-size: clamp(16px, 4vw, 20px);
+    font-size: clamp(16px, 2vw, 20px);
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
 }
 
@@ -82,7 +82,7 @@
     font-size: clamp(14px, 4vw, 28px);
     font-weight: 200;
     margin-top: 5px;
-    font-family: 'Roboto Condensed';
+    font-family: 'harmonia-light';
     text-transform: uppercase;
     color: white;
     text-shadow: 2px 2px 5px rgba(2, 42, 20, 0.6);
@@ -246,9 +246,9 @@ div#history {
 .history-text-container p {
     font-size: clamp(14px, 1.8vw, 18px);
     color: #000000;
-    line-height: 2px;
     margin-bottom: 20%;
     line-height: 23px;
+    font-family: 'harmonia-light';
 }
 
 .topcurve,
@@ -581,8 +581,9 @@ video {
 .card p {
     margin: 16px 0;
     font-size: clamp(14px, 2vw, 26px);
-    ;
+    font-family: 'harmonia-light';
     color: #000000;
+    line-height: 23px;
 }
 
 .stars {
@@ -786,49 +787,35 @@ video {
 
     #jewelry-carousel {
         display: flex;
-        /* Ensure the container uses flexbox */
         justify-content: space-between;
-        /* Distribute space evenly */
         margin: 3%;
         margin-bottom: 0;
     }
 
     #jewelry-carousel .splide__track {
         display: flex;
-        /* Ensure the inner list uses flexbox */
         width: 100%;
-        /* Full width for proper spacing */
         justify-content: space-between;
-        /* Distribute space evenly */
     }
 
     #jewelry-carousel .splide__list {
         display: flex;
-        /* Ensure the inner list uses flexbox */
         width: 100%;
-        /* Full width for proper spacing */
         justify-content: space-between;
-        /* Distribute space evenly */
         padding: 0;
-        /* Remove default padding */
         margin: 0;
-        /* Remove default margin */
         list-style: none;
-        /* Remove default list styling */
     }
 
     .pop-effect {
         position: relative;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        /* Smooth transition for transform and box-shadow */
     }
 
     .pop-effect:hover {
         z-index: 10;
         transform: scale(1.1);
-        /* Scale up the element to 110% of its original size */
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-        /* Add a shadow to give a popping effect */
     }
 
     #jewelry-carousel .splide__slide {
@@ -837,7 +824,6 @@ video {
         margin: 0;
         margin-bottom: 20px;
         height: 55vh;
-        /* Add bottom margin for spacing */
         overflow: hidden;
         position: relative;
         border-radius: 10px;

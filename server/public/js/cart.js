@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     const addToCartButtons = document.querySelectorAll('.addcart');
     const subtotalElement = document.querySelector('.totalamt h4');
     const cartCountElement = document.querySelector('#order-icon span');
@@ -13,34 +13,20 @@ document.addEventListener('DOMContentLoaded', function () {
         const cartTotalElement = item.querySelector('.carttotal');
         const unitPrice = parseFloat(cartTotalElement.getAttribute('data-unit-price'));
 
-        minusButton.addEventListener('click', () => {
-            let quantity = parseInt(quantityElement.textContent);
-            if (quantity > 1) {
-                quantity--;
-                quantityElement.textContent = quantity;
-                cartTotalElement.textContent = `$${(unitPrice * quantity).toFixed(2)}`;
-                updateSubtotal();
-                updateCartCount();
-                updateLocalStorage(); // Update local storage when quantity changes
-            } else {
-                item.remove();
-                updateSubtotal();
-                updateCartCount();
-                updateLocalStorage(); // Update local storage when item is removed
-            }
-        });
-
-        plusButton.addEventListener('click', () => {
-            let quantity = parseInt(quantityElement.textContent);
-            quantity++;
+        function updateQuantity(change) {
+            let quantity = parseInt(quantityElement.textContent) + change;
+            quantity = Math.max(1, quantity); // Ensure quantity doesn't go below 1
             quantityElement.textContent = quantity;
             cartTotalElement.textContent = `$${(unitPrice * quantity).toFixed(2)}`;
             updateSubtotal();
             updateCartCount();
-            updateLocalStorage(); // Update local storage when quantity changes
-        });
+            updateLocalStorage();
+        }
 
-        // Add event listener for "Show Note" link
+        minusButton.addEventListener('click', () => updateQuantity(-1));
+        plusButton.addEventListener('click', () => updateQuantity(1));
+
+        // Toggle note display
         const showNoteLink = item.querySelector('.show-note');
         if (showNoteLink) {
             showNoteLink.addEventListener('click', () => {
@@ -55,21 +41,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to add item to cart
     addToCartButtons.forEach(button => {
-        button.addEventListener('click', function () {
+        button.addEventListener('click', () => {
             const parentItem = button.closest('.item-text-container');
             const productName = parentItem.querySelector('h2').innerText;
-            const selectedColor = parentItem.querySelector('#color') ? parentItem.querySelector('#color').value : 'N/A';
-            const selectedSize = parentItem.querySelector('#size') ? parentItem.querySelector('#size').value + ' in' : 'N/A';
-            const selectedType = parentItem.querySelector('#type') ? parentItem.querySelector('#type').value : 'N/A';
-            const customNote = parentItem.querySelector('#note') ? parentItem.querySelector('#note').value : 'N/A';
+            const selectedColor = parentItem.querySelector('#color')?.value || 'N/A';
+            const selectedSize = parentItem.querySelector('#size')?.value + ' in' || 'N/A';
+            const selectedType = parentItem.querySelector('#type')?.value || 'N/A';
+            const customNote = parentItem.querySelector('#note')?.value || 'N/A';
             const unitPrice = parseFloat(parentItem.querySelector('h4').innerText.replace('$', ''));
-
-            // Extract the src of the first image in the main carousel
             const firstImageSrc = document.querySelector('#main-carousel .splide__slide img').src;
 
             const cartItem = document.createElement('div');
             cartItem.classList.add('cartlist');
-
             cartItem.innerHTML = `
                 <div class="cartimg">
                     <img src="${firstImageSrc}" alt="${productName}">
@@ -100,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
             updateCart(cartItem);
             updateSubtotal();
             updateCartCount();
-            updateLocalStorage(); // Update local storage when item is added to cart
+            updateLocalStorage();
 
             popoutCart.classList.add('show');
             overlay.classList.add('show');
@@ -131,10 +114,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const cartItems = [];
         document.querySelectorAll('.cartlist').forEach(cartItem => {
             const productName = cartItem.querySelector('.cartname').textContent;
-            const selectedColor = cartItem.querySelector('.item-description p.color') ? cartItem.querySelector('.item-description p.color').textContent : '';
-            const selectedSize = cartItem.querySelector('.item-description p.size') ? cartItem.querySelector('.item-description p.size').textContent : '';
-            const selectedType = cartItem.querySelector('.item-description p.type') ? cartItem.querySelector('.item-description p.type').textContent : '';
-            const customNote = cartItem.querySelector('.item-description p.note') ? cartItem.querySelector('.item-description p.note').textContent : '';
+            const selectedColor = cartItem.querySelector('.item-description .color')?.textContent || '';
+            const selectedSize = cartItem.querySelector('.item-description .size')?.textContent || '';
+            const selectedType = cartItem.querySelector('.item-description .type')?.textContent || '';
+            const customNote = cartItem.querySelector('.item-description .note')?.textContent || '';
             const unitPrice = parseFloat(cartItem.querySelector('.carttotal').getAttribute('data-unit-price'));
             const quantity = parseInt(cartItem.querySelector('.quantity').textContent);
             const firstImageSrc = cartItem.querySelector('.cartimg img').src;
@@ -189,23 +172,19 @@ document.addEventListener('DOMContentLoaded', function () {
             const cartContainer = document.querySelector('#popout-cart .carttab');
             cartContainer.appendChild(cartItem);
 
-            // Initialize event listeners for quantity update
             updateCart(cartItem);
         });
 
-        updateSubtotal(); // Update subtotal after loading cart items
-        updateCartCount(); // Update cart count after loading cart items
+        updateSubtotal();
+        updateCartCount();
     }
 
     // Load cart items from local storage when the page loads
     loadCartFromLocalStorage();
-    // Function to clear cart
-    // Function to clear cart items
+
+    // Function to clear cart items and update display
     function clearCart() {
-        const cartItems = document.querySelectorAll('.cartlist');
-        cartItems.forEach(item => {
-            item.remove();
-        });
+        document.querySelectorAll('.cartlist').forEach(item => item.remove());
         updateSubtotal();
         updateCartCount();
         localStorage.removeItem('cart'); // Clear local storage
@@ -214,8 +193,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add event listener for checkout button to clear cart
     const checkoutButton = document.querySelector('.checkout');
     if (checkoutButton) {
-        checkoutButton.addEventListener('click', function () {
-            clearCart();
-        });
+        checkoutButton.addEventListener('click', clearCart);
     }
 });

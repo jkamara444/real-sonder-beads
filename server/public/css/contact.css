@@ -1,17 +1,21 @@
-/* ----------------- page & body styling -----------------  */
+/* ----------------- highlighted items section ----------------- */
+
+:root {
+    --bg-image: url('../pics/headers/IMG_9657.jpg');
+    --primary-color: rgba(48, 70, 56, 1);
+    --secondary-color: rgba(66, 96, 83, 0.6);
+}
+
+/* ----------------- page & body styling ----------------- */
 
 .header {
     position: relative;
     text-align: center;
 }
 
-
-/* ----------------- background image styling -----------------  */
-
-
 #bgimage {
     position: absolute;
-    background-image: url('../pics/headers/IMG_9657.jpg');
+    background-image: var(--bg-image);
     background-size: 110%;
     background-position: center 60%;
     height: 18vh;
@@ -27,15 +31,13 @@
     left: 0;
     width: 100%;
     z-index: 5;
-    /* Ensure the SVG is below the text */
 }
 
-/* ----------------- profile card styling -----------------  */
-
+/* ----------------- profile card styling ----------------- */
+/* 
 .contact {
-    padding: 0px 50px;
+    padding: 0 50px;
     margin-top: 10%;
-
 }
 
 .profile-card-container {
@@ -68,7 +70,7 @@
     height: 35%;
     width: 100%;
     border-radius: 24px 24px 0 0;
-    background-color: rgba(48, 70, 56, 1);
+    background-color: var(--primary-color);
 }
 
 .me-pic {
@@ -92,7 +94,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #000000;
+    color: #000;
     padding: 10px;
 }
 
@@ -103,8 +105,7 @@
 }
 
 .abt {
-    padding-right: 3%;
-    padding-left: 3%;
+    padding: 0 3%;
     font-size: clamp(16px, 1.6vw, 24px);
     font-family: 'serif';
     text-align: center;
@@ -124,20 +125,20 @@
     border-radius: 5px;
     margin: 0 10px;
     padding: 8px 24px;
-    background-color: rgba(66, 96, 83, 0.6);
+    background-color: var(--secondary-color);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.buttons .button:hover {
+.button:hover {
     background-color: #466f6d;
-}
+} */
 
-/* ----------------- icons styling -----------------  */
+/* ----------------- contact us styling ----------------- */
 
 .contacts {
     margin-top: 30%;
-    padding: 0px 55px;
+    padding: 0 55px;
 }
 
 .contacts-container {
@@ -145,6 +146,8 @@
 }
 
 .contacts-text-container p {
+    font-family: 'harmonia';
+    font-size: clamp(14px, 1.6vw, 24px);
     flex-direction: column;
     align-items: center;
     margin-bottom: 10%;
@@ -152,7 +155,7 @@
     font-weight: 100;
 }
 
-/* ----------------- content styling -----------------  */
+/* ----------------- policy section styling ----------------- */
 
 .content-container {
     display: flex;
@@ -172,7 +175,6 @@
     border-bottom: none;
 }
 
-
 .content h2 {
     font-family: 'bebas';
     font-size: clamp(16px, 1.3vw, 18px);
@@ -188,8 +190,7 @@
     margin-bottom: 10%;
 }
 
-/* ----------------- faq styling ----------------- */
-
+/* FAQ styling */
 .help-body-container {
     display: flex;
     flex-direction: column;
@@ -207,13 +208,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0px 55px;
+    padding: 0 55px;
 }
 
 .faq-item:last-child {
     margin-bottom: 10%;
 }
-
 
 #faq h1,
 .contacts h1 {
@@ -252,24 +252,30 @@
 }
 
 .faq-content p {
-    margin: 10px 0;
+    font-family: 'harmonia';
+    font-size: clamp(14px, 1.6vw, 24px);
+    margin: 20px 0;
+    word-break: break-all;
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+.section a {
+    color: rgb(24, 70, 40);
+}
+
+/* ----------------- ipad media queries ----------------- */
+
+@media only screen and (min-width: 768px) {
     .profile-card {
         margin-top: 5%;
     }
-
 }
 
-/* ------------------ desktop query  ------------------ */
+/* ----------------- desktop media queries ----------------- */
 
-@media only screen and (min-device-width: 1025px) {
-
+@media only screen and (min-width: 1025px) {
     #bgimage {
         height: 25vh;
     }
-
 
     .me-pic {
         height: 22vh;
@@ -284,16 +290,10 @@
     }
 
     .help-body-container {
-        padding: 0px 55px;
+        padding: 0 55px;
     }
 
-    .contacts-text-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center
-    }
-
-    .contacts-text-container p,
+    .contacts-text-container,
     .faq-content p {
         max-width: 600px;
         text-align: center;
@@ -303,8 +303,5 @@
 
     .faq-content p {
         text-align: left;
-
     }
-
-
 }
