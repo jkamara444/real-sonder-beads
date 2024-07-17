@@ -6,6 +6,7 @@
 }
 
 .header-text h1 a {
+    display: none;
     position: absolute;
     top: 73%;
     transform: translate(-50%, -50%);

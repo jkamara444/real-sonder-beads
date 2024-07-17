@@ -42,6 +42,12 @@
     align-items: center;
 }
 
+#item .thin-grey-line {
+    display: none;
+    margin: 2% 50px 15%;
+
+}
+
 #main-carousel {
     margin-bottom: 5%;
     width: 100vw;
@@ -297,9 +303,6 @@ input[type="text"]::placeholder {
     text-align: center;
 }
 
-#item .thin-grey-line {
-    margin: 2% 50px 15%;
-}
 
 .product-row {
     padding: 10px;
