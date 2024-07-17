@@ -248,7 +248,7 @@ div#history {
     color: #000000;
     margin-bottom: 20%;
     line-height: 23px;
-    font-family: 'harmonia-light';
+    font-family: 'harmonia';
 }
 
 .topcurve,
@@ -581,7 +581,7 @@ video {
 .card p {
     margin: 16px 0;
     font-size: clamp(14px, 2vw, 26px);
-    font-family: 'harmonia-light';
+    font-family: 'harmonia';
     color: #000000;
     line-height: 23px;
 }
