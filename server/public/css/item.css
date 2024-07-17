@@ -125,17 +125,19 @@
 }
 
 .item-text-container h2 {
-    font-weight: lighter;
     margin-top: 5%;
     font-size: clamp(24px, 6vw, 40px);
     font-family: 'bebas';
     margin-bottom: 10px;
+    font-weight: 100;
+
 }
 
 .item-text-container h4 {
     font-size: clamp(16px, 5vw, 30px);
     font-family: 'bebas';
     margin-bottom: 10px;
+    font-weight: 100;
 }
 
 .item-text-container p {
@@ -171,7 +173,7 @@
 .options label,
 .options input {
     font-family: 'bebas';
-    font-size: clamp(14px, 1.5vw, 28px);
+    font-size: clamp(15px, 1.5vw, 28px);
     margin-right: 5px;
     white-space: nowrap;
 }
@@ -251,12 +253,12 @@ input[type="text"]::placeholder {
     margin-top: 10%;
     width: 73vw;
     height: 10vh;
-    max-width: 400px;
+    max-width: 450px;
 }
 
 
 .item-text-container button {
-    width: 73%;
+    width: 80%;
     align-items: center;
     padding: 6px 15px;
     background-color: #3e7c541f;
@@ -288,38 +290,37 @@ input[type="text"]::placeholder {
 }
 
 #waistbeads h2 {
-    font-size: clamp(28px, 6vw, 40px);
+    font-size: clamp(20px, 8vw, 34px);
     font-family: 'bebas';
     font-weight: 100;
     margin-bottom: 10px;
     text-align: center;
 }
 
+#item .thin-grey-line {
+    margin: 2% 50px 15%;
+}
+
 .product-row {
     padding: 10px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* Two columns of equal width */
-    /* Space between products */
     margin-bottom: 10px;
-    /* Space between rows */
 }
 
 .product {
+    margin: 10px 0;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /* Optional: background color for product */
     padding: 10px;
-    /* Padding around product */
-
 }
 
-.product img {
-    width: 100%;
-    /* Make image take full width of container */
-    height: auto;
-    /* Optional: limit the maximum width of images */
+.product a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Bebas';
+    text-align: left;
 }
 
 .product h4 {
@@ -335,7 +336,12 @@ input[type="text"]::placeholder {
     margin: 10px 5px;
     font-size: clamp(15px, 2.75vw, 20px);
     font-family: 'Bebas';
-    font-weight: 100;
+}
+
+.product img {
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
 }
 
 
@@ -436,6 +442,10 @@ input[type="text"]::placeholder {
         position: relative;
     }
 
+    #item .thin-grey-line {
+        display: none;
+    }
+
 
     /* ----------------- you may like section ----------------- */
 
@@ -445,7 +455,12 @@ input[type="text"]::placeholder {
     }
 
     #waistbeads {
-        margin-top: 5%;
+        margin-top: -2%;
+        padding: 25px;
+    }
+
+    #waistbeads h2 {
+        margin-top: 3%;
     }
 
 
@@ -457,6 +472,7 @@ input[type="text"]::placeholder {
         flex-direction: row;
         margin: 0 0;
         padding: 0px;
+        height: 90vh;
     }
 
 

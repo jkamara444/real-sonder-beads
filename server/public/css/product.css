@@ -111,6 +111,7 @@
     margin-left: 5px;
     margin-bottom: 15px;
     font-family: 'Bebas';
+    font-weight: 100;
 }
 
 .product p {
@@ -118,6 +119,7 @@
     margin: 10px 5px;
     font-size: clamp(15px, 2.75vw, 20px);
     font-family: 'Bebas';
+    font-weight: 100;
 }
 
 .product img {
@@ -161,6 +163,10 @@
 
     #waistbeads {
         margin-top: 10px;
+    }
+
+    .header-text h1 a {
+        top: 60%;
     }
 
     .product-row {
