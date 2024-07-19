@@ -45,7 +45,6 @@
 #item .thin-grey-line {
     display: none;
     margin: 2% 50px 15%;
-
 }
 
 #main-carousel {
@@ -73,11 +72,11 @@
 }
 
 .splide__arrow--next {
-    right: -3em !important;
+    right: -2.5em !important;
 }
 
 .splide__arrow--prev {
-    left: -3em !important;
+    left: -2.5em !important;
 }
 
 #main-carousel img {
@@ -90,7 +89,7 @@
 
 #thumbnail-carousel {
     height: 50px;
-    width: 70%;
+    width: 80%;
 }
 
 .splide__arrow {
@@ -158,6 +157,7 @@
 
 .thin-grey-line2 {
     margin: 10px 10%;
+    border-bottom: none;
 }
 
 /* ----------------- item button styling -----------------  */
@@ -296,9 +296,10 @@ input[type="text"]::placeholder {
 }
 
 #waistbeads h2 {
-    font-size: clamp(20px, 8vw, 34px);
+    font-size: clamp(24px, 6vw, 40px);
     font-family: 'bebas';
     font-weight: 100;
+    margin-top: 15px;
     margin-bottom: 10px;
     text-align: center;
 }
