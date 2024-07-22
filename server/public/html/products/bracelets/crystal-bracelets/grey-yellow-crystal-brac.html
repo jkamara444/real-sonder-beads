@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../../css/item.css">
+    <link rel="stylesheet" href="../../../../css/universal.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        #waistbeads {
+            margin-top: 120vh;
+        }
+
+        @media only screen and (min-device-width: 1025px) {
+            .text-content {
+                margin-top: -70px;
+            }
+
+            #waistbeads {
+                margin-top: 0;
+            }
+        }
+    </style>
+    <!----------------- bdy container to prevent overflow ----------------->
+    <div id="bdy">
+        <!------------------ background image (desktop only) --------------------->
+        <div id="bgimage">
+            <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 100" version="1.1"
+                xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
+                        <stop stop-color="rgba(255, 255, 255, 1)" offset="0%"></stop>
+                        <stop stop-color="rgba(214.29, 228.034, 203.501, 1)" offset="100%"></stop>
+                    </linearGradient>
+                </defs>
+                <path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)"
+                    d="M0,50L80,51.7C160,53,320,57,480,55C640,53,800,47,960,46.7C1120,47,1280,53,1440,56.7C1600,60,1760,60,1920,56.7C2080,53,2240,47,2400,51.7C2560,57,2720,73,2880,76.7C3040,80,3200,70,3360,60C3520,50,3680,40,3840,38.3C4000,37,4160,43,4320,43.3C4480,43,4640,37,4800,38.3C4960,40,5120,50,5280,60C5440,70,5600,80,5760,76.7C5920,73,6080,57,6240,56.7C6400,57,6560,73,6720,70C6880,67,7040,43,7200,36.7C7360,30,7520,40,7680,48.3C7840,57,8000,63,8160,63.3C8320,63,8480,57,8640,50C8800,43,8960,37,9120,36.7C9280,37,9440,43,9600,38.3C9760,33,9920,17,10080,8.3C10240,0,10400,0,10560,8.3C10720,17,10880,33,11040,43.3C11200,53,11360,57,11440,58.3L11520,60L11520,100L11440,100C11360,100,11200,100,11040,100C10880,100,10720,100,10560,100C10400,100,10240,100,10080,100C9920,100,9760,100,9600,100C9440,100,9280,100,9120,100C8960,100,8800,100,8640,100C8480,100,8320,100,8160,100C8000,100,7840,100,7680,100C7520,100,7360,100,7200,100C7040,100,6880,100,6720,100C6560,100,6400,100,6240,100C6080,100,5920,100,5760,100C5600,100,5440,100,5280,100C5120,100,4960,100,4800,100C4640,100,4480,100,4320,100C4160,100,4000,100,3840,100C3680,100,3520,100,3360,100C3200,100,3040,100,2880,100C2720,100,2560,100,2400,100C2240,100,2080,100,1920,100C1760,100,1600,100,1440,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z">
+                </path>
+            </svg>
+        </div>
+        <!----------------- item section ----------------->
+        <div id="item">
+            <!----------------- pictures of item section (main carousel) ----------------->
+            <div class="item-carousel-container">
+                <section id="main-carousel" class="splide" aria-label="The main carousel">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="../../../../pics/bracelets/crystal-bracelets/grey-yellow-crystal-brac/IMG_9917 (1).jpg"
+                                    alt="">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="../../../../pics/headers/jwaistbead.jpg" alt="">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="../../../../pics/headers/multiplewaistbeads copy.JPEG" alt="">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="../../../../pics/headers/jwaistbead.jpg" alt="">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="../../../../pics/bracelets/peachcrystalbracelet.jpg" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!----------------- pictures of item section (thumbnail carousel) ----------------->
+                <section id="thumbnail-carousel" class="splide main-carousel"
+                    aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel.">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="../../../../pics/bracelets/crystal-bracelets/grey-yellow-crystal-brac/IMG_9917 (1).jpg"
+                                    alt="">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="../../../../pics/headers/jwaistbead.jpg" alt="">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="../../../../pics/headers/multiplewaistbeads copy.JPEG" alt="">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="../../../../pics/headers/jwaistbead.jpg" alt="">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="../../../../pics/bracelets/peachcrystalbracelet.jpg" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <!----------------- text & buttons for item section  ----------------->
+            <div class="item-text-container" id="product-1">
+                <div class="text-content">
+                    <h2>Grey Yellow Crystal Bracelet</h2>
+                    <h4>$7.99</h4>
+                    <div class="options">
+                        <div class="size-option">
+                            <label for="size">Size (in inches):</label>
+                            <input type="number" id="size" min="0">
+                        </div>
+                    </div>
+                    <button class="addcart">Add to Cart</button>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et dolore magna aliqua. Sagittis aliquam malesuada bibendum arcu vitae. Dictum fusce ut placerat
+                        orci nulla pellentesque dignissim. Augue interdum velit euismod in pellentesque massa placerat.
+                        In
+                        eu mi bibendum neque egestas congue. Quam elementum pulvinar etiam non. consequat ac felis donec
+                        et.
+                        Semper semper feugiat nibh sed pulvinar proin.</p>
+                </div>
+            </div>
+            <hr class="thin-grey-line">
+        </div>
+        <!----------------- nav section ----------------->
+        <!--------------- sticky nav section --------------->
+        <div class="topnav">
+            <div id="nav-carousel" class="splide">
+                <div class="splide__slider">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <h6>Sonder Beads is Now Open</h6>
+                            </li>
+                            <li class="splide__slide">
+                                <h6>Sonder Beads is Now Open</h6>
+                            </li>
+                            <li class="splide__slide">
+                                <h6>Sonder Beads is Now Open</h6>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="splide__toggle" type="button">
+                    <span class="splide__toggle__play"><img src="../../../../pics/icons/icons8-play-64.png"
+                            alt=""></span>
+                    <span class="splide__toggle__pause"><img src="../../../../pics/icons/icons8-pause-50.png"
+                            alt=""></span>
+                </button>
+            </div>
+            <!-------------------- actual nav section -------------------------->
+            <div id="nav-placeholder"></div>
+            <nav id="navbar">
+                <ul>
+                    <li class="logo">
+                        <h1><a href="index.html">sonder beads</h1>
+                    </li>
+                    <li class="navicons">
+                        <div class="cart-icon-container">
+                            <a href="javascript:void(0);" id="order-icon">
+                                <img src="../../../../pics/icons/icons8-cart-48.png" alt="order list"> <span></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="navicons dropdown">
+                        <a href="javascript:void(0);" id="menu-icon"><img
+                                src="../../../../pics/icons/icons8-lines-48.png" alt="dropdown nav"></a>
+                    </li>
+                </ul>
+                <!----------------- desktop nav list ----------------->
+                <ul class="desktop">
+                    <li><a href="../../waist.html">waistbeads</a></li>
+                    <li><a href="../../bracelet.html">bracelets</a></li>
+                    <li><a href="../../earrings.html">earrings</a></li>
+                    <li><a href="../../">history</a></li>
+                    <li><a href="../../contact.html">contact & policies</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!----------------- popout navigation BAR (mobile and ipad) ----------------->
+        <div id="popout-menu" class="popout-menu">
+            <ul>
+                <li><a href="index.html">Home</a><span id="close-menu"><img src="../pics/icons/icons8-x-50.png"
+                            alt=""></span></li>
+                <li><a href="../html/waist.html">waistbeads</a></li>
+                <li><a href="../html/bracelet.html">bracelet</a></li>
+                <li><a href="../html/earrings.html">earrings</a></li>
+                <li><a href="index.html">history</a></li>
+                <li><a href="index.html">contact & Policies</a></li>
+            </ul>
+        </div>
+        <!----------------- popout cart ----------------->
+        <div id="popout-cart" class="popout-cart">
+            <div class="carttab">
+                <h3>shopping cart <span><button id="close-cart">close</button> </span></h3>
+            </div>
+            <hr class="thin-grey-line">
+            <div class="cart-footer">
+                <div class="totalamt">
+                    <h2>Subtotal</h2>
+                    <h4>$120.00 USD</h4>
+                </div>
+                <p>Shipping & taxes calculated at checkout
+                </p>
+                <div class="cartbtn">
+                    <button class="checkout">checkout!</button>
+                </div>
+            </div>
+        </div>
+        <!----------------- overlay to make background dimmed after nav pops out ----------------->
+        <div id="overlay" class="overlay"></div>
+        <!----------------- you may also like section  ----------------->
+        <div id="waistbeads">
+            <hr class="thin-grey-line2">
+            <h2>YOU MAY ALSO LIKE</h2>
+            <div class="product-row">
+                <div class="product" data-category="custom">
+                    <a href="../../../../html/products/waistbeads/custom_page copy.html">
+                        <img src="../../../../pics/bracelets/peachcrystalbracelet.jpg" alt="white marble bracelet">
+                        <p>Custom Waistbead</p>
+                        <h4>$15.00</h4>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="../../../../html/products/waistbeads/single_color_page.html">
+                        <img src="../../../../pics/bracelets/peachcrystalbracelet.jpg" alt="white marble bracelet">
+                        <p>Single Color Waistbead</p>
+                        <h4>$7.00</h4>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="../../../../html/products/waistbeads/product_page1.html">
+                        <img src="../../../../pics/bracelets/peachcrystalbracelet.jpg" alt="white marble bracelet">
+                        <p>Single Color Crystal Waistbead</p>
+                        <h4>$10.00</h4>
+                    </a>
+                </div>
+                <div class="product" data-category="beaded">
+                    <a href="../../../../html/products/waistbeads/product_page1.html">
+                        <img src="../../../../pics/bracelets/peachcrystalbracelet.jpg" alt="white marble bracelet">
+                        <p>Brown and Gold Beaded Waistbead</p>
+                        <h4>$8.00</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--------------- footer --------------->
+        <footer class="footer-distributed">
+            <hr class="thin-grey-line">
+            <div class="footer-left">
+                <h3>Sonder Beads </h3>
+                <p class="footer-links">
+                    <a href="#">Home</a>
+                    |
+                    <a href="#">About</a>
+                    |
+                    <a href="#">Contact</a>
+                    |
+                    <a href="#">Blog</a>
+                </p>
+                <p class="footer-company-name">Copyright © 2022 <strong>SonderBeads</strong> All rights reserved</p>
+            </div>
+            <div class="footer-center">
+                <div>
+                    <img src="../../../../pics/icons/icons8-mail-48.png" alt="mail icon">
+                    <p><span>Sonder Beads</span>
+                        Contact Us</p>
+                </div>
+                <div>
+                    <img src="../../../../pics/icons/icons8-gmail-48.png" alt="mail icon">
+                    <p><a href="mailto:sonderbeads.co@gmail.com">sonderbeadsco@gmail.com</a></p>
+                </div>
+                <div>
+                    <img src="../../../../pics/icons/icons8-instagram-48.png" alt="insta icon">
+                    <p>@sonderbeads </p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-company-about">
+                    <span>About the company</span>
+                    <strong>Sonder Beads</strong> Sonder — the understanding that every person's story is as complex
+                    and
+                    significant as your own. At
+                    Sonder
+                    Beads, we embrace this philosophy through our unique designs that cherish creativity and
+                    community.
+                </p>
+            </div>
+        </footer>
+        <!----------------- js ----------------->
+        <script src="../../../../bundle.js"></script>
+        <script src="../../../../js/index.js"></script>
+        <script src="../../../../js/cart.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+
+                var navSplide = new Splide('#nav-carousel', {
+                    type: 'loop',
+                    autoplay: 'play',
+                    perPage: 1,
+                    arrows: false,
+                    pagination: false,
+                });
+                navSplide.mount();
+
+
+                var thumbnails = new Splide('#thumbnail-carousel', {
+                    arrows: false,
+                    perPage: 3,
+                    fixedWidth: 110,
+                    fixedHeight: 120,
+                    rewind: true,
+                    pagination: false,
+                    isNavigation: true,
+                    focus: 'center',
+                    breakpoints: {
+                        1024: {
+                            fixedWidth: 75,
+                            fixedHeight: 40,
+                            arrows: true,
+
+                        },
+                    },
+                }).mount();
+
+                var main = new Splide('#main-carousel', {
+                    type: 'fade',
+                    rewind: true,
+                    pagination: false,
+                    breakpoints: {
+                        1024: {
+                            arrows: false,
+                        },
+                    },
+                });
+
+                main.sync(thumbnails);
+                main.mount();
+            });
+        </script>
+    </div>
+</body>
+
+</html>
