@@ -87,14 +87,14 @@
             <div class="item-text-container" id="product-1">
                 <div class="text-content">
                     <h2>Custom Waistbead</h2>
-                    <h4>$9.99 + </h4>
+                    <h4 class="unit-price">$9.99 + </h4>
                     <div class="options">
                         <div class="type-option">
                             <label for="type">Type:</label>
                             <select id="type">
-                                <option value="beaded">Beaded</option>
-                                <option value="crystal">Crystal</option>
-                                <option value="both">Both</option>
+                                <option value="beaded" data-price="9.99">Beaded</option>
+                                <option value="crystal" data-price="13.99">Crystal</option>
+                                <option value="both" data-price="11.99">Both</option>
                             </select>
                         </div>
                         <div class="size-option">
@@ -103,8 +103,8 @@
                         </div>
                         <div class="note-option">
                             <label for="note">Describe Custom:</label>
-                            <input type="text" id="note"
-                                placeholder="Please describe in detail and refer to our policy on customs <3">
+                            <textarea id="note"
+                                placeholder="Please describe in detail and refer to our policy on customs <3"></textarea>
                         </div>
                     </div>
                     <button class="addcart">Add to Cart</button>
@@ -141,7 +141,8 @@
                     </div>
                 </div>
                 <button class="splide__toggle" type="button">
-                    <span class="splide__toggle__play"><img src="../../../../pics/icons/icons8-play-64.png" alt=""></span>
+                    <span class="splide__toggle__play"><img src="../../../../pics/icons/icons8-play-64.png"
+                            alt=""></span>
                     <span class="splide__toggle__pause"><img src="../../../../pics/icons/icons8-pause-50.png"
                             alt=""></span>
                 </button>
@@ -161,8 +162,8 @@
                         </div>
                     </li>
                     <li class="navicons dropdown">
-                        <a href="javascript:void(0);" id="menu-icon"><img src="../../../../pics/icons/icons8-lines-48.png"
-                                alt="dropdown nav"></a>
+                        <a href="javascript:void(0);" id="menu-icon"><img
+                                src="../../../../pics/icons/icons8-lines-48.png" alt="dropdown nav"></a>
                     </li>
                 </ul>
                 <!----------------- desktop nav list ----------------->

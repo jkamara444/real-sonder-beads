@@ -89,8 +89,17 @@
             <div class="item-text-container" id="product-1">
                 <div class="text-content">
                     <h2>Hello Kitty Gemstone Bracelet</h2>
-                    <h4>$5.99</h4>
+                    <h4 class="unit-price"> $5.99 </h4>
                     <div class="options">
+                        <div class="type-option">
+                            <label for="type">Type:</label>
+                            <select id="type">
+                                <option value="#1" data-price="5.99">#1</option>
+                                <option value="#2" data-price="5.99">#2</option>
+                                <option value="#3" data-price="5.99">#3</option>
+                                <option value="All Three (Full Set)" data-price="14.99">All Three (Full Set)</option>
+                            </select>
+                        </div>
                         <div class="size-option">
                             <label for="size">Size (in inches):</label>
                             <input type="number" id="size" min="0">

@@ -177,7 +177,7 @@
 }
 
 .options label,
-.options input {
+.options textarea  {
     font-family: 'bebas';
     font-size: clamp(15px, 1.5vw, 28px);
     margin-right: 5px;
@@ -202,9 +202,8 @@
 .size-option input,
 .color-option select,
 .type-option select,
-.note-option input {
+.note-option textarea {
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
     border-radius: 10px;
     border: none;
@@ -236,30 +235,25 @@
     margin-top: 25%;
 }
 
-.note-option input {
-    margin-right: 0;
-    margin-top: 25%;
-    align-items: center;
-
-}
-
-input[type="text"] {
+textarea {
+    width: 73vw;
+    height: 10vh; 
+    max-width: 450px;
     padding: 10px;
     font-size: 14px;
     font-family: "harmonia";
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box; 
+    resize: vertical; 
+    overflow-wrap: break-word; 
+    white-space: normal !important;
 }
 
-input[type="text"]::placeholder {
+textarea::placeholder {
     padding: 10px;
     white-space: pre-wrap;
     text-align: center;
-}
-
-.note-option input {
-    margin-top: 10%;
-    width: 73vw;
-    height: 10vh;
-    max-width: 450px;
 }
 
 
@@ -398,7 +392,7 @@ input[type="text"]::placeholder {
 
     .options label,
     .options input,
-    .options select {
+    .options select, textarea {
         font-family: 'bebas';
         font-size: clamp(18px, 3vw, 28px);
         margin-right: 5px;

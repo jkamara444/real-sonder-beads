@@ -114,5 +114,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const typeSelect = document.querySelector('#product-1 #type');
+  const priceElement = document.querySelector('#product-1 .unit-price');
+
+  typeSelect.addEventListener('change', (event) => {
+    const selectedOption = event.target.selectedOptions[0];
+    const unitPrice = parseFloat(selectedOption.getAttribute('data-price'));
+    priceElement.textContent = `$${unitPrice.toFixed(2)}`;
+  });
+});
+
+
 
 
