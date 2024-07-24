@@ -53,8 +53,8 @@
 }
 
 #thumbnail-carousel .splide__track--draggable {
+    width: 60vw;
     height: 15vh;
-    justify-self: center;
 }
 
 #thumbnail-carousel img {
@@ -90,6 +90,8 @@
 #thumbnail-carousel {
     height: 50px;
     width: 80%;
+    display: flex;
+    justify-content: center;
 }
 
 .splide__arrow {
@@ -172,12 +174,17 @@
     margin-top: 5%;
 }
 
+.options> :only-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
 .options>div {
     width: 140px;
 }
 
 .options label,
-.options textarea  {
+.options textarea {
     font-family: 'bebas';
     font-size: clamp(15px, 1.5vw, 28px);
     margin-right: 5px;
@@ -237,16 +244,16 @@
 
 textarea {
     width: 73vw;
-    height: 10vh; 
+    height: 10vh;
     max-width: 450px;
     padding: 10px;
     font-size: 14px;
     font-family: "harmonia";
     border: 1px solid #ccc;
     border-radius: 10px;
-    box-sizing: border-box; 
-    resize: vertical; 
-    overflow-wrap: break-word; 
+    box-sizing: border-box;
+    resize: vertical;
+    overflow-wrap: break-word;
     white-space: normal !important;
 }
 
@@ -392,7 +399,8 @@ textarea::placeholder {
 
     .options label,
     .options input,
-    .options select, textarea {
+    .options select,
+    textarea {
         font-family: 'bebas';
         font-size: clamp(18px, 3vw, 28px);
         margin-right: 5px;

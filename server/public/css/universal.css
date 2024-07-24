@@ -235,7 +235,7 @@ nav ul.desktop li a {
     justify-content: space-between;
 }
 
-.popout-menu span img {
+.popout-menu span img, .close-button {
     width: 13px;
     height: 13px;
     cursor: pointer;

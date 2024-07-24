@@ -127,4 +127,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// Function to show the popup
+function showPopup() {
+  const popup = document.getElementById('popup');
+  popup.style.display = 'flex';
+}
+
+// Function to close the popup
+function closePopup() {
+  const popup = document.getElementById('popup');
+  popup.style.display = 'none';
+}
+
+// Event listener to close the popup when the close button is clicked
+document.getElementById('close-button').addEventListener('click', closePopup);
+
+// Show the popup 5 seconds after the page loads
+window.onload = function () {
+  setTimeout(showPopup, 4000);
+}
+
 
