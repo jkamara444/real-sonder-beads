@@ -1,29 +1,29 @@
 
 
-// tell Barba to use the css plugin
+// // tell Barba to use the css plugin
 
-barba.use(barbaCss);
+// barba.use(barbaCss);
 
-// init Barba
-barba.init({
-  transitions: [
-    {
-      name: 'fade',
-      to: {
-        namespace: ['home'] // Adjust if you have specific page namespaces
-      },
-      once() {
-        console.log('Transition started');
-      },
-      leave() {
-        console.log('Leaving page');
-      },
-      enter() {
-        console.log('Entering page');
-      }
-    }
-  ]
-});
+// // init Barba
+// barba.init({
+//   transitions: [
+//     {
+//       name: 'fade',
+//       to: {
+//         namespace: ['home'] // Adjust if you have specific page namespaces
+//       },
+//       once() {
+//         console.log('Transition started');
+//       },
+//       leave() {
+//         console.log('Leaving page');
+//       },
+//       enter() {
+//         console.log('Entering page');
+//       }
+//     }
+//   ]
+// });
 
 
 document.addEventListener('DOMContentLoaded', () => {
