@@ -1,6 +1,6 @@
 
-import barba from "";
-import barbaCss from "/barba/css";
+import barba from "@core";
+import barbaCss from "@barba/css";
 
 // tell Barba to use the css plugin
 barba.use(barbaCss);
