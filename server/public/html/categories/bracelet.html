@@ -27,9 +27,8 @@
             background-position: 100% 60%;
         }
     </style>
-    <!----------------- bdy container to prevent overflow ----------------->
-
-    <body>
+    <div class="bdy">
+        <!----------------- bdy container to prevent overflow ----------------->
         <main>
             <!------------------ background image (desktop only) --------------------->
             <div id="bgimage">
@@ -274,26 +273,27 @@
                     </p>
                 </div>
             </footer>
-            <!------------------ js section --------------------->
-            <script src="../../js/product.js"></script>
-            <script src="../../js/index.js"></script>
-            <script src="../../js/cart.js"></script>
-            <script src="../../bundle.js"></script>
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
+        </main>
+    </div>
+    <!------------------ js section --------------------->
+    <script src="../../js/product.js"></script>
+    <script src="../../js/index.js"></script>
+    <script src="../../js/cart.js"></script>
+    <script src="../../bundle.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
 
-                    var navSplide = new Splide('#nav-carousel', {
-                        type: 'loop',
-                        autoplay: 'play',
-                        perPage: 1,
-                        arrows: false,
-                        pagination: false,
-                    });
-                    navSplide.mount();
+            var navSplide = new Splide('#nav-carousel', {
+                type: 'loop',
+                autoplay: 'play',
+                perPage: 1,
+                arrows: false,
+                pagination: false,
+            });
+            navSplide.mount();
 
-                });
-            </script>
-            </div>
-    </body>
+        });
+    </script>
+</body>
 
 </html>
