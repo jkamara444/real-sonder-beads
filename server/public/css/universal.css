@@ -651,7 +651,7 @@ footer.footer-distributed {
 }
 
 .barba-once-active {
-    transition: opacity 10s linear;
+    transition: opacity 0.5s linear;
 }
 
 .barba-once-to {

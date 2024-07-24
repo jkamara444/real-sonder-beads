@@ -1,6 +1,4 @@
 
-import barba from "@core";
-import barbaCss from "@barba/css";
 
 // tell Barba to use the css plugin
 barba.use(barbaCss);
@@ -10,7 +8,17 @@ barba.init({
   transitions: [
     {
       name: 'fade',
+      to: {
+        namespace: ['home'] // Adjust if you have specific page namespaces
+      },
       once() {
+        console.log('Transition started');
+      },
+      leave() {
+        console.log('Leaving page');
+      },
+      enter() {
+        console.log('Entering page');
       }
     }
   ]
