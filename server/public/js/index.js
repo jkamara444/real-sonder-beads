@@ -1,3 +1,5 @@
+
+
 // open and close popout nav and cart 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -144,6 +146,8 @@ window.onload = function () {
     setTimeout(showPopup, 4000);
   }
 }
+
+
 
 
 
