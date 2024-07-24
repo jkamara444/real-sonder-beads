@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const addToCartButtons = document.querySelectorAll('.addcart');
     const subtotalElement = document.querySelector('.totalamt h4');
@@ -207,5 +206,3 @@ document.addEventListener('DOMContentLoaded', () => {
         checkoutButton.addEventListener('click', clearCart);
     }
 });
-
-
