@@ -22,7 +22,7 @@
     <style>
         @media only screen and (min-device-width: 1025px) {
             #bgimage {
-                background-image: url("https://sonderbeads.com/server/public/pics/hi/100_0146.JPG");
+                background-image: url(../../pics/hi/100_0146.JPG);
             }
         }
     </style>
@@ -33,7 +33,7 @@
             <!------------------ background image (desktop only) --------------------->
             <div id="bgimage">
                 <div class="header-text">
-                    <h1><a href="https://sonderbeads.com/html/categories/waist.html">Waistbeads</a></h1>
+                    <h1><a href="../../html/categories/waist.html">Waistbeads</a></h1>
                 </div>
                 <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 100" version="1.1"
                     xmlns="http://www.w3.org/2000/svg">
@@ -67,10 +67,8 @@
                     </div>
                 </div>
                 <button class="splide__toggle" type="button">
-                    <span class="splide__toggle__play"><img
-                            src="https://sonderbeads.com/server/public/pics/icons/icons8-play-64.png" alt=""></span>
-                    <span class="splide__toggle__pause"><img
-                            src="https://sonderbeads.com/server/public/pics/icons/icons8-pause-50.png" alt=""></span>
+                    <span class="splide__toggle__play"><img src="../../pics/icons/icons8-play-64.png" alt=""></span>
+                    <span class="splide__toggle__pause"><img src="../../pics/icons/icons8-pause-50.png" alt=""></span>
                 </button>
             </div>
             <!-------------------- actual nav section -------------------------->
@@ -78,103 +76,236 @@
             <nav id="navbar">
                 <ul>
                     <li class="logo">
-                        <h1><a href="https://sonderbeads.com/index.html">sonder beads</a></h1>
+                        <h1><a href="index.html">sonder beads</h1>
                     </li>
                     <li class="navicons">
                         <div class="cart-icon-container">
                             <a href="javascript:void(0);" id="order-icon">
-                                <img src="https://sonderbeads.com/server/public/pics/icons/icons8-cart-48.png"
-                                    alt="order list"> <span></span>
+                                <img src="../../pics/icons/icons8-cart-48.png" alt="order list"> <span></span>
                             </a>
                         </div>
                     </li>
                     <li class="navicons dropdown">
-                        <a href="javascript:void(0);" id="menu-icon"><img
-                                src="https://sonderbeads.com/server/public/pics/icons/icons8-lines-48.png"
+                        <a href="javascript:void(0);" id="menu-icon"><img src="../../pics/icons/icons8-lines-48.png"
                                 alt="dropdown nav"></a>
                     </li>
                 </ul>
                 <!----------------- desktop nav list ----------------->
                 <ul class="desktop">
-                    <li><a href="https://sonderbeads.com/index.html">Home</a></li>
-                    <li><a href="https://sonderbeads.com/html/categories/waist.html">waistbeads</a></li>
-                    <li><a href="https://sonderbeads.com/html/categories/bracelet.html">bracelets</a></li>
-                    <li><a href="https://sonderbeads.com/html/categories/necklace.html">necklaces</a></li>
-                    <li><a href="https://sonderbeads.com/html/categories/earrings.html">earrings</a></li>
-                </ul>
-                <!----------------- mobile nav list ----------------->
-                <ul class="mobile">
-                    <li><a href="https://sonderbeads.com/index.html">Home</a></li>
-                    <li><a href="https://sonderbeads.com/html/categories/waist.html">waistbeads</a></li>
-                    <li><a href="https://sonderbeads.com/html/categories/bracelet.html">bracelets</a></li>
-                    <li><a href="https://sonderbeads.com/html/categories/necklace.html">necklaces</a></li>
-                    <li><a href="https://sonderbeads.com/html/categories/earrings.html">earrings</a></li>
+                    <li><a href="../../../../index.html">Home</a></li>
+                    <li><a href="../categories/waist.html">waistbeads</a></li>
+                    <li><a href="../categories/bracelet.html">bracelet</a></li>
+                    <li><a href="../categories/earrings.html">earrings</a></li>
+                    <li><a href="../../../../index.html">history</a></li>
+                    <li><a href="../contact.html">contact & Policies</a></li>
                 </ul>
             </nav>
-            <!------------------ Content Area ------------------------->
-            <div class="content-container">
-                <div class="content">
-                    <h1>About</h1>
-                    <p>Welcome to Sonder Beads, where we offer a unique collection of handcrafted jewelry. Our pieces
-                        are designed with love and care, reflecting the beauty and diversity of our world. Explore our
-                        collection and find the perfect piece to express your individuality.</p>
+            <!----------------- popout navigation BAR (mobile and ipad) ----------------->
+            <div id="popout-menu" class="popout-menu">
+                <ul>
+                    <li><a href="../../../../index.html">Home</a><span id="close-menu"><img
+                                src="../../pics/icons/icons8-x-50.png" alt=""></span></li>
+                    <li><a href="../categories/waist.html">waistbeads</a></li>
+                    <li><a href="../categories/bracelet.html">bracelet</a></li>
+                    <li><a href="../categories/earrings.html">earrings</a></li>
+                    <li><a href="../../../../index.html">history</a></li>
+                    <li><a href="../contact.html">contact & Policies</a></li>
+                </ul>
+            </div>
+            <!----------------- popout cart ----------------->
+            <div id="popout-cart" class="popout-cart">
+                <div class="carttab">
+                    <h3>shopping cart <span><button id="close-cart">close</button> </span></h3>
+                </div>
+                <hr class="thin-grey-line">
+                <div class="cart-footer">
+                    <div class="totalamt">
+                        <h2>Subtotal</h2>
+                        <h4>$120.00 USD</h4>
+                    </div>
+                    <p>Shipping & taxes calculated at checkout
+                    </p>
+                    <div class="cartbtn">
+                        <button class="checkout">checkout!</button>
+                    </div>
                 </div>
             </div>
+            <!----------------- overlay to make background dimmed after nav pops out ----------------->
+            <div id="overlay" class="overlay"></div>
+            <!------------------ filter section --------------------->
+            <div id="filter-sort">
+                <!-- <h2>filter by category</h2> -->
+                <select id="filter-button">
+                    <option value="" disabled selected>Filter By Category</option>
+                    <option value="all" data-category="all">All</option>
+                    <option value="beaded" data-category="beaded">Beaded</option>
+                    <option value="crystal" data-category="crystal">Crystal</option>
+                    <option value="custom" data-category="custom">Custom</option>
+                </select>
+                <select id="sort-button">
+                    <option value="" disabled selected>Sort</option>
+                    <option value="low-high" data-category="low-high">Price Low to High</option>
+                    <option value="high-low" data-category="high-low">Price High to Low</option>
+                </select>
+            </div>
+            <!------------------ product list section --------------------->
+            <div id="waistbeads">
+                <div class="product-row">
+                    <div class="product" data-category="custom">
+                        <a href="/products/waistbeads/both-wb/custom_page%20copy.html">
+                            <img src="../../pics/waistbeads/custom-wb/pinkbluewaistbead.JPEG"
+                                alt="white marble bracelet">
+                            <p>Custom Waistbead</p>
+                            <h4>$9.99 +</h4>
+                        </a>
+                    </div>
+                    <div class="product" data-category="beaded">
+                        <a href="/products/waistbeads/both-wb/custom_page%20copy.html">
+                            <img src="../../pics/waistbeads/beaded-waistbead/single-color-waistbead/IMG_2746.jpg"
+                                alt="white marble bracelet">
+                            <p>Single Color Beaded Waistbead</p>
+                            <h4>$6.99</h4>
+                        </a>
+                    </div>
+                    <div class="product">
+                        <a href="../../html/products/waistbeads/crystal-wb/single-color-crystal-wb.html">
+                            <img src="../../pics/waistbeads/crystal-waistbead/single-color-crystal-wb/orangecrystalwaistbead.JPEG"
+                                alt="white marble bracelet">
+                            <p>Single Color Crystal Waistbead</p>
+                            <h4>$9.99</h4>
+                        </a>
+                    </div>
+                    <!-- <div class="product" data-category="beaded">
+                    <a href="../../html/products/waistbeads/beaded-wb/mixed-purple-wb.html">
+                        <img src="../../pics/waistbeads/beaded-waistbead/mixed-purple-waistbead/IMG_9865.jpg"
+                            alt="white marble bracelet">
+                        <p>Purple Melody Beaded Waistbead</p>
+                        <h4>$6.99</h4>
+                    </a>
+                </div> -->
+                    <!-- <div class="product" data-category="crystal">
+                    <a href="../../html/products/waistbeads/crystal-wb/indian-agate-crystal-wb.html">
+                        <img src="../../pics/waistbeads/crystal-waistbead/indian-agate-crystal-wb/IMG_2723_2.jpg"
+                            alt="white marble bracelet">
+                        <p>Indian Agate Crystal Waistbead</p>
+                        <h4>$9.99</h4>
+                    </a>
+                </div> -->
+                    <div class="product" data-category="special">
+                        <a href="../../html/products/waistbeads/both-wb/pink-serinity-wb.html">
+                            <img src="../../pics/bracelets/peachcrystalbracelet.jpg" alt="white marble bracelet">
+                            <p>Pink Serenity Waistbead</p>
+                            <h4>$11.99</h4>
+                        </a>
+                    </div>
+                    <div class="product" data-category="special">
+                        <a href="../../html/products/waistbeads/both-wb/black-quartz-wb.html">
+                            <img src="../../pics/bracelets/peachcrystalbracelet.jpg" alt="white marble bracelet">
+                            <p>Black Rutilated Quartz Waistbead </p>
+                            <h4>$8.99</h4>
+                        </a>
+                    </div>
+                    <div class="product" data-category="crystal">
+                        <a href="../../html/products/waistbeads/beaded-wb/mixed-beaded-wb.html">
+                            <img src="../../pics/bracelets/peachcrystalbracelet.jpg" alt="white marble bracelet">
+                            <p>Colorful Beaded Waistbead</p>
+                            <h4>$6.99</h4>
+                        </a>
+                    </div>
+                    <div class="product" data-category="crystal">
+                        <a href="../../html/products/waistbeads/crystal-wb/mixed-color-crystal-wb.html">
+                            <img src="../../pics/bracelets/peachcrystalbracelet.jpg" alt="white marble bracelet">
+                            <p>Mixed Color Crystal Waistbead</p>
+                            <h4>$9.99</h4>
+                        </a>
+                    </div>
+                    <div class="product" data-category="beaded">
+                        <a href="../../html/products/waistbeads/beaded-wb/blue-sunrise-wb.html">
+                            <img src="../../pics/bracelets/peachcrystalbracelet.jpg" alt="white marble bracelet">
+                            <p>Blue Sunrise Beaded Waistbead</p>
+                            <h4>$6.99</h4>
+                        </a>
+                    </div>
+                    <div class="product" data-category="beaded">
+                        <a href="../../html/products/waistbeads/beaded-wb/brown-sugar-wb.html">
+                            <img src="../../pics/bracelets/peachcrystalbracelet.jpg" alt="white marble bracelet">
+                            <p>Brown Sugar Beaded Waistbead</p>
+                            <h4>$6.99</h4>
+                        </a>
+                    </div>
+                    <!-- <div class="product" data-category="beaded">
+                    <a href="../../html/products/waistbeads/both-wb/verdant-harmony-wb.html">
+                        <img src="../../pics/waistbeads/beaded-waistbead/green-waistbead/IMG_2740.jpg"
+                            alt="white marble bracelet">
+                        <p>Verdant Harmony Waistbead</p>
+                        <h4>$7.99</h4>
+                    </a>
+                </div> -->
+                </div>
+            </div>
+            <!------------------ footer section --------------------->
+            <footer class="footer-distributed">
+                <hr class="thin-grey-line">
+                <div class="footer-left">
+                    <h3>Sonder Beads </h3>
+                    <p class="footer-links">
+                        <a href="#">Home</a>
+                        |
+                        <a href="#">About</a>
+                        |
+                        <a href="#">Contact</a>
+                        |
+                        <a href="#">Blog</a>
+                    </p>
+                    <p class="footer-company-name">Copyright © 2022 <strong>SonderBeads</strong> All rights reserved</p>
+                </div>
+                <div class="footer-center">
+                    <div>
+                        <img src="../../pics/icons/icons8-mail-48.png" alt="mail icon">
+                        <p><span>Sonder Beads</span>
+                            Contact Us</p>
+                    </div>
+                    <div>
+                        <img src="../../pics/icons/icons8-gmail-48.png" alt="mail icon">
+                        <p><a href="mailto:sonderbeads.co@gmail.com">sonderbeadsco@gmail.com</a></p>
+                    </div>
+                    <div>
+                        <img src="../../pics/icons/icons8-instagram-48.png" alt="insta icon">
+                        <p>@sonderbeads </p>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-company-about">
+                        <span>About the company</span>
+                        <strong>Sonder Beads</strong> Sonder — the understanding that every person's story is as complex
+                        and
+                        significant as your own. At
+                        Sonder
+                        Beads, we embrace this philosophy through our unique designs that cherish creativity and
+                        community.
+                    </p>
+                </div>
+            </footer>
         </main>
-        <script src="https://sonderbeads.com/server/public/js/main.js"></script>
-        <script src="https://sonderbeads.com/server/public/js/filters.js"></script>
-        <script src="https://sonderbeads.com/server/public/js/cart.js"></script>
+        <!------------------ js section --------------------->
+        <script src="../../js/index.js"></script>
+        <script src="../../js/cart.js"></script>
+        <script src="../../bundle.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                var splide = new Splide('#nav-carousel', {
+
+                var navSplide = new Splide('#nav-carousel', {
                     type: 'loop',
-                    heightRatio: 0.3,
-                    pagination: false,
+                    autoplay: 'play',
+                    perPage: 1,
                     arrows: false,
-                }).mount();
-            });
-        </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var orderIcon = document.getElementById('order-icon');
-                orderIcon.addEventListener('click', function () {
-                    var cart = document.getElementById('cart');
-                    if (cart) {
-                        cart.classList.toggle('open');
-                    }
+                    pagination: false,
                 });
+                navSplide.mount();
+
             });
         </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var menuIcon = document.getElementById('menu-icon');
-                var nav = document.getElementById('navbar');
-                menuIcon.addEventListener('click', function () {
-                    nav.classList.toggle('open');
-                });
-            });
-        </script>
-        <script>
-            // Barba.js page transitions
-            barba.init({
-                sync: true,
-                transitions: [{
-                    name: 'fade',
-                    leave(data) {
-                        return gsap.to(data.current.container, {
-                            opacity: 0,
-                            duration: 0.5
-                        });
-                    },
-                    enter(data) {
-                        return gsap.from(data.next.container, {
-                            opacity: 0,
-                            duration: 0.5
-                        });
-                    }
-                }]
-            });
-        </script>
+        </div>
     </body>
 
 </html>
