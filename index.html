@@ -23,7 +23,7 @@
 </head>
 
 <body data-barba="wrapper">
-    <main data-barba="container" data-barba-namespace="home">
+    <main data-barba="container" class="is-home" data-background="#CC9B6D">
         <!----------------- bdy container to prevent overflow ----------------->
         <div id="bdy">
             <!------------------ background image (desktop only) --------------------->
@@ -549,7 +549,7 @@
     <!------------------------- js ------------------------->
     <script src="./server/public/bundle.js"></script>
     <script src="./server/public/checkout.js"></script>
-    <script src="./server/public/js/index.js"></script>
+    <script type="module" src="./server/public/js/index.js"></script>
     <script src="./server/public/js/cart.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -682,19 +682,6 @@
                     console.error('Error!', error.message);
                     button.textContent = "Try Again"; // Optional: Change button text to "Try Again" if an error occurs
                 });
-        });
-    </script>
-    <script>
-        barba.init({
-            transitions: [{
-                name: 'default-transition',
-                leave() {
-                    // create your stunning leave animation here
-                },
-                enter() {
-                    // create your amazing enter animation here
-                }
-            }]
         });
     </script>
 </body>

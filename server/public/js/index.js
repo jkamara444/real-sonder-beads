@@ -1,4 +1,21 @@
 
+import barba from "";
+import barbaCss from "/barba/css";
+
+// tell Barba to use the css plugin
+barba.use(barbaCss);
+
+// init Barba
+barba.init({
+  transitions: [
+    {
+      name: 'fade',
+      once() {
+      }
+    }
+  ]
+});
+
 
 // open and close popout nav and cart 
 
@@ -155,6 +172,8 @@ window.onload = function () {
     setTimeout(showPopup, 4000);
   }
 }
+
+
 
 
 
