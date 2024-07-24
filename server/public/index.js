@@ -26,64 +26,55 @@ barba.init({
 });
 
 
-// open and close popout nav and cart 
-
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   const elements = {
-    orderIcon: document.getElementById("order-icon"),
-    popoutCart: document.getElementById("popout-cart"),
-    closeCartButton: document.getElementById("close-cart"),
-    addToCartButtons: document.querySelectorAll(".addcart"),
-    menuIcon: document.getElementById("menu-icon"),
-    popoutMenu: document.getElementById("popout-menu"),
-    closeMenuIcon: document.getElementById("close-menu"),
-    overlay: document.getElementById("overlay")
+    orderIcon: document.getElementById('order-icon'),
+    popoutCart: document.getElementById('popout-cart'),
+    closeCartButton: document.getElementById('close-cart'),
+    addToCartButtons: document.querySelectorAll('.addcart'),
+    menuIcon: document.getElementById('menu-icon'),
+    popoutMenu: document.getElementById('popout-menu'),
+    closeMenuIcon: document.getElementById('close-menu'),
+    overlay: document.getElementById('overlay')
   };
 
-  const toggleVisibility = (element) => {
-    element.classList.toggle("show");
-    elements.overlay.classList.toggle("show");
+  const togglePopup = (popup) => {
+    popup.classList.toggle('show');
+    elements.overlay.classList.toggle('show');
   };
 
-  if (elements.orderIcon) {
-    elements.orderIcon.addEventListener("click", () => toggleVisibility(elements.popoutCart));
-  }
+  elements.orderIcon.addEventListener('click', () => {
+    togglePopup(elements.popoutCart);
+  });
 
-  if (elements.closeCartButton) {
-    elements.closeCartButton.addEventListener("click", () => {
-      elements.popoutCart.classList.remove("show");
-      elements.overlay.classList.remove("show");
+  elements.closeCartButton.addEventListener('click', () => {
+    elements.popoutCart.classList.remove('show');
+    elements.overlay.classList.remove('show');
+  });
+
+  elements.menuIcon.addEventListener('click', () => {
+    togglePopup(elements.popoutMenu);
+  });
+
+  elements.closeMenuIcon.addEventListener('click', () => {
+    elements.popoutMenu.classList.remove('show');
+    elements.overlay.classList.remove('show');
+  });
+
+  elements.overlay.addEventListener('click', () => {
+    elements.popoutMenu.classList.remove('show');
+    elements.popoutCart.classList.remove('show');
+    elements.overlay.classList.remove('show');
+  });
+
+  elements.addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      elements.popoutCart.classList.add('show');
+      elements.overlay.classList.add('show');
     });
-  }
-
-  if (elements.menuIcon) {
-    elements.menuIcon.addEventListener("click", () => toggleVisibility(elements.popoutMenu));
-  }
-
-  if (elements.closeMenuIcon) {
-    elements.closeMenuIcon.addEventListener("click", () => {
-      elements.popoutMenu.classList.remove("show");
-      elements.overlay.classList.remove("show");
-    });
-  }
-
-  if (elements.overlay) {
-    elements.overlay.addEventListener("click", () => {
-      elements.popoutMenu.classList.remove("show");
-      elements.popoutCart.classList.remove("show");
-      elements.overlay.classList.remove("show");
-    });
-  }
-
-  if (elements.addToCartButtons.length > 0) {
-    elements.addToCartButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        elements.popoutCart.classList.add("show");
-        elements.overlay.classList.add("show");
-      });
-    });
-  }
+  });
 });
+
 
 
 
@@ -182,6 +173,15 @@ window.onload = function () {
     setTimeout(showPopup, 4000);
   }
 }
+
+
+
+
+
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const addToCartButtons = document.querySelectorAll('.addcart');
@@ -391,12 +391,5 @@ document.addEventListener('DOMContentLoaded', () => {
     checkoutButton.addEventListener('click', clearCart);
   }
 });
-
-
-
-
-
-
-
 
 
