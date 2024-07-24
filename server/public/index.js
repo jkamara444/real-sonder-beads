@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+  console.log('DOM fully loaded and parsed');
+
   const elements = {
     orderIcon: document.getElementById("order-icon"),
     popoutCart: document.getElementById("popout-cart"),
@@ -10,16 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay: document.getElementById("overlay")
   };
 
+  console.log(elements);
+
   const toggleVisibility = (element) => {
+    console.log('Toggling visibility for:', element);
     element.classList.toggle("show");
     elements.overlay.classList.toggle("show");
   };
 
   if (elements.orderIcon) {
+    console.log('Adding click event listener to orderIcon');
     elements.orderIcon.addEventListener("click", () => toggleVisibility(elements.popoutCart));
   }
 
   if (elements.closeCartButton) {
+    console.log('Adding click event listener to closeCartButton');
     elements.closeCartButton.addEventListener("click", () => {
       elements.popoutCart.classList.remove("show");
       elements.overlay.classList.remove("show");
@@ -27,10 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (elements.menuIcon) {
+    console.log('Adding click event listener to menuIcon');
     elements.menuIcon.addEventListener("click", () => toggleVisibility(elements.popoutMenu));
   }
 
   if (elements.closeMenuIcon) {
+    console.log('Adding click event listener to closeMenuIcon');
     elements.closeMenuIcon.addEventListener("click", () => {
       elements.popoutMenu.classList.remove("show");
       elements.overlay.classList.remove("show");
@@ -38,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (elements.overlay) {
+    console.log('Adding click event listener to overlay');
     elements.overlay.addEventListener("click", () => {
       elements.popoutMenu.classList.remove("show");
       elements.popoutCart.classList.remove("show");
@@ -46,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (elements.addToCartButtons.length > 0) {
+    console.log('Adding click event listeners to addToCartButtons');
     elements.addToCartButtons.forEach(button => {
       button.addEventListener("click", () => {
         elements.popoutCart.classList.add("show");
