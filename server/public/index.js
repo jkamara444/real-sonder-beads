@@ -1,6 +1,7 @@
 
 
 // tell Barba to use the css plugin
+
 barba.use(barbaCss);
 
 // init Barba
@@ -87,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 //  nav sticky and transparency
+
 document.addEventListener('DOMContentLoaded', function () {
   const navbar = document.getElementById('navbar');
   const placeholder = document.getElementById('nav-placeholder');
