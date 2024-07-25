@@ -546,149 +546,150 @@
                     </p>
                 </div>
             </footer>
-            <!------------------------- js ------------------------->
-            <script type="module">
-                import Swup from 'https://unpkg.com/swup@4?module';
-                const swup = new Swup();
-            </script>
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-
-                    //landing carousel
-                    var landingSplide = new Splide('#bgimage', {
-                        type: 'loop',
-                        autoplay: 'play',
-                        perPage: 1,
-                        arrows: false,
-                    });
-                    landingSplide.mount();
-
-                    //nav carousel
-                    var navSplide = new Splide('#nav-carousel', {
-                        type: 'loop',
-                        autoplay: 'play',
-                        arrows: false,
-                        pagination: false,
-                    });
-                    navSplide.mount();
-
-                    // jewelry carousel
-                    var jewelrySplide = new Splide('#jewelry-carousel', {
-                        arrows: false,
-                        pagination: false,
-                        type: 'loop',
-                        mediaQuery: 'min',
-                        breakpoints: {
-                            1024: {
-                                destroy: true,
-                            },
-                        }
-                    });
-
-                    var bar = jewelrySplide.root.querySelector('#jewelry-slider');
-
-                    jewelrySplide.on('mounted move', function () {
-                        var end = jewelrySplide.Components.Controller.getEnd() + 1;
-                        var rate = Math.min((jewelrySplide.index + 1) / end, 1);
-                        bar.style.width = String(100 * rate) + '%';
-                    });
-                    jewelrySplide.mount();
-
-
-                    // Initialize the highlighted carousel
-                    var splideHighlighted = new Splide('#splide-highlighted', {
-                        type: 'loop',
-                        perPage: 2,
-                        perMove: 1,
-                        breakpoints: {
-                            1024: {
-                                perPage: 1,
-                            },
-                        }
-                    });
-                    splideHighlighted.mount();
-
-                    // Initialize the new arrivals carousel
-                    var splideArrivals = new Splide('#splide-arrivals', {
-                        type: 'loop',
-                        perPage: 3,
-                        perMove: 1,
-                        breakpoints: {
-                            1024: {
-                                perPage: 3,
-                            },
-                        }
-                    });
-
-                    var bar2 = splideArrivals.root.querySelector('#newarrivals-slider');
-
-                    splideArrivals.on('mounted move', function () {
-                        var end = splideArrivals.Components.Controller.getEnd() + 1;
-                        var rate = Math.min((splideArrivals.index + 1) / end, 1);
-                        bar2.style.width = String(100 * rate) + '%';
-                    });
-
-                    splideArrivals.mount();
-
-                    // Initialize the featured carousel
-                    var splideFeatured = new Splide('#splide-featured', {
-                        type: 'loop',
-                        perPage: 3,
-                        perMove: 1,
-                        breakpoints: {
-                            1024: {
-                                perPage: 3,
-                            },
-                        }
-                    });
-
-                    var bar3 = splideFeatured.root.querySelector('#featured-slider');
-
-                    splideFeatured.on('mounted move', function () {
-                        var end = splideFeatured.Components.Controller.getEnd() + 1;
-                        var rate = Math.min((splideFeatured.index + 1) / end, 1);
-                        bar3.style.width = String(100 * rate) + '%';
-                    });
-
-                    splideFeatured.mount();
-
-
-                    // Initialize the reviews carousel
-                    var splideReviews = new Splide('#splide-reviews', {
-                        type: 'loop',
-                    });
-                    splideReviews.mount();
-                });
-            </script>
-            <script>
-                const scriptURL = 'https://script.google.com/macros/s/AKfycbwV00AtZq3vaTZWJXJSc3AjXWklqKtJqJWXDsnSK7bZ9MtyV1PTaVOVChNAUuM88xSM/exec';
-                const form = document.forms['submit-to-google-sheet'];
-                const button = form.querySelector('button'); // Select the button element
-
-                form.addEventListener('submit', e => {
-                    e.preventDefault();
-                    button.textContent = "Submitting..."; // Change button text to indicate submission in progress
-
-                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                        .then(response => {
-                            button.textContent = "Thank you!"; // Change button text to "Thank you!" after successful submission
-                            form.reset(); // Clear the form fields
-
-                            setTimeout(() => {
-                                button.textContent = "Join Now"; // Revert button text back after 5 seconds
-                            }, 5000);
-                        })
-                        .catch(error => {
-                            console.error('Error!', error.message);
-                            button.textContent = "Try Again"; // Optional: Change button text to "Try Again" if an error occurs
-                        });
-                });
-            </script>
-            <script src="./server/public/bundle.js"></script>
-            <script src="./server/public/cart.js"></script>
-            <script src="./server/public/index.js"></script>
         </div>
     </main>
+    <!------------------------- js ------------------------->
+    <script type="module">
+        import Swup from 'https://unpkg.com/swup@4?module';
+        const swup = new Swup();
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            //landing carousel
+            var landingSplide = new Splide('#bgimage', {
+                type: 'loop',
+                autoplay: 'play',
+                perPage: 1,
+                arrows: false,
+            });
+            landingSplide.mount();
+
+            //nav carousel
+            var navSplide = new Splide('#nav-carousel', {
+                type: 'loop',
+                autoplay: 'play',
+                arrows: false,
+                pagination: false,
+            });
+            navSplide.mount();
+
+            // jewelry carousel
+            var jewelrySplide = new Splide('#jewelry-carousel', {
+                arrows: false,
+                pagination: false,
+                type: 'loop',
+                mediaQuery: 'min',
+                breakpoints: {
+                    1024: {
+                        destroy: true,
+                    },
+                }
+            });
+
+            var bar = jewelrySplide.root.querySelector('#jewelry-slider');
+
+            jewelrySplide.on('mounted move', function () {
+                var end = jewelrySplide.Components.Controller.getEnd() + 1;
+                var rate = Math.min((jewelrySplide.index + 1) / end, 1);
+                bar.style.width = String(100 * rate) + '%';
+            });
+            jewelrySplide.mount();
+
+
+            // Initialize the highlighted carousel
+            var splideHighlighted = new Splide('#splide-highlighted', {
+                type: 'loop',
+                perPage: 2,
+                perMove: 1,
+                breakpoints: {
+                    1024: {
+                        perPage: 1,
+                    },
+                }
+            });
+            splideHighlighted.mount();
+
+            // Initialize the new arrivals carousel
+            var splideArrivals = new Splide('#splide-arrivals', {
+                type: 'loop',
+                perPage: 3,
+                perMove: 1,
+                breakpoints: {
+                    1024: {
+                        perPage: 3,
+                    },
+                }
+            });
+
+            var bar2 = splideArrivals.root.querySelector('#newarrivals-slider');
+
+            splideArrivals.on('mounted move', function () {
+                var end = splideArrivals.Components.Controller.getEnd() + 1;
+                var rate = Math.min((splideArrivals.index + 1) / end, 1);
+                bar2.style.width = String(100 * rate) + '%';
+            });
+
+            splideArrivals.mount();
+
+            // Initialize the featured carousel
+            var splideFeatured = new Splide('#splide-featured', {
+                type: 'loop',
+                perPage: 3,
+                perMove: 1,
+                breakpoints: {
+                    1024: {
+                        perPage: 3,
+                    },
+                }
+            });
+
+            var bar3 = splideFeatured.root.querySelector('#featured-slider');
+
+            splideFeatured.on('mounted move', function () {
+                var end = splideFeatured.Components.Controller.getEnd() + 1;
+                var rate = Math.min((splideFeatured.index + 1) / end, 1);
+                bar3.style.width = String(100 * rate) + '%';
+            });
+
+            splideFeatured.mount();
+
+
+            // Initialize the reviews carousel
+            var splideReviews = new Splide('#splide-reviews', {
+                type: 'loop',
+            });
+            splideReviews.mount();
+        });
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwV00AtZq3vaTZWJXJSc3AjXWklqKtJqJWXDsnSK7bZ9MtyV1PTaVOVChNAUuM88xSM/exec';
+        const form = document.forms['submit-to-google-sheet'];
+        const button = form.querySelector('button'); // Select the button element
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            button.textContent = "Submitting..."; // Change button text to indicate submission in progress
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    button.textContent = "Thank you!"; // Change button text to "Thank you!" after successful submission
+                    form.reset(); // Clear the form fields
+
+                    setTimeout(() => {
+                        button.textContent = "Join Now"; // Revert button text back after 5 seconds
+                    }, 5000);
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    button.textContent = "Try Again"; // Optional: Change button text to "Try Again" if an error occurs
+                });
+        });
+    </script>
+    <script src="./server/public/bundle.js"></script>
+    <script src="./server/public/cart.js"></script>
+    <script src="./server/public/index.js"></script>
+
 </body>
 
 </html>
