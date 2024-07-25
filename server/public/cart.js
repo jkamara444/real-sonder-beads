@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedType = selectedTypeElement?.value || 'N/A';
             const customNote = parentItem.querySelector('#note')?.value || 'N/A';
             const unitPriceElement = parentItem.querySelector('h4'); // Get the price from h4
-            const unitPrice = unitPriceElement ? parseFloat(unitPriceElement.textContent.replace('$', '')) : 0;
+            const unitPrice = parseFloat(selectedTypeElement.selectedOptions[0].getAttribute('data-price'));
             const firstImageSrc = document.querySelector('#main-carousel .splide__slide img').src;
 
             const cartItem = document.createElement('div');
