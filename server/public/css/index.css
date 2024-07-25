@@ -278,8 +278,8 @@ div#history {
 }
 
 #splide-arrivals img {
-    width: 31vw;
-    height: 31vw;
+    width: 38vw;
+    height: 36vw;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -290,6 +290,7 @@ div#history {
     margin: 0 7.5px;
     display: flex;
     justify-content: center;
+    width: 37vw !important;
 }
 
 #splide-arrivals p,
