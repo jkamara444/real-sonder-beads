@@ -97,14 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             updateCart(cartItem);
             updateSubtotal();
-            updateCartCount();
+            updateCartCount(); // Call updateCartCount after updating the cart
             updateLocalStorage();
 
             popoutCart.classList.add('show');
             overlay.classList.add('show');
         });
     });
-
 
     document.querySelectorAll('.item-type').forEach(select => {
         select.addEventListener('change', (event) => {
@@ -127,14 +126,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateCartCount() {
         let totalItems = 0;
         document.querySelectorAll('.cartlist').forEach(cartItem => {
-            const quantity = parseInt(cartItem.querySelector('.quantity').textContent);
-            totalItems += quantity;
+            const quantityElement = cartItem.querySelector('.quantity');
+            if (quantityElement) {
+                const quantity = parseInt(quantityElement.textContent, 10);
+                totalItems += isNaN(quantity) ? 0 : quantity;
+            }
         });
         if (cartCountElement) {
             cartCountElement.textContent = totalItems;
         }
     }
-
 
     function updateLocalStorage() {
         const cartItems = [];
@@ -145,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedType = cartItem.querySelector('.item-description .type')?.textContent || '';
             const customNote = cartItem.querySelector('.item-description .note')?.textContent || '';
             const unitPrice = parseFloat(cartItem.querySelector('.carttotal').getAttribute('data-unit-price'));
-            const quantity = parseInt(cartItem.querySelector('.quantity').textContent);
+            const quantity = parseInt(cartItem.querySelector('.quantity').textContent, 10);
             const firstImageSrc = cartItem.querySelector('.cartimg img').src;
 
             cartItems.push({
@@ -202,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         updateSubtotal();
-        updateCartCount();
+        updateCartCount(); // Ensure this is called after loading cart items
     }
 
     loadCartFromLocalStorage();
