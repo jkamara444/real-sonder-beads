@@ -82,15 +82,15 @@ html {
     width: 0;
 }
 
-.barba-once {
+.fade-once {
     opacity: 0;
 }
 
-.barba-once-active {
+.fade-once-active {
     transition: opacity 5s linear;
 }
 
-.barba-once-to {
+.fade-once-to {
     opacity: 1;
 }
 

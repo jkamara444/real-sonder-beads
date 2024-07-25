@@ -184,13 +184,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showPopup() {
     const popup = document.getElementById('popup');
-    popup.style.display = 'flex';
-    sessionStorage.setItem('popupShown', 'true');
+    if (popup) {
+      popup.style.display = 'flex';
+      sessionStorage.setItem('popupShown', 'true');
+    } else {
+      console.error('Element with id "popup" not found.');
+    }
   }
 
   function closePopup() {
     const popup = document.getElementById('popup');
-    popup.style.display = 'none';
+    if (popup) {
+      popup.style.display = 'none';
+    } else {
+      console.error('Element with id "popup" not found.');
+    }
   }
 
   window.onload = function () {
