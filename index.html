@@ -549,10 +549,6 @@
         </div>
     </main>
     <!------------------------- js ------------------------->
-    <script type="module">
-        import Swup from 'https://unpkg.com/swup@4?module';
-        const swup = new Swup();
-    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
 
@@ -689,7 +685,21 @@
     <script src="./server/public/bundle.js"></script>
     <script src="./server/public/cart.js"></script>
     <script src="./server/public/index.js"></script>
-
+    <script type="module">
+        import Swup from 'https://unpkg.com/swup@4?module';
+        const swup = new Swup();
+    </script>
+    <script>
+        // Check if the page has already been reloaded
+        if (!sessionStorage.getItem('reloaded')) {
+            sessionStorage.setItem('reloaded', 'true');
+            // Refresh the page
+            window.location.reload();
+        } else {
+            // Clear the sessionStorage item after reloading
+            sessionStorage.removeItem('reloaded');
+        }
+    </script>
 </body>
 
 </html>
