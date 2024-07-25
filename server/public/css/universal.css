@@ -235,7 +235,8 @@ nav ul.desktop li a {
     justify-content: space-between;
 }
 
-.popout-menu span img, .close-button {
+.popout-menu span img,
+.close-button {
     width: 13px;
     height: 13px;
     cursor: pointer;
@@ -254,6 +255,7 @@ nav ul.desktop li a {
 
 .popout-menu.show {
     right: 0;
+    display: block;
 }
 
 .dropdown-content,
@@ -340,6 +342,8 @@ nav ul.desktop li a {
 
 .show {
     right: 0 !important;
+    display: block;
+
 }
 
 /* styling of the popout menu */

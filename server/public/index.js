@@ -12,30 +12,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const togglePopin = (popin) => {
     console.log('Toggling popup:', popin);
-    popin.classList.toggle('show');
-    elements.overlay.classList.toggle('show');
+    if (popin) {
+      popin.classList.toggle('show');
+      elements.overlay.classList.toggle('show');
+    } else {
+      console.error('Popup element not found');
+    }
   };
 
   if (elements.orderIcon && elements.popoutCart && elements.closeCartButton && elements.menuIcon && elements.popoutMenu && elements.closeMenuIcon && elements.overlay) {
+    console.log('All elements found.');
     elements.orderIcon.addEventListener('click', () => {
+      console.log('Order icon clicked.');
       togglePopin(elements.popoutCart);
     });
 
     elements.closeCartButton.addEventListener('click', () => {
+      console.log('Close cart button clicked.');
       elements.popoutCart.classList.remove('show');
       elements.overlay.classList.remove('show');
     });
 
     elements.menuIcon.addEventListener('click', () => {
+      console.log('Menu icon clicked.');
       togglePopin(elements.popoutMenu);
     });
 
     elements.closeMenuIcon.addEventListener('click', () => {
+      console.log('Close menu icon clicked.');
       elements.popoutMenu.classList.remove('show');
       elements.overlay.classList.remove('show');
     });
 
     elements.overlay.addEventListener('click', () => {
+      console.log('Overlay clicked.');
       elements.popoutMenu.classList.remove('show');
       elements.popoutCart.classList.remove('show');
       elements.overlay.classList.remove('show');
@@ -43,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     elements.addToCartButtons.forEach(button => {
       button.addEventListener('click', () => {
+        console.log('Add to cart button clicked.');
         elements.popoutCart.classList.add('show');
         elements.overlay.classList.add('show');
       });
@@ -51,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('One or more elements not found.');
   }
 });
+
 
 
 //  nav sticky and transparency

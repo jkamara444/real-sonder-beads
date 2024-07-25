@@ -51,10 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedColor = parentItem.querySelector('#color')?.value || 'N/A';
             const selectedSize = parentItem.querySelector('#size')?.value ? parentItem.querySelector('#size').value + ' in' : 'N/A';
             const selectedTypeElement = parentItem.querySelector('#type');
-            const selectedType = selectedTypeElement?.value || 'N/A';
+            const selectedType = selectedTypeElement ? selectedTypeElement.value : 'N/A';
             const customNote = parentItem.querySelector('#note')?.value || 'N/A';
             const unitPriceElement = parentItem.querySelector('h4'); // Get the price from h4
-            const unitPrice = parseFloat(selectedTypeElement.selectedOptions[0].getAttribute('data-price'));
+
+            let unitPrice = 0;
+            if (unitPriceElement) {
+                unitPrice = parseFloat(unitPriceElement.textContent.replace('$', ''));
+            } else if (selectedTypeElement && selectedTypeElement.tagName === 'SELECT') {
+                const selectedOption = selectedTypeElement.selectedOptions[0];
+                unitPrice = parseFloat(selectedOption.getAttribute('data-price')) || 0;
+            }
+
             const firstImageSrc = document.querySelector('#main-carousel .splide__slide img').src;
 
             const cartItem = document.createElement('div');
@@ -96,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay.classList.add('show');
         });
     });
+
 
     document.querySelectorAll('.item-type').forEach(select => {
         select.addEventListener('change', (event) => {
