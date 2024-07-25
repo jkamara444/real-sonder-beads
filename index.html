@@ -681,6 +681,13 @@
         <script src="./server/public/cart.js"></script>
         <script src="./server/public/index.js"></script>
     </div>
+    <script>
+        window.addEventListener('storage', (event) => {
+            if (event.key === 'cart') {
+                loadCartFromLocalStorage(); // Reload cart data when localStorage changes
+            }
+        });
+    </script>
 </body>
 
 </html>
