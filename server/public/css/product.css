@@ -92,6 +92,10 @@
     margin-bottom: 10px;
 }
 
+.animate__animated.animate__fadeInUp {
+    --animate-duration: 200ms;
+}
+
 .product {
     margin: 10px 0;
     flex-direction: column;
