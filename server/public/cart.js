@@ -125,18 +125,13 @@ document.addEventListener('DOMContentLoaded', () => {
         subtotalElement.textContent = `$${subtotal.toFixed(2)} USD`;
     }
 
-    function updateCartCount() {
+      function updateCartCount() {
         let totalItems = 0;
         document.querySelectorAll('.cartlist').forEach(cartItem => {
-            const quantityElement = cartItem.querySelector('.quantity');
-            if (quantityElement) {
-                const quantity = parseInt(quantityElement.textContent, 10);
-                totalItems += isNaN(quantity) ? 0 : quantity;
-            }
+            const quantity = parseInt(cartItem.querySelector('.quantity').textContent);
+            totalItems += quantity;
         });
-        if (cartCountElement) {
-            cartCountElement.textContent = totalItems;
-        }
+        cartCountElement.textContent = totalItems;
     }
 
     function updateLocalStorage() {
