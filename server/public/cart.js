@@ -49,20 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const parentItem = button.closest('.item-text-container');
             const productName = parentItem.querySelector('h2').innerText;
             const selectedColor = parentItem.querySelector('#color')?.value || 'N/A';
-            const selectedSize = parentItem.querySelector('#size')?.value ? parentItem.querySelector('#size').value + ' in' : 'N/A';
+            const selectedSize = parentItem.querySelector('#size')?.value + ' in' || 'N/A';
             const selectedTypeElement = parentItem.querySelector('#type');
-            const selectedType = selectedTypeElement ? selectedTypeElement.value : 'N/A';
+            const selectedType = selectedTypeElement.value || 'N/A';
             const customNote = parentItem.querySelector('#note')?.value || 'N/A';
-            const unitPriceElement = parentItem.querySelector('h4'); // Get the price from h4
-
-            let unitPrice = 0;
-            if (unitPriceElement) {
-                unitPrice = parseFloat(unitPriceElement.textContent.replace('$', ''));
-            } else if (selectedTypeElement && selectedTypeElement.tagName === 'SELECT') {
-                const selectedOption = selectedTypeElement.selectedOptions[0];
-                unitPrice = parseFloat(selectedOption.getAttribute('data-price')) || 0;
-            }
-
+            const unitPrice = parseFloat(selectedTypeElement.selectedOptions[0].getAttribute('data-price'));
             const firstImageSrc = document.querySelector('#main-carousel .splide__slide img').src;
 
             const cartItem = document.createElement('div');
@@ -97,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             updateCart(cartItem);
             updateSubtotal();
-            updateCartCount(); // Call updateCartCount after updating the cart
+            updateCartCount();
             updateLocalStorage();
 
             popoutCart.classList.add('show');
@@ -141,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedType = cartItem.querySelector('.item-description .type')?.textContent || '';
             const customNote = cartItem.querySelector('.item-description .note')?.textContent || '';
             const unitPrice = parseFloat(cartItem.querySelector('.carttotal').getAttribute('data-unit-price'));
-            const quantity = parseInt(cartItem.querySelector('.quantity').textContent, 10);
+            const quantity = parseInt(cartItem.querySelector('.quantity').textContent);
             const firstImageSrc = cartItem.querySelector('.cartimg img').src;
 
             cartItems.push({
@@ -198,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         updateSubtotal();
-        updateCartCount(); // Ensure this is called after loading cart items
+        updateCartCount();
     }
 
     loadCartFromLocalStorage();
