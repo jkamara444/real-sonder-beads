@@ -49,12 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const parentItem = button.closest('.item-text-container');
             const productName = parentItem.querySelector('h2').innerText;
             const selectedColor = parentItem.querySelector('#color')?.value || 'N/A';
-            const selectedSize = parentItem.querySelector('#size')?.value + ' in' || 'N/A';
+            const selectedSize = parentItem.querySelector('#size')?.value ? parentItem.querySelector('#size').value + ' in' : 'N/A';
             const selectedTypeElement = parentItem.querySelector('#type');
-            const selectedType = selectedTypeElement ? selectedTypeElement.value : 'N/A';
+            const selectedType = selectedTypeElement?.value || 'N/A';
             const customNote = parentItem.querySelector('#note')?.value || 'N/A';
-            const unitPriceElement = parentItem.querySelector('h4');
-            const unitPrice = parseFloat(unitPriceElement.textContent.replace('$', ''));
+            const unitPriceElement = parentItem.querySelector('h4'); // Get the price from h4
+            const unitPrice = unitPriceElement ? parseFloat(unitPriceElement.textContent.replace('$', '')) : 0;
             const firstImageSrc = document.querySelector('#main-carousel .splide__slide img').src;
 
             const cartItem = document.createElement('div');
