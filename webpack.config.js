@@ -21,16 +21,6 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
-      },
-      {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
       }
     ]
   },
@@ -42,5 +32,5 @@ module.exports = {
     contentBase: path.join(__dirname, 'server/public'),
     compress: true,
     port: 5500
-  }
+  },
 };
