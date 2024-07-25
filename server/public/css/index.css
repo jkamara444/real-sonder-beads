@@ -1155,10 +1155,11 @@ button:hover {
     }
 
     #splide-featured .splide__slide {
-        margin-right: 15px;
         font-family: 'bebas';
         margin: 0 7.5px;
-        width: auto !important;
+        display: flex;
+        justify-content: center;
+        width: 20.7vw !important;
     }
 
     #splide-featured .splide-featured-list {
