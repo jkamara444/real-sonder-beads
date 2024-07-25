@@ -29,12 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
             updateLocalStorage();
         }
 
-        minusButton.addEventListener('click', () => updateQuantity(-1));
-        plusButton.addEventListener('click', () => updateQuantity(1));
+        if (minusButton) minusButton.addEventListener('click', () => updateQuantity(-1));
+        if (plusButton) plusButton.addEventListener('click', () => updateQuantity(1));
 
         const showNoteLink = item.querySelector('.show-note');
         if (showNoteLink) {
-            showNoteLink.addEventListener('click', () => {
+            showNoteLink.addEventListener('click', (event) => {
+                event.preventDefault();
                 const noteParagraph = item.querySelector('.note');
                 if (noteParagraph) {
                     noteParagraph.style.display = noteParagraph.style.display === 'none' ? 'block' : 'none';
@@ -47,14 +48,16 @@ document.addEventListener('DOMContentLoaded', () => {
     addToCartButtons.forEach(button => {
         button.addEventListener('click', () => {
             const parentItem = button.closest('.item-text-container');
-            const productName = parentItem.querySelector('h2').innerText;
+            if (!parentItem) return;
+
+            const productName = parentItem.querySelector('h2')?.innerText || 'N/A';
             const selectedColor = parentItem.querySelector('#color')?.value || 'N/A';
             const selectedSize = parentItem.querySelector('#size')?.value + ' in' || 'N/A';
             const selectedTypeElement = parentItem.querySelector('#type');
-            const selectedType = selectedTypeElement.value || 'N/A';
+            const selectedType = selectedTypeElement ? selectedTypeElement.value : 'N/A';
             const customNote = parentItem.querySelector('#note')?.value || 'N/A';
-            const unitPrice = parseFloat(selectedTypeElement.selectedOptions[0].getAttribute('data-price'));
-            const firstImageSrc = document.querySelector('#main-carousel .splide__slide img').src;
+            const unitPrice = selectedTypeElement ? parseFloat(selectedTypeElement.selectedOptions[0].getAttribute('data-price')) : 0;
+            const firstImageSrc = document.querySelector('#main-carousel .splide__slide img')?.src || '';
 
             const cartItem = document.createElement('div');
             cartItem.classList.add('cartlist');
