@@ -219,4 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (checkoutButton) {
         checkoutButton.addEventListener('click', clearCart);
     }
+
+    updateCartCount();
+    updateSubtotal();
 });
