@@ -1,67 +1,66 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const elements = {
-    orderIcon: document.getElementById('order-icon'),
-    popoutCart: document.getElementById('popout-cart'),
-    closeCartButton: document.getElementById('close-cart'),
-    addToCartButtons: document.querySelectorAll('.addcart'),
-    menuIcon: document.getElementById('menu-icon'),
-    popoutMenu: document.getElementById('popout-menu'),
-    closeMenuIcon: document.getElementById('close-menu'),
-    overlay: document.getElementById('overlay')
-  };
+  // Define your elements
+  const orderIcon = document.getElementById('order-icon');
+  const popoutCart = document.getElementById('popout-cart');
+  const closeCartButton = document.getElementById('close-cart');
+  const addToCartButtons = document.querySelectorAll('.addcart');
+  const menuIcon = document.getElementById('menu-icon');
+  const popoutMenu = document.getElementById('popout-menu');
+  const closeMenuIcon = document.getElementById('close-menu');
+  const overlay = document.getElementById('overlay');
 
-  const togglePopin = (popin) => {
-    console.log('Toggling popup:', popin);
-    if (popin) {
-      popin.classList.toggle('show');
-      elements.overlay.classList.toggle('show');
-    } else {
-      console.error('Popup element not found');
-    }
-  };
-
-  if (elements.orderIcon && elements.popoutCart && elements.closeCartButton && elements.menuIcon && elements.popoutMenu && elements.closeMenuIcon && elements.overlay) {
-    console.log('All elements found.');
-    elements.orderIcon.addEventListener('click', () => {
-      console.log('Order icon clicked.');
-      togglePopin(elements.popoutCart);
-    });
-
-    elements.closeCartButton.addEventListener('click', () => {
-      console.log('Close cart button clicked.');
-      elements.popoutCart.classList.remove('show');
-      elements.overlay.classList.remove('show');
-    });
-
-    elements.menuIcon.addEventListener('click', () => {
-      console.log('Menu icon clicked.');
-      togglePopin(elements.popoutMenu);
-    });
-
-    elements.closeMenuIcon.addEventListener('click', () => {
-      console.log('Close menu icon clicked.');
-      elements.popoutMenu.classList.remove('show');
-      elements.overlay.classList.remove('show');
-    });
-
-    elements.overlay.addEventListener('click', () => {
-      console.log('Overlay clicked.');
-      elements.popoutMenu.classList.remove('show');
-      elements.popoutCart.classList.remove('show');
-      elements.overlay.classList.remove('show');
-    });
-
-    elements.addToCartButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        console.log('Add to cart button clicked.');
-        elements.popoutCart.classList.add('show');
-        elements.overlay.classList.add('show');
-      });
-    });
-  } else {
-    console.error('One or more elements not found.');
+  // Check if all required elements exist
+  if (!orderIcon || !popoutCart || !closeCartButton || !menuIcon || !popoutMenu || !closeMenuIcon || !overlay) {
+    console.error('One or more required elements are missing.');
+    return;
   }
+
+  // Event listener for showing the cart
+  orderIcon.addEventListener('click', () => {
+    console.log('Order icon clicked.');
+    popoutCart.classList.add('show');
+    overlay.classList.add('show');
+  });
+
+  // Event listener for hiding the cart
+  closeCartButton.addEventListener('click', () => {
+    console.log('Close cart button clicked.');
+    popoutCart.classList.remove('show');
+    overlay.classList.remove('show');
+  });
+
+  // Event listener for showing the menu
+  menuIcon.addEventListener('click', () => {
+    console.log('Menu icon clicked.');
+    popoutMenu.classList.add('show');
+    overlay.classList.add('show');
+  });
+
+  // Event listener for hiding the menu
+  closeMenuIcon.addEventListener('click', () => {
+    console.log('Close menu button clicked.');
+    popoutMenu.classList.remove('show');
+    overlay.classList.remove('show');
+  });
+
+  // Event listener for overlay clicks (hide both cart and menu)
+  overlay.addEventListener('click', () => {
+    console.log('Overlay clicked.');
+    popoutMenu.classList.remove('show');
+    popoutCart.classList.remove('show');
+    overlay.classList.remove('show');
+  });
+
+  // Event listeners for add to cart buttons
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      console.log('Add to cart button clicked.');
+      popoutCart.classList.add('show');
+      overlay.classList.add('show');
+    });
+  });
 });
+
 
 
 
