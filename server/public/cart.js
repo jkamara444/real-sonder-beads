@@ -167,14 +167,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function loadCartFromLocalStorage() {
         const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    
+
         const cartContainer = document.querySelector('#popout-cart .carttab');
-        cartContainer.innerHTML = ''; // Clear existing items
-    
+        cartContainer.innerHTML = ''; // Clear any existing items
+
         cartItems.forEach(item => {
             const cartItem = document.createElement('div');
             cartItem.classList.add('cartlist');
-    
+
             cartItem.innerHTML = `
                 <div class="cartimg">
                     <img src="${item.firstImageSrc}" alt="${item.productName}">
@@ -199,17 +199,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="carttotal" data-unit-price="${item.unitPrice.toFixed(2)}">$${(item.unitPrice * item.quantity).toFixed(2)}</div>
                 <div class="unit-price" style="display: none;">$${item.unitPrice.toFixed(2)}</div>
             `;
-    
+
             cartContainer.appendChild(cartItem);
-    
+
             updateCart(cartItem); // Re-add event listeners
         });
-    
+
         updateSubtotal();
         updateCartCount();
     }
-    
-    loadCartFromLocalStorage(); // Call this function when the page loads
-    
+
+    loadCartFromLocalStorage(); // Load cart items on page load
 
 });
