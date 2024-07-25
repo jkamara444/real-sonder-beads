@@ -82,18 +82,6 @@ html {
     width: 0;
 }
 
-.fade-once {
-    opacity: 0;
-}
-
-.fade-once-active {
-    transition: opacity 3s ease-in-out;
-}
-
-.fade-once-to {
-    opacity: 1;
-}
-
 
 
 /* ----------------- navigation BAR styling (mobile & ipad) ----------------- */
