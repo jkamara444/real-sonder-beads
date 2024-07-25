@@ -87,7 +87,7 @@ html {
 }
 
 .fade-once-active {
-    transition: opacity 5s linear;
+    transition: opacity 3s ease-in-out;
 }
 
 .fade-once-to {

@@ -3,7 +3,6 @@ import barbaCss from '@barba/css';
 
 barba.use(barbaCss);
 
-document.addEventListener('DOMContentLoaded', () => {
   barba.init({
     transitions: [{
       name: 'fade',
@@ -18,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     }]
   });
-});
 
 
 
