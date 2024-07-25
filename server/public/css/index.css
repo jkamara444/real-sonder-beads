@@ -284,11 +284,13 @@ div#history {
     border-radius: 10px;
 }
 
-
 #splide-arrivals .splide__slide {
     margin-right: 15px;
     font-family: 'bebas';
     margin: 0 7.5px;
+    display: flex;
+    justify-content: center;
+    width: 20.7vw !important;
 }
 
 #splide-arrivals p,
