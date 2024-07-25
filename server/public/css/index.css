@@ -290,7 +290,6 @@ div#history {
     margin: 0 7.5px;
     display: flex;
     justify-content: center;
-    width: 20.7vw !important;
 }
 
 #splide-arrivals p,
@@ -1132,6 +1131,10 @@ button:hover {
         right: -5em !important;
     }
 
+    #splide-arrivals .splide__slide {
+        width: 20.7vw !important;
+    }
+
     /* ----------------- featured section styling ----------------- */
 
     #featured {
@@ -1152,6 +1155,7 @@ button:hover {
         border-radius: 10px;
         width: 20.7vw;
         height: 20.7vw;
+        margin-right: 0px;
     }
 
     #splide-featured .splide__slide {
