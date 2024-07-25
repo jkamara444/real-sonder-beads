@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay: document.getElementById('overlay')
   };
 
-  const togglePopup = (popup) => {
+  const togglePopin = (popin) => {
     console.log('Toggling popup:', popin);
     popin.classList.toggle('show');
     elements.overlay.classList.toggle('show');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Order icon found.');
     elements.orderIcon.addEventListener('click', () => {
       console.log('Order icon clicked.');
-      togglePopup(elements.popoutCart);
+      togglePopin(elements.popoutCart);
     });
   } else {
     console.error('Order icon not found.');
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Menu icon found.');
     elements.menuIcon.addEventListener('click', () => {
       console.log('Menu icon clicked.');
-      togglePopup(elements.popoutMenu);
+      togglePopin(elements.popoutMenu);
     });
   } else {
     console.error('Menu icon not found.');
@@ -83,8 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('Add to cart buttons not found.');
   }
 });
-
-
 
 
 
@@ -169,15 +167,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const typeSelect = document.querySelector('#product-1 #type');
   const priceElement = document.querySelector('#product-1 .unit-price');
 
-  typeSelect.addEventListener('change', (event) => {
-    const selectedOption = event.target.selectedOptions[0];
-    const unitPrice = parseFloat(selectedOption.getAttribute('data-price'));
-    priceElement.textContent = `$${unitPrice.toFixed(2)}`;
-  });
+  if (typeSelect && priceElement) {
+    typeSelect.addEventListener('change', (event) => {
+      const selectedOption = event.target.selectedOptions[0];
+      const unitPrice = parseFloat(selectedOption.getAttribute('data-price'));
+      priceElement.textContent = `$${unitPrice.toFixed(2)}`;
+    });
+  } else {
+    console.error('Type select or price element not found.');
+  }
 });
 
 
+
 // popup
+
 document.addEventListener('DOMContentLoaded', () => {
 
   function showPopup() {
@@ -191,12 +195,17 @@ document.addEventListener('DOMContentLoaded', () => {
     popup.style.display = 'none';
   }
 
-  document.getElementById('close-button').addEventListener('click', closePopup);
-
   window.onload = function () {
     if (!sessionStorage.getItem('popupShown')) {
       setTimeout(showPopup, 4000);
     }
+  }
+
+  const closeButton = document.getElementById('close-button');
+  if (closeButton) {
+    closeButton.addEventListener('click', closePopup);
+  } else {
+    console.error('Element with id "close-button" not found.');
   }
 
 });
