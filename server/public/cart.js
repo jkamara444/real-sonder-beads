@@ -130,8 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const quantity = parseInt(cartItem.querySelector('.quantity').textContent);
             totalItems += quantity;
         });
-        cartCountElement.textContent = totalItems;
+        if (cartCountElement) {
+            cartCountElement.textContent = totalItems;
+        }
     }
+
 
     function updateLocalStorage() {
         const cartItems = [];
