@@ -1,4 +1,5 @@
 import AOS from "simple-aos";
+import 'animate.css';
 
 AOS.init();
 
