@@ -16,75 +16,41 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.overlay.classList.toggle('show');
   };
 
-  if (elements.orderIcon) {
-    console.log('Order icon found.');
+  if (elements.orderIcon && elements.popoutCart && elements.closeCartButton && elements.menuIcon && elements.popoutMenu && elements.closeMenuIcon && elements.overlay) {
     elements.orderIcon.addEventListener('click', () => {
-      console.log('Order icon clicked.');
       togglePopin(elements.popoutCart);
     });
-  } else {
-    console.error('Order icon not found.');
-  }
 
-  if (elements.closeCartButton) {
-    console.log('Close cart button found.');
     elements.closeCartButton.addEventListener('click', () => {
-      console.log('Close cart button clicked.');
       elements.popoutCart.classList.remove('show');
       elements.overlay.classList.remove('show');
     });
-  } else {
-    console.error('Close cart button not found.');
-  }
 
-  if (elements.menuIcon) {
-    console.log('Menu icon found.');
     elements.menuIcon.addEventListener('click', () => {
-      console.log('Menu icon clicked.');
       togglePopin(elements.popoutMenu);
     });
-  } else {
-    console.error('Menu icon not found.');
-  }
 
-  if (elements.closeMenuIcon) {
-    console.log('Close menu icon found.');
     elements.closeMenuIcon.addEventListener('click', () => {
-      console.log('Close menu icon clicked.');
       elements.popoutMenu.classList.remove('show');
       elements.overlay.classList.remove('show');
     });
-  } else {
-    console.error('Close menu icon not found.');
-  }
 
-  if (elements.overlay) {
-    console.log('Overlay found.');
     elements.overlay.addEventListener('click', () => {
-      console.log('Overlay clicked.');
       elements.popoutMenu.classList.remove('show');
       elements.popoutCart.classList.remove('show');
       elements.overlay.classList.remove('show');
     });
-  } else {
-    console.error('Overlay not found.');
-  }
 
-  if (elements.addToCartButtons.length > 0) {
-    console.log('Add to cart buttons found.');
     elements.addToCartButtons.forEach(button => {
       button.addEventListener('click', () => {
-        console.log('Add to cart button clicked.');
         elements.popoutCart.classList.add('show');
         elements.overlay.classList.add('show');
       });
     });
   } else {
-    console.error('Add to cart buttons not found.');
+    console.error('One or more elements not found.');
   }
 });
-
-
 
 
 //  nav sticky and transparency
