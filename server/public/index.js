@@ -1,4 +1,6 @@
+import AOS from "simple-aos";
 
+AOS.init();
 
 
 
