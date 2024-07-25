@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             updateCart(cartItem);
             updateSubtotal();
-            updateCartCount(); // Call updateCartCount after updating the cart
+            updateCartCount();
             updateLocalStorage();
 
             popoutCart.classList.add('show');
@@ -167,6 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function loadCartFromLocalStorage() {
         const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
+        const cartContainer = document.querySelector('#popout-cart .carttab');
+        cartContainer.innerHTML = ''; // Clear any existing items
+
         cartItems.forEach(item => {
             const cartItem = document.createElement('div');
             cartItem.classList.add('cartlist');
@@ -196,27 +199,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="unit-price" style="display: none;">$${item.unitPrice.toFixed(2)}</div>
             `;
 
-            const cartContainer = document.querySelector('#popout-cart .carttab');
             cartContainer.appendChild(cartItem);
 
-            updateCart(cartItem);
+            updateCart(cartItem); // Re-add event listeners
         });
 
         updateSubtotal();
-        updateCartCount(); // Ensure this is called after loading cart items
-    }
-
-    loadCartFromLocalStorage();
-
-    function clearCart() {
-        document.querySelectorAll('.cartlist').forEach(item => item.remove());
-        updateSubtotal();
         updateCartCount();
-        localStorage.removeItem('cart');
     }
 
-    const checkoutButton = document.querySelector('.checkout');
-    if (checkoutButton) {
-        checkoutButton.addEventListener('click', clearCart);
-    }
+    loadCartFromLocalStorage(); // Load cart items on page load
+
 });
