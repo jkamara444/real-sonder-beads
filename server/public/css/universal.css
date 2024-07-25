@@ -82,6 +82,18 @@ html {
     width: 0;
 }
 
+.barba-once {
+    opacity: 0;
+}
+
+.barba-once-active {
+    transition: opacity 5s linear;
+}
+
+.barba-once-to {
+    opacity: 1;
+}
+
 
 
 /* ----------------- navigation BAR styling (mobile & ipad) ----------------- */
