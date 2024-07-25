@@ -47,14 +47,22 @@ document.addEventListener('DOMContentLoaded', () => {
     addToCartButtons.forEach(button => {
         button.addEventListener('click', () => {
             const parentItem = button.closest('.item-text-container');
-            const productName = parentItem.querySelector('h2').innerText;
+            if (!parentItem) return;
+
+            const productName = parentItem.querySelector('h2')?.innerText || 'N/A';
             const selectedColor = parentItem.querySelector('#color')?.value || 'N/A';
             const selectedSize = parentItem.querySelector('#size')?.value + ' in' || 'N/A';
             const selectedTypeElement = parentItem.querySelector('#type');
-            const selectedType = selectedTypeElement ? selectedTypeElement.value : 'N/A';
+            let selectedType = 'N/A';
+            let unitPrice = 0;
+
+            if (selectedTypeElement) {
+                selectedType = selectedTypeElement.value || 'N/A';
+                unitPrice = parseFloat(selectedTypeElement.selectedOptions[0].getAttribute('data-price')) || 0;
+            }
+
             const customNote = parentItem.querySelector('#note')?.value || 'N/A';
-            const unitPrice = selectedTypeElement ? parseFloat(selectedTypeElement.selectedOptions[0].getAttribute('data-price')) : 0;
-            const firstImageSrc = document.querySelector('#main-carousel .splide__slide img').src;
+            const firstImageSrc = document.querySelector('#main-carousel .splide__slide img')?.src || '';
 
             const cartItem = document.createElement('div');
             cartItem.classList.add('cartlist');
@@ -95,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay.classList.add('show');
         });
     });
+
 
     document.querySelectorAll('.item-type').forEach(select => {
         select.addEventListener('change', (event) => {
