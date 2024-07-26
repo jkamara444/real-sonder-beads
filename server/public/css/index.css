@@ -655,6 +655,11 @@ video {
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    gap: 8px;
+}
+
+.promo img {
+    width: 35px;
 }
 
 /* Close button */
