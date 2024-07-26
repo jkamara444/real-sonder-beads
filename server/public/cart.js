@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
             updateSubtotal();
             updateCartCount();
             updateLocalStorage();
+
+            const cartSpanQuantity = document.querySelector('.cart-quantity');
+            cartSpanQuantity.textContent = quantity;
         }
 
         minusButton.addEventListener('click', () => updateQuantity(-1));
