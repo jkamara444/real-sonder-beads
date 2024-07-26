@@ -650,6 +650,13 @@ video {
     letter-spacing: 0.5px;
 }
 
+.promo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
 /* Close button */
 .close-button {
     color: #aaa;
