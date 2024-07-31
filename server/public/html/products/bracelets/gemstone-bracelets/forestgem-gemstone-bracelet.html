@@ -179,14 +179,17 @@
         </div>
         <!----------------- popout cart ----------------->
         <div id="popout-cart" class="popout-cart">
-            <div class="carttab">
+            <div class="cart-header">
                 <h3>shopping cart <span><button id="close-cart">close</button> </span></h3>
             </div>
+            <div class="carttab">
+            </div>
             <hr class="thin-grey-line">
+            <div class="cart-items"></div>
             <div class="cart-footer">
                 <div class="totalamt">
                     <h2>Subtotal</h2>
-                    <h4>$120.00 USD</h4>
+                    <h4 id="cart-total">$0.00 USD</h4>
                 </div>
                 <p>Shipping & taxes calculated at checkout
                 </p>

@@ -387,6 +387,10 @@ nav ul.desktop li a {
     position: relative;
 }
 
+.cart-header {
+    padding-bottom: 0;
+}
+
 /* setup for each cart item */
 
 .cartlist {
