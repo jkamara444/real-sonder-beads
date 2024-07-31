@@ -5,6 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const popoutCart = document.querySelector('#popout-cart');
     const overlay = document.querySelector('#overlay');
 
+    document.querySelectorAll('.item-type').forEach(select => {
+        select.addEventListener('change', (event) => {
+            const selectedOption = event.target.selectedOptions[0];
+            const unitPrice = parseFloat(selectedOption.getAttribute('data-price'));
+            const parentItem = event.target.closest('.item-text-container');
+            const priceElement = parentItem.querySelector('h4');
+            priceElement.textContent = `$${unitPrice.toFixed(2)}`;
+        });
+    });
+
     function updateCart(item) {
         const minusButton = item.querySelector('.minus');
         const plusButton = item.querySelector('.plus');
@@ -56,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedTypeElement = parentItem.querySelector('#type');
             const selectedType = selectedTypeElement ? selectedTypeElement.value : 'N/A';
             const customNote = parentItem.querySelector('#note')?.value || 'N/A';
-            const unitPriceElement = parentItem.querySelector('h4'); // Get the price from h4
+            const unitPriceElement = parentItem.querySelector('h4');
 
             let unitPrice = 0;
             if (unitPriceElement) {
@@ -100,21 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             updateCart(cartItem);
             updateSubtotal();
-            updateCartCount(); // Call updateCartCount after updating the cart
+            updateCartCount();
             updateLocalStorage();
 
             popoutCart.classList.add('show');
             overlay.classList.add('show');
-        });
-    });
-
-    document.querySelectorAll('.item-type').forEach(select => {
-        select.addEventListener('change', (event) => {
-            const selectedOption = event.target.selectedOptions[0];
-            const unitPrice = parseFloat(selectedOption.getAttribute('data-price'));
-            const parentItem = event.target.closest('.item-text-container');
-            const priceElement = parentItem.querySelector('h4');
-            priceElement.textContent = `$${unitPrice.toFixed(2)}`;
         });
     });
 
@@ -201,11 +201,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         updateSubtotal();
-        updateCartCount(); // Ensure this is called after loading cart items
+        updateCartCount();
     }
 
-    loadCartFromLocalStorage();
+    function updateCartFromLocalStorage(event) {
+        if (event.key === 'cart') {
+            loadCartFromLocalStorage();
+        }
+    }
 
+    document.addEventListener('DOMContentLoaded', loadCartFromLocalStorage);
+
+    window.addEventListener('storage', updateCartFromLocalStorage);
     function clearCart() {
         document.querySelectorAll('.cartlist').forEach(item => item.remove());
         updateSubtotal();
