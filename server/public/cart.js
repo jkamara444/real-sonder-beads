@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addToCartButtons.forEach(button => {
         button.addEventListener('click', () => {
+            console.log('Add to Cart button clicked');
             const parentItem = button.closest('.item-text-container');
             const productName = parentItem.querySelector('h2').innerText;
             const selectedColor = parentItem.querySelector('#color')?.value || 'N/A';
@@ -71,8 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedType = selectedTypeElement ? selectedTypeElement.value : 'N/A';
             const customNote = parentItem.querySelector('#note')?.value || 'N/A';
             const unitPriceElement = parentItem.querySelector('h4');
-
             let unitPrice = 0;
+
             if (unitPriceElement) {
                 unitPrice = parseFloat(unitPriceElement.textContent.replace('$', ''));
             } else if (selectedTypeElement && selectedTypeElement.tagName === 'SELECT') {
@@ -84,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let cartItem = document.querySelector(`.cartlist .cartname:contains('${productName}')`);
             if (cartItem) {
+                console.log('Item already in cart');
                 const quantityElement = cartItem.parentNode.querySelector('.quantity');
                 const cartTotalElement = cartItem.parentNode.querySelector('.carttotal');
                 const quantity = parseInt(quantityElement.textContent) + 1;
@@ -93,32 +95,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateCartCount();
                 updateLocalStorage();
             } else {
+                console.log('Adding new item to cart');
                 const cartItem = document.createElement('div');
                 cartItem.classList.add('cartlist');
                 cartItem.innerHTML = `
-              <div class="cartimg">
-                <img src="${firstImageSrc}" alt="${productName}">
-              </div>
-              <div class="cartdetails">
-                <div class="cartname">${productName}</div>
-                <div class="item-description">
-                  ${selectedColor !== 'N/A' ? `<p class="color">${selectedColor}</p>` : ''}
-                  ${selectedSize !== 'N/A' ? `<p class="size">${selectedSize}</p>` : ''}
-                  ${selectedType !== 'N/A' ? `<p class="type">Type: ${selectedType}</p>` : ''}
-                  ${customNote !== 'N/A' ? `
-                    <a href="#" class="show-note">Show Note</a>
-                    <p class="note" style="display: none;">${customNote}</p>
-                  ` : ''}
-                </div>
-                <div class="cartquantity">
-                  <span class="minus">&lt;</span>
-                  <span class="quantity">1</span>
-                  <span class="plus">&gt;</span>
-                </div>
-              </div>
-              <div class="carttotal" data-unit-price="${unitPrice.toFixed(2)}">$${unitPrice.toFixed(2)}</div>
-              <div class="unit-price" style="display: none;">$${unitPrice.toFixed(2)}</div>
-            `;
+                  <div class="cartimg">
+                    <img src="${firstImageSrc}" alt="${productName}">
+                  </div>
+                  <div class="cartdetails">
+                    <div class="cartname">${productName}</div>
+                    <div class="item-description">
+                      ${selectedColor !== 'N/A' ? `<p class="color">${selectedColor}</p>` : ''}
+                      ${selectedSize !== 'N/A' ? `<p class="size">${selectedSize}</p>` : ''}
+                      ${selectedType !== 'N/A' ? `<p class="type">Type: ${selectedType}</p>` : ''}
+                      ${customNote !== 'N/A' ? `
+                        <a href="#" class="show-note">Show Note</a>
+                        <p class="note" style="display: none;">${customNote}</p>
+                      ` : ''}
+                    </div>
+                    <div class="cartquantity">
+                      <span class="minus">&lt;</span>
+                      <span class="quantity">1</span>
+                      <span class="plus">&gt;</span>
+                    </div>
+                  </div>
+                  <div class="carttotal" data-unit-price="${unitPrice.toFixed(2)}">$${unitPrice.toFixed(2)}</div>
+                  <div class="unit-price" style="display: none;">$${unitPrice.toFixed(2)}</div>
+                `;
 
                 const cartContainer = document.querySelector('#popout-cart .carttab');
                 if (cartContainer) {
@@ -132,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 popoutCart.classList.add('show');
                 overlay.classList.add('show');
-            };
+            }
         });
     });
 
