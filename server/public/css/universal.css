@@ -376,6 +376,7 @@ nav ul.desktop li a {
     text-decoration: none;
     border-radius: 10px;
     border: none;
+    margin-bottom: 15px;
 }
 
 .carttab,
@@ -389,6 +390,8 @@ nav ul.desktop li a {
 
 .cart-header {
     padding-bottom: 0;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
 }
 
 /* setup for each cart item */
