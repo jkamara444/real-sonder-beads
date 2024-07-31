@@ -357,7 +357,7 @@ nav ul.desktop li a {
 
 /* styling of the popout menu */
 
-.carttab h3 {
+.cart-header h3 {
     font-family: 'bebas';
     font-size: 20px;
     display: flex;
@@ -365,7 +365,7 @@ nav ul.desktop li a {
     align-items: center;
 }
 
-.carttab #close-cart {
+.cart-header #close-cart {
     cursor: pointer;
     font-family: 'bebas';
     font-size: 16px;
@@ -378,7 +378,8 @@ nav ul.desktop li a {
     border: none;
 }
 
-.carttab {
+.carttab,
+.cart-header {
     display: flex;
     flex-direction: column;
     padding: 20px;
