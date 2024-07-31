@@ -179,44 +179,65 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('cart', JSON.stringify(cartItems));
     }
 
+
     function loadCartFromLocalStorage() {
         const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
+        // Clear existing cart items
+        const cartContainer = document.querySelector('#popout-cart .carttab');
+        if (cartContainer) {
+            cartContainer.innerHTML = '';
+        }
+
         cartItems.forEach(item => {
-            const cartItem = document.createElement('div');
-            cartItem.classList.add('cartlist');
+            const existingCartItem = Array.from(cartContainer.querySelectorAll('.cartlist')).find(cartItem =>
+                cartItem.querySelector('.cartname').textContent.trim() === item.productName
+            );
 
-            cartItem.innerHTML = `
-                <div class="cartimg">
-                    <img src="${item.firstImageSrc}" alt="${item.productName}">
-                </div>
-                <div class="cartdetails">
-                    <div class="cartname">${item.productName}</div>
-                    <div class="item-description">
-                        ${item.selectedColor ? `<p class="color">${item.selectedColor}</p>` : ''}
-                        ${item.selectedSize ? `<p class="size">${item.selectedSize}</p>` : ''}
-                        ${item.selectedType ? `<p class="type">${item.selectedType}</p>` : ''}
-                        ${item.customNote ? `
-                            <a href="#" class="show-note">Show Note</a>
-                            <p class="note" style="display: none;">${item.customNote}</p>
-                        ` : ''}
-                    </div>
-                    <div class="cartquantity">
-                        <span class="minus">&lt;</span>
-                        <span class="quantity">${item.quantity}</span>
-                        <span class="plus">&gt;</span>
-                    </div>
-                </div>
-                <div class="carttotal" data-unit-price="${item.unitPrice.toFixed(2)}">$${(item.unitPrice * item.quantity).toFixed(2)}</div>
-                <div class="unit-price" style="display: none;">$${item.unitPrice.toFixed(2)}</div>
-            `;
+            if (existingCartItem) {
+                // Update existing item
+                const quantityElement = existingCartItem.querySelector('.quantity');
+                const cartTotalElement = existingCartItem.querySelector('.carttotal');
+                const newQuantity = parseInt(quantityElement.textContent, 10) + item.quantity;
+                const unitPrice = parseFloat(cartTotalElement.getAttribute('data-unit-price'));
 
-            const cartContainer = document.querySelector('#popout-cart .carttab');
-            if (cartContainer) {
-                cartContainer.appendChild(cartItem);
+                quantityElement.textContent = newQuantity;
+                cartTotalElement.textContent = `$${(unitPrice * newQuantity).toFixed(2)}`;
+            } else {
+                // Add new item
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cartlist');
+
+                cartItem.innerHTML = `
+                    <div class="cartimg">
+                        <img src="${item.firstImageSrc}" alt="${item.productName}">
+                    </div>
+                    <div class="cartdetails">
+                        <div class="cartname">${item.productName}</div>
+                        <div class="item-description">
+                            ${item.selectedColor ? `<p class="color">${item.selectedColor}</p>` : ''}
+                            ${item.selectedSize ? `<p class="size">${item.selectedSize}</p>` : ''}
+                            ${item.selectedType ? `<p class="type">${item.selectedType}</p>` : ''}
+                            ${item.customNote ? `
+                                <a href="#" class="show-note">Show Note</a>
+                                <p class="note" style="display: none;">${item.customNote}</p>
+                            ` : ''}
+                        </div>
+                        <div class="cartquantity">
+                            <span class="minus">&lt;</span>
+                            <span class="quantity">${item.quantity}</span>
+                            <span class="plus">&gt;</span>
+                        </div>
+                    </div>
+                    <div class="carttotal" data-unit-price="${item.unitPrice.toFixed(2)}">$${(item.unitPrice * item.quantity).toFixed(2)}</div>
+                    <div class="unit-price" style="display: none;">$${item.unitPrice.toFixed(2)}</div>
+                `;
+
+                if (cartContainer) {
+                    cartContainer.appendChild(cartItem);
+                }
+                updateCart(cartItem);
             }
-
-            updateCart(cartItem);
         });
 
         updateSubtotal();
