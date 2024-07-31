@@ -27,21 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
         let unitPrice = parseFloat(unitPriceElement.textContent.replace('$', ''));
 
         function updateQuantity(change) {
-            requestAnimationFrame(() => {
-                let quantity = parseInt(quantityElement.textContent) + change;
-                if (quantity <= 0) {
-                    item.remove();
-                    updateSubtotal();
-                    updateCartCount();
-                    updateLocalStorage();
-                    return;
-                }
-                quantityElement.textContent = quantity;
-                cartTotalElement.textContent = `$${(unitPrice * quantity).toFixed(2)}`;
+            let quantity = parseInt(quantityElement.textContent) + change;
+            if (quantity <= 0) {
+                item.remove();
                 updateSubtotal();
                 updateCartCount();
                 updateLocalStorage();
-            });
+                return;
+            }
+            quantityElement.textContent = quantity;
+            cartTotalElement.textContent = `$${(unitPrice * quantity).toFixed(2)}`;
+            updateSubtotal();
+            updateCartCount();
+            updateLocalStorage();
         }
 
         minusButton.addEventListener('click', () => updateQuantity(-1));

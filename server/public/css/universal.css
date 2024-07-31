@@ -307,6 +307,18 @@ nav ul.desktop li a {
 
 /* ----------------- popout cart styling  ----------------- */
 
+.cartquantity {
+    transition: all 0.2s ease-in-out;
+}
+
+.quantity {
+    transition: all 0.2s ease-in-out;
+}
+
+.carttotal {
+    transition: all 0.2s ease-in-out;
+}
+
 
 .cart-icon-container {
     z-index: 1000;
