@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const unitPrice = parseFloat(selectedOption.getAttribute('data-price'));
             const parentItem = event.target.closest('.item-text-container');
             const priceElement = parentItem.querySelector('h4');
-            priceElement.textContent = `$${unitPrice.toFixed(2)}`;
+            if (priceElement) {
+                priceElement.textContent = `$${unitPrice.toFixed(2)}`;
+            }
         });
     });
 
@@ -39,7 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
             updateLocalStorage();
 
             const cartSpanQuantity = document.querySelector('.cart-quantity');
-            cartSpanQuantity.textContent = quantity;
+            if (cartSpanQuantity) {
+                cartSpanQuantity.textContent = quantity;
+            }
         }
 
         minusButton.addEventListener('click', () => updateQuantity(-1));
@@ -76,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 unitPrice = parseFloat(selectedOption.getAttribute('data-price')) || 0;
             }
 
-            const firstImageSrc = document.querySelector('#main-carousel .splide__slide img').src;
+            const firstImageSrc = document.querySelector('#main-carousel .splide__slide img')?.src || '';
 
             const cartItem = document.createElement('div');
             cartItem.classList.add('cartlist');
@@ -106,7 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
 
             const cartContainer = document.querySelector('#popout-cart .carttab');
-            cartContainer.appendChild(cartItem);
+            if (cartContainer) {
+                cartContainer.appendChild(cartItem);
+            }
 
             updateCart(cartItem);
             updateSubtotal();
@@ -145,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const customNote = cartItem.querySelector('.item-description .note')?.textContent || '';
             const unitPrice = parseFloat(cartItem.querySelector('.carttotal').getAttribute('data-unit-price'));
             const quantity = parseInt(cartItem.querySelector('.quantity').textContent, 10);
-            const firstImageSrc = cartItem.querySelector('.cartimg img').src;
+            const firstImageSrc = cartItem.querySelector('.cartimg img')?.src || '';
 
             cartItems.push({
                 productName,
@@ -195,7 +201,9 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
 
             const cartContainer = document.querySelector('#popout-cart .carttab');
-            cartContainer.appendChild(cartItem);
+            if (cartContainer) {
+                cartContainer.appendChild(cartItem);
+            }
 
             updateCart(cartItem);
         });
@@ -210,9 +218,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    document.addEventListener('DOMContentLoaded', loadCartFromLocalStorage);
-
     window.addEventListener('storage', updateCartFromLocalStorage);
+    loadCartFromLocalStorage(); // Load cart on initial page load
+
     function clearCart() {
         document.querySelectorAll('.cartlist').forEach(item => item.remove());
         updateSubtotal();
