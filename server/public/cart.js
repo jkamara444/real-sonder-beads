@@ -11,9 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const unitPrice = parseFloat(selectedOption.getAttribute('data-price'));
             const parentItem = event.target.closest('.item-text-container');
             const priceElement = parentItem.querySelector('h4');
-            if (priceElement) {
-                priceElement.textContent = `$${unitPrice.toFixed(2)}`;
-            }
+            priceElement.textContent = `$${unitPrice.toFixed(2)}`;
         });
     });
 
@@ -41,9 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateLocalStorage();
 
             const cartSpanQuantity = document.querySelector('.cart-quantity');
-            if (cartSpanQuantity) {
-                cartSpanQuantity.textContent = quantity;
-            }
+            cartSpanQuantity.textContent = quantity;
         }
 
         minusButton.addEventListener('click', () => updateQuantity(-1));
@@ -63,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addToCartButtons.forEach(button => {
         button.addEventListener('click', () => {
-            console.log('Add to Cart button clicked');
             const parentItem = button.closest('.item-text-container');
             const productName = parentItem.querySelector('h2').innerText;
             const selectedColor = parentItem.querySelector('#color')?.value || 'N/A';
@@ -72,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedType = selectedTypeElement ? selectedTypeElement.value : 'N/A';
             const customNote = parentItem.querySelector('#note')?.value || 'N/A';
             const unitPriceElement = parentItem.querySelector('h4');
-            let unitPrice = 0;
 
+            let unitPrice = 0;
             if (unitPriceElement) {
                 unitPrice = parseFloat(unitPriceElement.textContent.replace('$', ''));
             } else if (selectedTypeElement && selectedTypeElement.tagName === 'SELECT') {
@@ -81,61 +76,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 unitPrice = parseFloat(selectedOption.getAttribute('data-price')) || 0;
             }
 
-            const firstImageSrc = document.querySelector('#main-carousel .splide__slide img')?.src || '';
+            const firstImageSrc = document.querySelector('#main-carousel .splide__slide img').src;
 
-            let cartItem = document.querySelector(`.cartlist .cartname:contains('${productName}')`);
-            if (cartItem) {
-                console.log('Item already in cart');
-                const quantityElement = cartItem.parentNode.querySelector('.quantity');
-                const cartTotalElement = cartItem.parentNode.querySelector('.carttotal');
-                const quantity = parseInt(quantityElement.textContent) + 1;
-                quantityElement.textContent = quantity;
-                cartTotalElement.textContent = `$${(unitPrice * quantity).toFixed(2)}`;
-                updateSubtotal();
-                updateCartCount();
-                updateLocalStorage();
-            } else {
-                console.log('Adding new item to cart');
-                const cartItem = document.createElement('div');
-                cartItem.classList.add('cartlist');
-                cartItem.innerHTML = `
-                  <div class="cartimg">
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cartlist');
+            cartItem.innerHTML = `
+                <div class="cartimg">
                     <img src="${firstImageSrc}" alt="${productName}">
-                  </div>
-                  <div class="cartdetails">
+                </div>
+                <div class="cartdetails">
                     <div class="cartname">${productName}</div>
                     <div class="item-description">
-                      ${selectedColor !== 'N/A' ? `<p class="color">${selectedColor}</p>` : ''}
-                      ${selectedSize !== 'N/A' ? `<p class="size">${selectedSize}</p>` : ''}
-                      ${selectedType !== 'N/A' ? `<p class="type">Type: ${selectedType}</p>` : ''}
-                      ${customNote !== 'N/A' ? `
-                        <a href="#" class="show-note">Show Note</a>
-                        <p class="note" style="display: none;">${customNote}</p>
-                      ` : ''}
+                        ${selectedColor !== 'N/A' ? `<p class="color">${selectedColor}</p>` : ''}
+                        ${selectedSize !== 'N/A' ? `<p class="size">${selectedSize}</p>` : ''}
+                        ${selectedType !== 'N/A' ? `<p class="type">Type: ${selectedType}</p>` : ''}
+                        ${customNote !== 'N/A' ? `
+                            <a href="#" class="show-note">Show Note</a>
+                            <p class="note" style="display: none;">${customNote}</p>
+                        ` : ''}
                     </div>
                     <div class="cartquantity">
-                      <span class="minus">&lt;</span>
-                      <span class="quantity">1</span>
-                      <span class="plus">&gt;</span>
+                        <span class="minus">&lt;</span>
+                        <span class="quantity">1</span>
+                        <span class="plus">&gt;</span>
                     </div>
-                  </div>
-                  <div class="carttotal" data-unit-price="${unitPrice.toFixed(2)}">$${unitPrice.toFixed(2)}</div>
-                  <div class="unit-price" style="display: none;">$${unitPrice.toFixed(2)}</div>
-                `;
+                </div>
+                <div class="carttotal" data-unit-price="${unitPrice.toFixed(2)}">$${unitPrice.toFixed(2)}</div>
+                <div class="unit-price" style="display: none;">$${unitPrice.toFixed(2)}</div>
+            `;
 
-                const cartContainer = document.querySelector('#popout-cart .carttab');
-                if (cartContainer) {
-                    cartContainer.appendChild(cartItem);
-                }
+            const cartContainer = document.querySelector('#popout-cart .carttab');
+            cartContainer.appendChild(cartItem);
 
-                updateCart(cartItem);
-                updateSubtotal();
-                updateCartCount();
-                updateLocalStorage();
+            updateCart(cartItem);
+            updateSubtotal();
+            updateCartCount();
+            updateLocalStorage();
 
-                popoutCart.classList.add('show');
-                overlay.classList.add('show');
-            }
+            popoutCart.classList.add('show');
+            overlay.classList.add('show');
         });
     });
 
@@ -166,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const customNote = cartItem.querySelector('.item-description .note')?.textContent || '';
             const unitPrice = parseFloat(cartItem.querySelector('.carttotal').getAttribute('data-unit-price'));
             const quantity = parseInt(cartItem.querySelector('.quantity').textContent, 10);
-            const firstImageSrc = cartItem.querySelector('.cartimg img')?.src || '';
+            const firstImageSrc = cartItem.querySelector('.cartimg img').src;
 
             cartItems.push({
                 productName,
@@ -182,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         localStorage.setItem('cart', JSON.stringify(cartItems));
     }
+
 
     function loadCartFromLocalStorage() {
         const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
@@ -234,8 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('storage', updateCartFromLocalStorage);
-    loadCartFromLocalStorage(); // Load cart on initial page load
-
     function clearCart() {
         document.querySelectorAll('.cartlist').forEach(item => item.remove());
         updateSubtotal();
