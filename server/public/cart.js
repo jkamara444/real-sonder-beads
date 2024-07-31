@@ -82,45 +82,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const firstImageSrc = document.querySelector('#main-carousel .splide__slide img')?.src || '';
 
-            const cartItem = document.createElement('div');
-            cartItem.classList.add('cartlist');
-            cartItem.innerHTML = `
-                <div class="cartimg">
-                    <img src="${firstImageSrc}" alt="${productName}">
+            let cartItem = document.querySelector(`.cartlist .cartname:contains('${productName}')`);
+            if (cartItem) {
+                const quantityElement = cartItem.parentNode.querySelector('.quantity');
+                const cartTotalElement = cartItem.parentNode.querySelector('.carttotal');
+                const quantity = parseInt(quantityElement.textContent) + 1;
+                quantityElement.textContent = quantity;
+                cartTotalElement.textContent = `$${(unitPrice * quantity).toFixed(2)}`;
+                updateSubtotal();
+                updateCartCount();
+                updateLocalStorage();
+            } else {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cartlist');
+                cartItem.innerHTML = `
+              <div class="cartimg">
+                <img src="${firstImageSrc}" alt="${productName}">
+              </div>
+              <div class="cartdetails">
+                <div class="cartname">${productName}</div>
+                <div class="item-description">
+                  ${selectedColor !== 'N/A' ? `<p class="color">${selectedColor}</p>` : ''}
+                  ${selectedSize !== 'N/A' ? `<p class="size">${selectedSize}</p>` : ''}
+                  ${selectedType !== 'N/A' ? `<p class="type">Type: ${selectedType}</p>` : ''}
+                  ${customNote !== 'N/A' ? `
+                    <a href="#" class="show-note">Show Note</a>
+                    <p class="note" style="display: none;">${customNote}</p>
+                  ` : ''}
                 </div>
-                <div class="cartdetails">
-                    <div class="cartname">${productName}</div>
-                    <div class="item-description">
-                        ${selectedColor !== 'N/A' ? `<p class="color">${selectedColor}</p>` : ''}
-                        ${selectedSize !== 'N/A' ? `<p class="size">${selectedSize}</p>` : ''}
-                        ${selectedType !== 'N/A' ? `<p class="type">Type: ${selectedType}</p>` : ''}
-                        ${customNote !== 'N/A' ? `
-                            <a href="#" class="show-note">Show Note</a>
-                            <p class="note" style="display: none;">${customNote}</p>
-                        ` : ''}
-                    </div>
-                    <div class="cartquantity">
-                        <span class="minus">&lt;</span>
-                        <span class="quantity">1</span>
-                        <span class="plus">&gt;</span>
-                    </div>
+                <div class="cartquantity">
+                  <span class="minus">&lt;</span>
+                  <span class="quantity">1</span>
+                  <span class="plus">&gt;</span>
                 </div>
-                <div class="carttotal" data-unit-price="${unitPrice.toFixed(2)}">$${unitPrice.toFixed(2)}</div>
-                <div class="unit-price" style="display: none;">$${unitPrice.toFixed(2)}</div>
+              </div>
+              <div class="carttotal" data-unit-price="${unitPrice.toFixed(2)}">$${unitPrice.toFixed(2)}</div>
+              <div class="unit-price" style="display: none;">$${unitPrice.toFixed(2)}</div>
             `;
 
-            const cartContainer = document.querySelector('#popout-cart .carttab');
-            if (cartContainer) {
-                cartContainer.appendChild(cartItem);
-            }
+                const cartContainer = document.querySelector('#popout-cart .carttab');
+                if (cartContainer) {
+                    cartContainer.appendChild(cartItem);
+                }
 
-            updateCart(cartItem);
-            updateSubtotal();
-            updateCartCount();
-            updateLocalStorage();
+                updateCart(cartItem);
+                updateSubtotal();
+                updateCartCount();
+                updateLocalStorage();
 
-            popoutCart.classList.add('show');
-            overlay.classList.add('show');
+                popoutCart.classList.add('show');
+                overlay.classList.add('show');
+            };
         });
     });
 
